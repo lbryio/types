@@ -6,7 +6,7 @@ Cross-language definitions for standard LBRY types.
 
 ### Go
 
-```
+```go
 package main
 
 import pb "github.com/lbryio/types/go"
