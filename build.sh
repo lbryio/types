@@ -24,6 +24,7 @@ hash protoc-gen-go 2>/dev/null || go get -u github.com/golang/protobuf/protoc-ge
 hash protoc-gen-go 2>/dev/null || { echo >&2 'error: Make sure $GOPATH/bin is in your $PATH'; exit 1; }
 
 
+mkdir -p $DIR/go $DIR/python $DIR/js $DIR/cpp
 find $DIR/go $DIR/python $DIR/js $DIR/cpp -type f -delete
 
 
