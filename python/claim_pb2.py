@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -22,6 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='claim.proto',
   package='pb',
   syntax='proto2',
+  serialized_options=None,
   serialized_pb=_b('\n\x0b\x63laim.proto\x12\x02pb\x1a\x0cstream.proto\x1a\x11\x63\x65rtificate.proto\x1a\x0fsignature.proto\"\xb6\x02\n\x05\x43laim\x12\"\n\x07version\x18\x01 \x02(\x0e\x32\x11.pb.Claim.Version\x12&\n\tclaimType\x18\x02 \x02(\x0e\x32\x13.pb.Claim.ClaimType\x12\x1a\n\x06stream\x18\x03 \x01(\x0b\x32\n.pb.Stream\x12$\n\x0b\x63\x65rtificate\x18\x04 \x01(\x0b\x32\x0f.pb.Certificate\x12)\n\x12publisherSignature\x18\x05 \x01(\x0b\x32\r.pb.Signature\"*\n\x07Version\x12\x13\n\x0fUNKNOWN_VERSION\x10\x00\x12\n\n\x06_0_0_1\x10\x01\"H\n\tClaimType\x12\x16\n\x12UNKNOWN_CLAIM_TYPE\x10\x00\x12\x0e\n\nstreamType\x10\x01\x12\x13\n\x0f\x63\x65rtificateType\x10\x02')
   ,
   dependencies=[stream__pb2.DESCRIPTOR,certificate__pb2.DESCRIPTOR,signature__pb2.DESCRIPTOR,])
@@ -36,15 +36,15 @@ _CLAIM_VERSION = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='UNKNOWN_VERSION', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='_0_0_1', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=264,
   serialized_end=306,
 )
@@ -58,19 +58,19 @@ _CLAIM_CLAIMTYPE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='UNKNOWN_CLAIM_TYPE', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='streamType', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='certificateType', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=308,
   serialized_end=380,
 )
@@ -90,35 +90,35 @@ _CLAIM = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='claimType', full_name='pb.Claim.claimType', index=1,
       number=2, type=14, cpp_type=8, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='stream', full_name='pb.Claim.stream', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='certificate', full_name='pb.Claim.certificate', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='publisherSignature', full_name='pb.Claim.publisherSignature', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -127,7 +127,7 @@ _CLAIM = _descriptor.Descriptor(
     _CLAIM_VERSION,
     _CLAIM_CLAIMTYPE,
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto2',
   extension_ranges=[],

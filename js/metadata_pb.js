@@ -72,7 +72,8 @@ proto.pb.Metadata.toObject = function(includeInstance, msg) {
     fee: (f = msg.getFee()) && fee_pb.Fee.toObject(includeInstance, f),
     thumbnail: jspb.Message.getField(msg, 9),
     preview: jspb.Message.getField(msg, 10),
-    licenseurl: jspb.Message.getField(msg, 11)
+    licenseurl: jspb.Message.getField(msg, 11),
+    releasetime: jspb.Message.getField(msg, 12)
   };
 
   if (includeInstance) {
@@ -153,6 +154,10 @@ proto.pb.Metadata.deserializeBinaryFromReader = function(msg, reader) {
     case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setLicenseurl(value);
+      break;
+    case 12:
+      var value = /** @type {number} */ (reader.readSint64());
+      msg.setReleasetime(value);
       break;
     default:
       reader.skipField();
@@ -258,6 +263,13 @@ proto.pb.Metadata.serializeBinaryToWriter = function(message, writer) {
   if (f != null) {
     writer.writeString(
       11,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 12));
+  if (f != null) {
+    writer.writeSint64(
+      12,
       f
     );
   }
@@ -785,6 +797,35 @@ proto.pb.Metadata.prototype.clearLicenseurl = function() {
  */
 proto.pb.Metadata.prototype.hasLicenseurl = function() {
   return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional sint64 releaseTime = 12;
+ * @return {number}
+ */
+proto.pb.Metadata.prototype.getReleasetime = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/** @param {number} value */
+proto.pb.Metadata.prototype.setReleasetime = function(value) {
+  jspb.Message.setField(this, 12, value);
+};
+
+
+proto.pb.Metadata.prototype.clearReleasetime = function() {
+  jspb.Message.setField(this, 12, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.pb.Metadata.prototype.hasReleasetime = function() {
+  return jspb.Message.getField(this, 12) != null;
 };
 
 

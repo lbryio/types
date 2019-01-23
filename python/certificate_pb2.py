@@ -8,7 +8,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -20,6 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='certificate.proto',
   package='pb',
   syntax='proto2',
+  serialized_options=None,
   serialized_pb=_b('\n\x11\x63\x65rtificate.proto\x12\x02pb\"\x94\x01\n\x0b\x43\x65rtificate\x12(\n\x07version\x18\x01 \x02(\x0e\x32\x17.pb.Certificate.Version\x12\x1c\n\x07keyType\x18\x02 \x02(\x0e\x32\x0b.pb.KeyType\x12\x11\n\tpublicKey\x18\x04 \x02(\x0c\"*\n\x07Version\x12\x13\n\x0fUNKNOWN_VERSION\x10\x00\x12\n\n\x06_0_0_1\x10\x01*Q\n\x07KeyType\x12\x1b\n\x17UNKNOWN_PUBLIC_KEY_TYPE\x10\x00\x12\x0c\n\x08NIST256p\x10\x01\x12\x0c\n\x08NIST384p\x10\x02\x12\r\n\tSECP256k1\x10\x03')
 )
 
@@ -31,23 +31,23 @@ _KEYTYPE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='UNKNOWN_PUBLIC_KEY_TYPE', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='NIST256p', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='NIST384p', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='SECP256k1', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=176,
   serialized_end=257,
 )
@@ -68,15 +68,15 @@ _CERTIFICATE_VERSION = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='UNKNOWN_VERSION', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='_0_0_1', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=132,
   serialized_end=174,
 )
@@ -96,21 +96,21 @@ _CERTIFICATE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='keyType', full_name='pb.Certificate.keyType', index=1,
       number=2, type=14, cpp_type=8, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='publicKey', full_name='pb.Certificate.publicKey', index=2,
       number=4, type=12, cpp_type=9, label=2,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -118,7 +118,7 @@ _CERTIFICATE = _descriptor.Descriptor(
   enum_types=[
     _CERTIFICATE_VERSION,
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto2',
   extension_ranges=[],
