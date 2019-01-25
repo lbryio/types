@@ -1,17 +1,24 @@
-syntax = "proto2";
+syntax = "proto3";
 
 package pb;
 
-import "metadata.proto";
-import "source.proto";
-
+import "fee.proto";
+import "file.proto";
 
 message Stream {
-    enum Version {
-        UNKNOWN_VERSION = 0;
-        _0_0_1 = 1;
-    }
-    required Version version = 1;
-    required Metadata metadata = 2;
-    required Source source = 3;
+    bytes hash = 1;
+    string language = 2;
+    string title = 3;
+    string author = 4;
+    string description = 5;
+    string media_type = 6;
+    string license = 7;
+    File file = 8;
+
+    Fee fee = 16;
+    string license_url = 17;
+    string thumbnail = 18;
+    string preview = 19;
+    bool nsfw = 20;
+    uint32 duration = 21;
 }

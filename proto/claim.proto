@@ -1,24 +1,18 @@
-syntax = "proto2";
+syntax = "proto3";
 
 package pb;
 
 import "stream.proto";
-import "certificate.proto";
-import "signature.proto";
+import "channel.proto";
 
 message Claim {
-    enum Version {
-        UNKNOWN_VERSION = 0;
-        _0_0_1 = 1;
+    enum Type {
+        UNKNOWN = 0;
+        STREAM = 1;
+        CHANNEL = 2;
     }
-    required Version version = 1;
-    enum ClaimType {
-        UNKNOWN_CLAIM_TYPE = 0;
-        streamType = 1;
-        certificateType = 2;
-    }
-    required ClaimType claimType = 2;
-    optional Stream stream = 3;
-    optional Certificate certificate = 4;
-    optional Signature publisherSignature = 5;
+
+    Type type = 1; // do we need this?
+    Stream stream = 2;
+    Channel channel = 3;
 }

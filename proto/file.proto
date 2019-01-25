@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package pb;
+
+message File {
+    string name = 1;
+    uint64 size = 2;
+}
