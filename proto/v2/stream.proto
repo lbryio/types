@@ -21,4 +21,10 @@ message Stream {
     string preview = 19;
     bool nsfw = 20;
     uint32 duration = 21;
+    Timestamp release_time = 22;
+}
+
+message Timestamp {
+    sint64 epoch_seconds = 1;
+    sint32 bc_year = 2;
 }
