@@ -7,9 +7,8 @@ import "channel.proto";
 
 message Claim {
     enum Type {
-        UNKNOWN = 0;
-        STREAM = 1;
-        CHANNEL = 2;
+        STREAM = 0;
+        CHANNEL = 1;
     }
 
     Type type = 1; // do we need this?

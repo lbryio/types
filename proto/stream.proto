@@ -17,8 +17,7 @@ message Stream {
 
     Fee fee = 16;
     string license_url = 17;
-    string thumbnail = 18;
-    string preview = 19;
-    bool nsfw = 20;
-    uint32 duration = 21;
+    string thumbnail_url = 18;
+    uint32 duration = 19;
+    repeated string tags = 20;
 }

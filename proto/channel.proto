@@ -4,4 +4,8 @@ package pb;
 
 message Channel {
     bytes public_key = 1;
+    string name = 2;
+    string description = 3;
+    string thumbnail_url = 4; // url or claim ID?
+    string cover_url = 5; // url or claim ID?
 }

@@ -4,10 +4,9 @@ package pb;
 
 message Fee {
     enum Currency {
-        UNKNOWN = 0;
-        LBC = 1;
-        BTC = 2;
-        USD = 3;
+        LBC = 0;
+        BTC = 1;
+        USD = 2;
     }
 
     Currency currency = 1;
