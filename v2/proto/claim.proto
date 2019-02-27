@@ -19,6 +19,7 @@ message Channel {
     string description = 3;
     string contact_email = 4;
     string homepage_url = 5;
+    repeated string tags = 6;
 
     string thumbnail_url = 16;
     string cover_url = 17;
