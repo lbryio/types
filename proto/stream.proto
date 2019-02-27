@@ -20,4 +20,5 @@ message Stream {
     string thumbnail_url = 18;
     uint32 duration = 19;
     repeated string tags = 20;
+    int64 release_time = 21; // seconds since UNIX epoch
 }
