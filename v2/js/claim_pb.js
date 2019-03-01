@@ -51,7 +51,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.pb.Channel = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.pb.Channel.repeatedFields_, null);
 };
 goog.inherits(proto.pb.Channel, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -373,6 +373,13 @@ proto.pb.Claim.prototype.hasChannel = function() {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.pb.Channel.repeatedFields_ = [6];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -407,6 +414,7 @@ proto.pb.Channel.toObject = function(includeInstance, msg) {
     description: jspb.Message.getFieldWithDefault(msg, 3, ""),
     contactEmail: jspb.Message.getFieldWithDefault(msg, 4, ""),
     homepageUrl: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    tagsList: jspb.Message.getRepeatedField(msg, 6),
     thumbnailUrl: jspb.Message.getFieldWithDefault(msg, 16, ""),
     coverUrl: jspb.Message.getFieldWithDefault(msg, 17, "")
   };
@@ -464,6 +472,10 @@ proto.pb.Channel.deserializeBinaryFromReader = function(msg, reader) {
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setHomepageUrl(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTags(value);
       break;
     case 16:
       var value = /** @type {string} */ (reader.readString());
@@ -534,6 +546,13 @@ proto.pb.Channel.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getTagsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      6,
       f
     );
   }
@@ -650,6 +669,38 @@ proto.pb.Channel.prototype.getHomepageUrl = function() {
 /** @param {string} value */
 proto.pb.Channel.prototype.setHomepageUrl = function(value) {
   jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * repeated string tags = 6;
+ * @return {!Array<string>}
+ */
+proto.pb.Channel.prototype.getTagsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
+};
+
+
+/** @param {!Array<string>} value */
+proto.pb.Channel.prototype.setTagsList = function(value) {
+  jspb.Message.setField(this, 6, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ */
+proto.pb.Channel.prototype.addTags = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ */
+proto.pb.Channel.prototype.clearTagsList = function() {
+  this.setTagsList([]);
 };
 
 

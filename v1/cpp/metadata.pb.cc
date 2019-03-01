@@ -6,69 +6,63 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
 #include <google/protobuf/wire_format_lite_inl.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
-// This is a temporary google only hack
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-#include "third_party/protobuf/version.h"
-#endif
 // @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
 
-namespace protobuf_fee_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_fee_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Fee;
-}  // namespace protobuf_fee_2eproto
-namespace pb {
+extern PROTOBUF_INTERNAL_EXPORT_fee_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Fee_fee_2eproto;
+namespace legacy_pb {
 class MetadataDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Metadata>
-      _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<Metadata> _instance;
 } _Metadata_default_instance_;
-}  // namespace pb
-namespace protobuf_metadata_2eproto {
-static void InitDefaultsMetadata() {
+}  // namespace legacy_pb
+static void InitDefaultsMetadata_metadata_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::pb::_Metadata_default_instance_;
-    new (ptr) ::pb::Metadata();
+    void* ptr = &::legacy_pb::_Metadata_default_instance_;
+    new (ptr) ::legacy_pb::Metadata();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::pb::Metadata::InitAsDefaultInstance();
+  ::legacy_pb::Metadata::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_Metadata =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsMetadata}, {
-      &protobuf_fee_2eproto::scc_info_Fee.base,}};
+::google::protobuf::internal::SCCInfo<1> scc_info_Metadata_metadata_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsMetadata_metadata_2eproto}, {
+      &scc_info_Fee_fee_2eproto.base,}};
 
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_Metadata.base);
+void InitDefaults_metadata_2eproto() {
+  ::google::protobuf::internal::InitSCC(&scc_info_Metadata_metadata_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[1];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[2];
+::google::protobuf::Metadata file_level_metadata_metadata_2eproto[1];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors_metadata_2eproto[2];
+constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_metadata_2eproto = nullptr;
 
-const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Metadata, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Metadata, _internal_metadata_),
+const ::google::protobuf::uint32 TableStruct_metadata_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  PROTOBUF_FIELD_OFFSET(::legacy_pb::Metadata, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::legacy_pb::Metadata, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Metadata, version_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Metadata, language_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Metadata, title_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Metadata, description_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Metadata, author_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Metadata, license_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Metadata, nsfw_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Metadata, fee_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Metadata, thumbnail_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Metadata, preview_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Metadata, licenseurl_),
+  PROTOBUF_FIELD_OFFSET(::legacy_pb::Metadata, version_),
+  PROTOBUF_FIELD_OFFSET(::legacy_pb::Metadata, language_),
+  PROTOBUF_FIELD_OFFSET(::legacy_pb::Metadata, title_),
+  PROTOBUF_FIELD_OFFSET(::legacy_pb::Metadata, description_),
+  PROTOBUF_FIELD_OFFSET(::legacy_pb::Metadata, author_),
+  PROTOBUF_FIELD_OFFSET(::legacy_pb::Metadata, license_),
+  PROTOBUF_FIELD_OFFSET(::legacy_pb::Metadata, nsfw_),
+  PROTOBUF_FIELD_OFFSET(::legacy_pb::Metadata, fee_),
+  PROTOBUF_FIELD_OFFSET(::legacy_pb::Metadata, thumbnail_),
+  PROTOBUF_FIELD_OFFSET(::legacy_pb::Metadata, preview_),
+  PROTOBUF_FIELD_OFFSET(::legacy_pb::Metadata, licenseurl_),
   8,
   9,
   0,
@@ -81,107 +75,91 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   5,
   6,
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 16, sizeof(::pb::Metadata)},
+static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, 16, sizeof(::legacy_pb::Metadata)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::pb::_Metadata_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::legacy_pb::_Metadata_default_instance_),
 };
 
-void protobuf_AssignDescriptors() {
-  AddDescriptors();
-  AssignDescriptors(
-      "metadata.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, file_level_enum_descriptors, NULL);
-}
+::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_metadata_2eproto = {
+  {}, AddDescriptors_metadata_2eproto, "metadata.proto", schemas,
+  file_default_instances, TableStruct_metadata_2eproto::offsets,
+  file_level_metadata_metadata_2eproto, 1, file_level_enum_descriptors_metadata_2eproto, file_level_service_descriptors_metadata_2eproto,
+};
 
-void protobuf_AssignDescriptorsOnce() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
-}
+const char descriptor_table_protodef_metadata_2eproto[] =
+  "\n\016metadata.proto\022\tlegacy_pb\032\tfee.proto\"\374"
+  "\016\n\010Metadata\022,\n\007version\030\001 \002(\0162\033.legacy_pb"
+  ".Metadata.Version\022.\n\010language\030\002 \002(\0162\034.le"
+  "gacy_pb.Metadata.Language\022\r\n\005title\030\003 \002(\t"
+  "\022\023\n\013description\030\004 \002(\t\022\016\n\006author\030\005 \002(\t\022\017\n"
+  "\007license\030\006 \002(\t\022\014\n\004nsfw\030\007 \002(\010\022\033\n\003fee\030\010 \001("
+  "\0132\016.legacy_pb.Fee\022\021\n\tthumbnail\030\t \001(\t\022\017\n\007"
+  "preview\030\n \001(\t\022\022\n\nlicenseUrl\030\013 \001(\t\"N\n\007Ver"
+  "sion\022\023\n\017UNKNOWN_VERSION\020\000\022\n\n\006_0_0_1\020\001\022\n\n"
+  "\006_0_0_2\020\002\022\n\n\006_0_0_3\020\003\022\n\n\006_0_1_0\020\004\"\231\014\n\010La"
+  "nguage\022\024\n\020UNKNOWN_LANGUAGE\020\000\022\006\n\002en\020\001\022\006\n\002"
+  "aa\020\002\022\006\n\002ab\020\003\022\006\n\002ae\020\004\022\006\n\002af\020\005\022\006\n\002ak\020\006\022\006\n\002"
+  "am\020\007\022\006\n\002an\020\010\022\006\n\002ar\020\t\022\006\n\002as\020\n\022\006\n\002av\020\013\022\006\n\002"
+  "ay\020\014\022\006\n\002az\020\r\022\006\n\002ba\020\016\022\006\n\002be\020\017\022\006\n\002bg\020\020\022\006\n\002"
+  "bh\020\021\022\006\n\002bi\020\022\022\006\n\002bm\020\023\022\006\n\002bn\020\024\022\006\n\002bo\020\025\022\006\n\002"
+  "br\020\026\022\006\n\002bs\020\027\022\006\n\002ca\020\030\022\006\n\002ce\020\031\022\006\n\002ch\020\032\022\006\n\002"
+  "co\020\033\022\006\n\002cr\020\034\022\006\n\002cs\020\035\022\006\n\002cu\020\036\022\006\n\002cv\020\037\022\006\n\002"
+  "cy\020 \022\006\n\002da\020!\022\006\n\002de\020\"\022\006\n\002dv\020#\022\006\n\002dz\020$\022\006\n\002"
+  "ee\020%\022\006\n\002el\020&\022\006\n\002eo\020\'\022\006\n\002es\020(\022\006\n\002et\020)\022\006\n\002"
+  "eu\020*\022\006\n\002fa\020+\022\006\n\002ff\020,\022\006\n\002fi\020-\022\006\n\002fj\020.\022\006\n\002"
+  "fo\020/\022\006\n\002fr\0200\022\006\n\002fy\0201\022\006\n\002ga\0202\022\006\n\002gd\0203\022\006\n\002"
+  "gl\0204\022\006\n\002gn\0205\022\006\n\002gu\0206\022\006\n\002gv\0207\022\006\n\002ha\0208\022\006\n\002"
+  "he\0209\022\006\n\002hi\020:\022\006\n\002ho\020;\022\006\n\002hr\020<\022\006\n\002ht\020=\022\006\n\002"
+  "hu\020>\022\006\n\002hy\020\?\022\006\n\002hz\020@\022\006\n\002ia\020A\022\006\n\002id\020B\022\006\n\002"
+  "ie\020C\022\006\n\002ig\020D\022\006\n\002ii\020E\022\006\n\002ik\020F\022\006\n\002io\020G\022\006\n\002"
+  "is\020H\022\006\n\002it\020I\022\006\n\002iu\020J\022\006\n\002ja\020K\022\006\n\002jv\020L\022\006\n\002"
+  "ka\020M\022\006\n\002kg\020N\022\006\n\002ki\020O\022\006\n\002kj\020P\022\006\n\002kk\020Q\022\006\n\002"
+  "kl\020R\022\006\n\002km\020S\022\006\n\002kn\020T\022\006\n\002ko\020U\022\006\n\002kr\020V\022\006\n\002"
+  "ks\020W\022\006\n\002ku\020X\022\006\n\002kv\020Y\022\006\n\002kw\020Z\022\006\n\002ky\020[\022\006\n\002"
+  "la\020\\\022\006\n\002lb\020]\022\006\n\002lg\020^\022\006\n\002li\020_\022\006\n\002ln\020`\022\006\n\002"
+  "lo\020a\022\006\n\002lt\020b\022\006\n\002lu\020c\022\006\n\002lv\020d\022\006\n\002mg\020e\022\006\n\002"
+  "mh\020f\022\006\n\002mi\020g\022\006\n\002mk\020h\022\006\n\002ml\020i\022\006\n\002mn\020j\022\006\n\002"
+  "mr\020k\022\006\n\002ms\020l\022\006\n\002mt\020m\022\006\n\002my\020n\022\006\n\002na\020o\022\006\n\002"
+  "nb\020p\022\006\n\002nd\020q\022\006\n\002ne\020r\022\006\n\002ng\020s\022\006\n\002nl\020t\022\006\n\002"
+  "nn\020u\022\006\n\002no\020v\022\006\n\002nr\020w\022\006\n\002nv\020x\022\006\n\002ny\020y\022\006\n\002"
+  "oc\020z\022\006\n\002oj\020{\022\006\n\002om\020|\022\006\n\002or\020}\022\006\n\002os\020~\022\006\n\002"
+  "pa\020\177\022\007\n\002pi\020\200\001\022\007\n\002pl\020\201\001\022\007\n\002ps\020\202\001\022\007\n\002pt\020\203\001"
+  "\022\007\n\002qu\020\204\001\022\007\n\002rm\020\205\001\022\007\n\002rn\020\206\001\022\007\n\002ro\020\207\001\022\007\n\002"
+  "ru\020\210\001\022\007\n\002rw\020\211\001\022\007\n\002sa\020\212\001\022\007\n\002sc\020\213\001\022\007\n\002sd\020\214"
+  "\001\022\007\n\002se\020\215\001\022\007\n\002sg\020\216\001\022\007\n\002si\020\217\001\022\007\n\002sk\020\220\001\022\007\n"
+  "\002sl\020\221\001\022\007\n\002sm\020\222\001\022\007\n\002sn\020\223\001\022\007\n\002so\020\224\001\022\007\n\002sq\020"
+  "\225\001\022\007\n\002sr\020\226\001\022\007\n\002ss\020\227\001\022\007\n\002st\020\230\001\022\007\n\002su\020\231\001\022\007"
+  "\n\002sv\020\232\001\022\007\n\002sw\020\233\001\022\007\n\002ta\020\234\001\022\007\n\002te\020\235\001\022\007\n\002tg"
+  "\020\236\001\022\007\n\002th\020\237\001\022\007\n\002ti\020\240\001\022\007\n\002tk\020\241\001\022\007\n\002tl\020\242\001\022"
+  "\007\n\002tn\020\243\001\022\007\n\002to\020\244\001\022\007\n\002tr\020\245\001\022\007\n\002ts\020\246\001\022\007\n\002t"
+  "t\020\247\001\022\007\n\002tw\020\250\001\022\007\n\002ty\020\251\001\022\007\n\002ug\020\252\001\022\007\n\002uk\020\253\001"
+  "\022\007\n\002ur\020\254\001\022\007\n\002uz\020\255\001\022\007\n\002ve\020\256\001\022\007\n\002vi\020\257\001\022\007\n\002"
+  "vo\020\260\001\022\007\n\002wa\020\261\001\022\007\n\002wo\020\262\001\022\007\n\002xh\020\263\001\022\007\n\002yi\020\264"
+  "\001\022\007\n\002yo\020\265\001\022\007\n\002za\020\266\001\022\007\n\002zh\020\267\001\022\007\n\002zu\020\270\001"
+  ;
+::google::protobuf::internal::DescriptorTable descriptor_table_metadata_2eproto = {
+  false, InitDefaults_metadata_2eproto, 
+  descriptor_table_protodef_metadata_2eproto,
+  "metadata.proto", &assign_descriptors_table_metadata_2eproto, 1957,
+};
 
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
-void protobuf_RegisterTypes(const ::std::string&) {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 1);
-}
-
-void AddDescriptorsImpl() {
-  InitDefaults();
-  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\016metadata.proto\022\002pb\032\tfee.proto\"\347\016\n\010Meta"
-      "data\022%\n\007version\030\001 \002(\0162\024.pb.Metadata.Vers"
-      "ion\022\'\n\010language\030\002 \002(\0162\025.pb.Metadata.Lang"
-      "uage\022\r\n\005title\030\003 \002(\t\022\023\n\013description\030\004 \002(\t"
-      "\022\016\n\006author\030\005 \002(\t\022\017\n\007license\030\006 \002(\t\022\014\n\004nsf"
-      "w\030\007 \002(\010\022\024\n\003fee\030\010 \001(\0132\007.pb.Fee\022\021\n\tthumbna"
-      "il\030\t \001(\t\022\017\n\007preview\030\n \001(\t\022\022\n\nlicenseUrl\030"
-      "\013 \001(\t\"N\n\007Version\022\023\n\017UNKNOWN_VERSION\020\000\022\n\n"
-      "\006_0_0_1\020\001\022\n\n\006_0_0_2\020\002\022\n\n\006_0_0_3\020\003\022\n\n\006_0_"
-      "1_0\020\004\"\231\014\n\010Language\022\024\n\020UNKNOWN_LANGUAGE\020\000"
-      "\022\006\n\002en\020\001\022\006\n\002aa\020\002\022\006\n\002ab\020\003\022\006\n\002ae\020\004\022\006\n\002af\020\005"
-      "\022\006\n\002ak\020\006\022\006\n\002am\020\007\022\006\n\002an\020\010\022\006\n\002ar\020\t\022\006\n\002as\020\n"
-      "\022\006\n\002av\020\013\022\006\n\002ay\020\014\022\006\n\002az\020\r\022\006\n\002ba\020\016\022\006\n\002be\020\017"
-      "\022\006\n\002bg\020\020\022\006\n\002bh\020\021\022\006\n\002bi\020\022\022\006\n\002bm\020\023\022\006\n\002bn\020\024"
-      "\022\006\n\002bo\020\025\022\006\n\002br\020\026\022\006\n\002bs\020\027\022\006\n\002ca\020\030\022\006\n\002ce\020\031"
-      "\022\006\n\002ch\020\032\022\006\n\002co\020\033\022\006\n\002cr\020\034\022\006\n\002cs\020\035\022\006\n\002cu\020\036"
-      "\022\006\n\002cv\020\037\022\006\n\002cy\020 \022\006\n\002da\020!\022\006\n\002de\020\"\022\006\n\002dv\020#"
-      "\022\006\n\002dz\020$\022\006\n\002ee\020%\022\006\n\002el\020&\022\006\n\002eo\020\'\022\006\n\002es\020("
-      "\022\006\n\002et\020)\022\006\n\002eu\020*\022\006\n\002fa\020+\022\006\n\002ff\020,\022\006\n\002fi\020-"
-      "\022\006\n\002fj\020.\022\006\n\002fo\020/\022\006\n\002fr\0200\022\006\n\002fy\0201\022\006\n\002ga\0202"
-      "\022\006\n\002gd\0203\022\006\n\002gl\0204\022\006\n\002gn\0205\022\006\n\002gu\0206\022\006\n\002gv\0207"
-      "\022\006\n\002ha\0208\022\006\n\002he\0209\022\006\n\002hi\020:\022\006\n\002ho\020;\022\006\n\002hr\020<"
-      "\022\006\n\002ht\020=\022\006\n\002hu\020>\022\006\n\002hy\020\?\022\006\n\002hz\020@\022\006\n\002ia\020A"
-      "\022\006\n\002id\020B\022\006\n\002ie\020C\022\006\n\002ig\020D\022\006\n\002ii\020E\022\006\n\002ik\020F"
-      "\022\006\n\002io\020G\022\006\n\002is\020H\022\006\n\002it\020I\022\006\n\002iu\020J\022\006\n\002ja\020K"
-      "\022\006\n\002jv\020L\022\006\n\002ka\020M\022\006\n\002kg\020N\022\006\n\002ki\020O\022\006\n\002kj\020P"
-      "\022\006\n\002kk\020Q\022\006\n\002kl\020R\022\006\n\002km\020S\022\006\n\002kn\020T\022\006\n\002ko\020U"
-      "\022\006\n\002kr\020V\022\006\n\002ks\020W\022\006\n\002ku\020X\022\006\n\002kv\020Y\022\006\n\002kw\020Z"
-      "\022\006\n\002ky\020[\022\006\n\002la\020\\\022\006\n\002lb\020]\022\006\n\002lg\020^\022\006\n\002li\020_"
-      "\022\006\n\002ln\020`\022\006\n\002lo\020a\022\006\n\002lt\020b\022\006\n\002lu\020c\022\006\n\002lv\020d"
-      "\022\006\n\002mg\020e\022\006\n\002mh\020f\022\006\n\002mi\020g\022\006\n\002mk\020h\022\006\n\002ml\020i"
-      "\022\006\n\002mn\020j\022\006\n\002mr\020k\022\006\n\002ms\020l\022\006\n\002mt\020m\022\006\n\002my\020n"
-      "\022\006\n\002na\020o\022\006\n\002nb\020p\022\006\n\002nd\020q\022\006\n\002ne\020r\022\006\n\002ng\020s"
-      "\022\006\n\002nl\020t\022\006\n\002nn\020u\022\006\n\002no\020v\022\006\n\002nr\020w\022\006\n\002nv\020x"
-      "\022\006\n\002ny\020y\022\006\n\002oc\020z\022\006\n\002oj\020{\022\006\n\002om\020|\022\006\n\002or\020}"
-      "\022\006\n\002os\020~\022\006\n\002pa\020\177\022\007\n\002pi\020\200\001\022\007\n\002pl\020\201\001\022\007\n\002ps"
-      "\020\202\001\022\007\n\002pt\020\203\001\022\007\n\002qu\020\204\001\022\007\n\002rm\020\205\001\022\007\n\002rn\020\206\001\022"
-      "\007\n\002ro\020\207\001\022\007\n\002ru\020\210\001\022\007\n\002rw\020\211\001\022\007\n\002sa\020\212\001\022\007\n\002s"
-      "c\020\213\001\022\007\n\002sd\020\214\001\022\007\n\002se\020\215\001\022\007\n\002sg\020\216\001\022\007\n\002si\020\217\001"
-      "\022\007\n\002sk\020\220\001\022\007\n\002sl\020\221\001\022\007\n\002sm\020\222\001\022\007\n\002sn\020\223\001\022\007\n\002"
-      "so\020\224\001\022\007\n\002sq\020\225\001\022\007\n\002sr\020\226\001\022\007\n\002ss\020\227\001\022\007\n\002st\020\230"
-      "\001\022\007\n\002su\020\231\001\022\007\n\002sv\020\232\001\022\007\n\002sw\020\233\001\022\007\n\002ta\020\234\001\022\007\n"
-      "\002te\020\235\001\022\007\n\002tg\020\236\001\022\007\n\002th\020\237\001\022\007\n\002ti\020\240\001\022\007\n\002tk\020"
-      "\241\001\022\007\n\002tl\020\242\001\022\007\n\002tn\020\243\001\022\007\n\002to\020\244\001\022\007\n\002tr\020\245\001\022\007"
-      "\n\002ts\020\246\001\022\007\n\002tt\020\247\001\022\007\n\002tw\020\250\001\022\007\n\002ty\020\251\001\022\007\n\002ug"
-      "\020\252\001\022\007\n\002uk\020\253\001\022\007\n\002ur\020\254\001\022\007\n\002uz\020\255\001\022\007\n\002ve\020\256\001\022"
-      "\007\n\002vi\020\257\001\022\007\n\002vo\020\260\001\022\007\n\002wa\020\261\001\022\007\n\002wo\020\262\001\022\007\n\002x"
-      "h\020\263\001\022\007\n\002yi\020\264\001\022\007\n\002yo\020\265\001\022\007\n\002za\020\266\001\022\007\n\002zh\020\267\001"
-      "\022\007\n\002zu\020\270\001"
+void AddDescriptors_metadata_2eproto() {
+  static constexpr ::google::protobuf::internal::InitFunc deps[1] =
+  {
+    ::AddDescriptors_fee_2eproto,
   };
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1929);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "metadata.proto", &protobuf_RegisterTypes);
-  ::protobuf_fee_2eproto::AddDescriptors();
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_metadata_2eproto, deps, 1);
 }
 
-void AddDescriptors() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
-}
-// Force AddDescriptors() to be called at dynamic initialization time.
-struct StaticDescriptorInitializer {
-  StaticDescriptorInitializer() {
-    AddDescriptors();
-  }
-} static_descriptor_initializer;
-}  // namespace protobuf_metadata_2eproto
-namespace pb {
+// Force running AddDescriptors() at dynamic initialization time.
+static bool dynamic_init_dummy_metadata_2eproto = []() { AddDescriptors_metadata_2eproto(); return true; }();
+namespace legacy_pb {
 const ::google::protobuf::EnumDescriptor* Metadata_Version_descriptor() {
-  protobuf_metadata_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_metadata_2eproto::file_level_enum_descriptors[0];
+  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_metadata_2eproto);
+  return file_level_enum_descriptors_metadata_2eproto[0];
 }
 bool Metadata_Version_IsValid(int value) {
   switch (value) {
@@ -207,8 +185,8 @@ const Metadata_Version Metadata::Version_MAX;
 const int Metadata::Version_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 const ::google::protobuf::EnumDescriptor* Metadata_Language_descriptor() {
-  protobuf_metadata_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_metadata_2eproto::file_level_enum_descriptors[1];
+  ::google::protobuf::internal::AssignDescriptors(&assign_descriptors_table_metadata_2eproto);
+  return file_level_enum_descriptors_metadata_2eproto[1];
 }
 bool Metadata_Language_IsValid(int value) {
   switch (value) {
@@ -597,12 +575,54 @@ const int Metadata::Language_ARRAYSIZE;
 // ===================================================================
 
 void Metadata::InitAsDefaultInstance() {
-  ::pb::_Metadata_default_instance_._instance.get_mutable()->fee_ = const_cast< ::pb::Fee*>(
-      ::pb::Fee::internal_default_instance());
+  ::legacy_pb::_Metadata_default_instance_._instance.get_mutable()->fee_ = const_cast< ::legacy_pb::Fee*>(
+      ::legacy_pb::Fee::internal_default_instance());
+}
+class Metadata::HasBitSetters {
+ public:
+  static void set_has_version(Metadata* msg) {
+    msg->_has_bits_[0] |= 0x00000100u;
+  }
+  static void set_has_language(Metadata* msg) {
+    msg->_has_bits_[0] |= 0x00000200u;
+  }
+  static void set_has_title(Metadata* msg) {
+    msg->_has_bits_[0] |= 0x00000001u;
+  }
+  static void set_has_description(Metadata* msg) {
+    msg->_has_bits_[0] |= 0x00000002u;
+  }
+  static void set_has_author(Metadata* msg) {
+    msg->_has_bits_[0] |= 0x00000004u;
+  }
+  static void set_has_license(Metadata* msg) {
+    msg->_has_bits_[0] |= 0x00000008u;
+  }
+  static void set_has_nsfw(Metadata* msg) {
+    msg->_has_bits_[0] |= 0x00000400u;
+  }
+  static const ::legacy_pb::Fee& fee(const Metadata* msg);
+  static void set_has_fee(Metadata* msg) {
+    msg->_has_bits_[0] |= 0x00000080u;
+  }
+  static void set_has_thumbnail(Metadata* msg) {
+    msg->_has_bits_[0] |= 0x00000010u;
+  }
+  static void set_has_preview(Metadata* msg) {
+    msg->_has_bits_[0] |= 0x00000020u;
+  }
+  static void set_has_licenseurl(Metadata* msg) {
+    msg->_has_bits_[0] |= 0x00000040u;
+  }
+};
+
+const ::legacy_pb::Fee&
+Metadata::HasBitSetters::fee(const Metadata* msg) {
+  return *msg->fee_;
 }
 void Metadata::clear_fee() {
-  if (fee_ != NULL) fee_->Clear();
-  clear_has_fee();
+  if (fee_ != nullptr) fee_->Clear();
+  _has_bits_[0] &= ~0x00000080u;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Metadata::kVersionFieldNumber;
@@ -619,15 +639,13 @@ const int Metadata::kLicenseUrlFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Metadata::Metadata()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_metadata_2eproto::scc_info_Metadata.base);
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:pb.Metadata)
+  // @@protoc_insertion_point(constructor:legacy_pb.Metadata)
 }
 Metadata::Metadata(const Metadata& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
+      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   title_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -659,17 +677,19 @@ Metadata::Metadata(const Metadata& from)
     licenseurl_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.licenseurl_);
   }
   if (from.has_fee()) {
-    fee_ = new ::pb::Fee(*from.fee_);
+    fee_ = new ::legacy_pb::Fee(*from.fee_);
   } else {
-    fee_ = NULL;
+    fee_ = nullptr;
   }
   ::memcpy(&version_, &from.version_,
     static_cast<size_t>(reinterpret_cast<char*>(&nsfw_) -
     reinterpret_cast<char*>(&version_)) + sizeof(nsfw_));
-  // @@protoc_insertion_point(copy_constructor:pb.Metadata)
+  // @@protoc_insertion_point(copy_constructor:legacy_pb.Metadata)
 }
 
 void Metadata::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_Metadata_metadata_2eproto.base);
   title_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   description_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   author_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -683,7 +703,7 @@ void Metadata::SharedCtor() {
 }
 
 Metadata::~Metadata() {
-  // @@protoc_insertion_point(destructor:pb.Metadata)
+  // @@protoc_insertion_point(destructor:legacy_pb.Metadata)
   SharedDtor();
 }
 
@@ -701,25 +721,20 @@ void Metadata::SharedDtor() {
 void Metadata::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* Metadata::descriptor() {
-  ::protobuf_metadata_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_metadata_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const Metadata& Metadata::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_metadata_2eproto::scc_info_Metadata.base);
+  ::google::protobuf::internal::InitSCC(&::scc_info_Metadata_metadata_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void Metadata::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.Metadata)
+// @@protoc_insertion_point(message_clear_start:legacy_pb.Metadata)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 255u) {
+  if (cached_has_bits & 0x000000ffu) {
     if (cached_has_bits & 0x00000001u) {
       title_.ClearNonDefaultToEmptyNoArena();
     }
@@ -742,11 +757,11 @@ void Metadata::Clear() {
       licenseurl_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000080u) {
-      GOOGLE_DCHECK(fee_ != NULL);
+      GOOGLE_DCHECK(fee_ != nullptr);
       fee_->Clear();
     }
   }
-  if (cached_has_bits & 1792u) {
+  if (cached_has_bits & 0x00000700u) {
     ::memset(&version_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&nsfw_) -
         reinterpret_cast<char*>(&version_)) + sizeof(nsfw_));
@@ -755,29 +770,221 @@ void Metadata::Clear() {
   _internal_metadata_.Clear();
 }
 
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* Metadata::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<Metadata*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // required .legacy_pb.Metadata.Version version = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        if (!::legacy_pb::Metadata_Version_IsValid(val)) {
+          ::google::protobuf::internal::WriteVarint(1, val, msg->mutable_unknown_fields());
+          break;
+        }
+        msg->set_version(static_cast<::legacy_pb::Metadata_Version>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // required .legacy_pb.Metadata.Language language = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        ::google::protobuf::uint64 val = ::google::protobuf::internal::ReadVarint(&ptr);
+        if (!::legacy_pb::Metadata_Language_IsValid(val)) {
+          ::google::protobuf::internal::WriteVarint(2, val, msg->mutable_unknown_fields());
+          break;
+        }
+        msg->set_language(static_cast<::legacy_pb::Metadata_Language>(val));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // required string title = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 26) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("legacy_pb.Metadata.title");
+        object = msg->mutable_title();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8Verify;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8Verify(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // required string description = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 34) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("legacy_pb.Metadata.description");
+        object = msg->mutable_description();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8Verify;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8Verify(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // required string author = 5;
+      case 5: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("legacy_pb.Metadata.author");
+        object = msg->mutable_author();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8Verify;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8Verify(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // required string license = 6;
+      case 6: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("legacy_pb.Metadata.license");
+        object = msg->mutable_license();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8Verify;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8Verify(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // required bool nsfw = 7;
+      case 7: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 56) goto handle_unusual;
+        msg->set_nsfw(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // optional .legacy_pb.Fee fee = 8;
+      case 8: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 66) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        parser_till_end = ::legacy_pb::Fee::_InternalParse;
+        object = msg->mutable_fee();
+        if (size > end - ptr) goto len_delim_till_end;
+        ptr += size;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+            {parser_till_end, object}, ptr - size, ptr));
+        break;
+      }
+      // optional string thumbnail = 9;
+      case 9: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 74) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("legacy_pb.Metadata.thumbnail");
+        object = msg->mutable_thumbnail();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8Verify;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8Verify(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // optional string preview = 10;
+      case 10: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 82) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("legacy_pb.Metadata.preview");
+        object = msg->mutable_preview();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8Verify;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8Verify(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // optional string licenseUrl = 11;
+      case 11: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 90) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("legacy_pb.Metadata.licenseUrl");
+        object = msg->mutable_licenseurl();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8Verify;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8Verify(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool Metadata::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:pb.Metadata)
+  // @@protoc_insertion_point(parse_start:legacy_pb.Metadata)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required .pb.Metadata.Version version = 1;
+      // required .legacy_pb.Metadata.Version version = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-          int value;
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+          int value = 0;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          if (::pb::Metadata_Version_IsValid(value)) {
-            set_version(static_cast< ::pb::Metadata_Version >(value));
+          if (::legacy_pb::Metadata_Version_IsValid(value)) {
+            set_version(static_cast< ::legacy_pb::Metadata_Version >(value));
           } else {
             mutable_unknown_fields()->AddVarint(
-                1, static_cast< ::google::protobuf::uint64>(value));
+                1, static_cast<::google::protobuf::uint64>(value));
           }
         } else {
           goto handle_unusual;
@@ -785,19 +992,18 @@ bool Metadata::MergePartialFromCodedStream(
         break;
       }
 
-      // required .pb.Metadata.Language language = 2;
+      // required .legacy_pb.Metadata.Language language = 2;
       case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-          int value;
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
+          int value = 0;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          if (::pb::Metadata_Language_IsValid(value)) {
-            set_language(static_cast< ::pb::Metadata_Language >(value));
+          if (::legacy_pb::Metadata_Language_IsValid(value)) {
+            set_language(static_cast< ::legacy_pb::Metadata_Language >(value));
           } else {
             mutable_unknown_fields()->AddVarint(
-                2, static_cast< ::google::protobuf::uint64>(value));
+                2, static_cast<::google::protobuf::uint64>(value));
           }
         } else {
           goto handle_unusual;
@@ -807,14 +1013,13 @@ bool Metadata::MergePartialFromCodedStream(
 
       // required string title = 3;
       case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_title()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->title().data(), static_cast<int>(this->title().length()),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "pb.Metadata.title");
+            "legacy_pb.Metadata.title");
         } else {
           goto handle_unusual;
         }
@@ -823,14 +1028,13 @@ bool Metadata::MergePartialFromCodedStream(
 
       // required string description = 4;
       case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (34 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_description()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->description().data(), static_cast<int>(this->description().length()),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "pb.Metadata.description");
+            "legacy_pb.Metadata.description");
         } else {
           goto handle_unusual;
         }
@@ -839,14 +1043,13 @@ bool Metadata::MergePartialFromCodedStream(
 
       // required string author = 5;
       case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_author()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->author().data(), static_cast<int>(this->author().length()),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "pb.Metadata.author");
+            "legacy_pb.Metadata.author");
         } else {
           goto handle_unusual;
         }
@@ -855,14 +1058,13 @@ bool Metadata::MergePartialFromCodedStream(
 
       // required string license = 6;
       case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_license()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->license().data(), static_cast<int>(this->license().length()),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "pb.Metadata.license");
+            "legacy_pb.Metadata.license");
         } else {
           goto handle_unusual;
         }
@@ -871,9 +1073,8 @@ bool Metadata::MergePartialFromCodedStream(
 
       // required bool nsfw = 7;
       case 7: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(56u /* 56 & 0xFF */)) {
-          set_has_nsfw();
+        if (static_cast< ::google::protobuf::uint8>(tag) == (56 & 0xFF)) {
+          HasBitSetters::set_has_nsfw(this);
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
                  input, &nsfw_)));
@@ -883,10 +1084,9 @@ bool Metadata::MergePartialFromCodedStream(
         break;
       }
 
-      // optional .pb.Fee fee = 8;
+      // optional .legacy_pb.Fee fee = 8;
       case 8: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (66 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_fee()));
         } else {
@@ -897,14 +1097,13 @@ bool Metadata::MergePartialFromCodedStream(
 
       // optional string thumbnail = 9;
       case 9: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (74 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_thumbnail()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->thumbnail().data(), static_cast<int>(this->thumbnail().length()),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "pb.Metadata.thumbnail");
+            "legacy_pb.Metadata.thumbnail");
         } else {
           goto handle_unusual;
         }
@@ -913,14 +1112,13 @@ bool Metadata::MergePartialFromCodedStream(
 
       // optional string preview = 10;
       case 10: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(82u /* 82 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (82 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_preview()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->preview().data(), static_cast<int>(this->preview().length()),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "pb.Metadata.preview");
+            "legacy_pb.Metadata.preview");
         } else {
           goto handle_unusual;
         }
@@ -929,14 +1127,13 @@ bool Metadata::MergePartialFromCodedStream(
 
       // optional string licenseUrl = 11;
       case 11: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(90u /* 90 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (90 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_licenseurl()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->licenseurl().data(), static_cast<int>(this->licenseurl().length()),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "pb.Metadata.licenseUrl");
+            "legacy_pb.Metadata.licenseUrl");
         } else {
           goto handle_unusual;
         }
@@ -955,28 +1152,29 @@ bool Metadata::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:pb.Metadata)
+  // @@protoc_insertion_point(parse_success:legacy_pb.Metadata)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:pb.Metadata)
+  // @@protoc_insertion_point(parse_failure:legacy_pb.Metadata)
   return false;
 #undef DO_
 }
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void Metadata::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:pb.Metadata)
+  // @@protoc_insertion_point(serialize_start:legacy_pb.Metadata)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  // required .pb.Metadata.Version version = 1;
+  // required .legacy_pb.Metadata.Version version = 1;
   if (cached_has_bits & 0x00000100u) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       1, this->version(), output);
   }
 
-  // required .pb.Metadata.Language language = 2;
+  // required .legacy_pb.Metadata.Language language = 2;
   if (cached_has_bits & 0x00000200u) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       2, this->language(), output);
@@ -987,7 +1185,7 @@ void Metadata::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->title().data(), static_cast<int>(this->title().length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "pb.Metadata.title");
+      "legacy_pb.Metadata.title");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       3, this->title(), output);
   }
@@ -997,7 +1195,7 @@ void Metadata::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->description().data(), static_cast<int>(this->description().length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "pb.Metadata.description");
+      "legacy_pb.Metadata.description");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       4, this->description(), output);
   }
@@ -1007,7 +1205,7 @@ void Metadata::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->author().data(), static_cast<int>(this->author().length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "pb.Metadata.author");
+      "legacy_pb.Metadata.author");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       5, this->author(), output);
   }
@@ -1017,7 +1215,7 @@ void Metadata::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->license().data(), static_cast<int>(this->license().length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "pb.Metadata.license");
+      "legacy_pb.Metadata.license");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       6, this->license(), output);
   }
@@ -1027,10 +1225,10 @@ void Metadata::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(7, this->nsfw(), output);
   }
 
-  // optional .pb.Fee fee = 8;
+  // optional .legacy_pb.Fee fee = 8;
   if (cached_has_bits & 0x00000080u) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      8, this->_internal_fee(), output);
+      8, HasBitSetters::fee(this), output);
   }
 
   // optional string thumbnail = 9;
@@ -1038,7 +1236,7 @@ void Metadata::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->thumbnail().data(), static_cast<int>(this->thumbnail().length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "pb.Metadata.thumbnail");
+      "legacy_pb.Metadata.thumbnail");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       9, this->thumbnail(), output);
   }
@@ -1048,7 +1246,7 @@ void Metadata::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->preview().data(), static_cast<int>(this->preview().length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "pb.Metadata.preview");
+      "legacy_pb.Metadata.preview");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       10, this->preview(), output);
   }
@@ -1058,7 +1256,7 @@ void Metadata::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->licenseurl().data(), static_cast<int>(this->licenseurl().length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "pb.Metadata.licenseUrl");
+      "legacy_pb.Metadata.licenseUrl");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       11, this->licenseurl(), output);
   }
@@ -1067,24 +1265,23 @@ void Metadata::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:pb.Metadata)
+  // @@protoc_insertion_point(serialize_end:legacy_pb.Metadata)
 }
 
 ::google::protobuf::uint8* Metadata::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:pb.Metadata)
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:legacy_pb.Metadata)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  // required .pb.Metadata.Version version = 1;
+  // required .legacy_pb.Metadata.Version version = 1;
   if (cached_has_bits & 0x00000100u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       1, this->version(), target);
   }
 
-  // required .pb.Metadata.Language language = 2;
+  // required .legacy_pb.Metadata.Language language = 2;
   if (cached_has_bits & 0x00000200u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       2, this->language(), target);
@@ -1095,7 +1292,7 @@ void Metadata::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->title().data(), static_cast<int>(this->title().length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "pb.Metadata.title");
+      "legacy_pb.Metadata.title");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         3, this->title(), target);
@@ -1106,7 +1303,7 @@ void Metadata::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->description().data(), static_cast<int>(this->description().length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "pb.Metadata.description");
+      "legacy_pb.Metadata.description");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         4, this->description(), target);
@@ -1117,7 +1314,7 @@ void Metadata::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->author().data(), static_cast<int>(this->author().length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "pb.Metadata.author");
+      "legacy_pb.Metadata.author");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         5, this->author(), target);
@@ -1128,7 +1325,7 @@ void Metadata::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->license().data(), static_cast<int>(this->license().length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "pb.Metadata.license");
+      "legacy_pb.Metadata.license");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         6, this->license(), target);
@@ -1139,11 +1336,11 @@ void Metadata::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(7, this->nsfw(), target);
   }
 
-  // optional .pb.Fee fee = 8;
+  // optional .legacy_pb.Fee fee = 8;
   if (cached_has_bits & 0x00000080u) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        8, this->_internal_fee(), deterministic, target);
+        8, HasBitSetters::fee(this), target);
   }
 
   // optional string thumbnail = 9;
@@ -1151,7 +1348,7 @@ void Metadata::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->thumbnail().data(), static_cast<int>(this->thumbnail().length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "pb.Metadata.thumbnail");
+      "legacy_pb.Metadata.thumbnail");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         9, this->thumbnail(), target);
@@ -1162,7 +1359,7 @@ void Metadata::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->preview().data(), static_cast<int>(this->preview().length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "pb.Metadata.preview");
+      "legacy_pb.Metadata.preview");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         10, this->preview(), target);
@@ -1173,7 +1370,7 @@ void Metadata::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->licenseurl().data(), static_cast<int>(this->licenseurl().length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "pb.Metadata.licenseUrl");
+      "legacy_pb.Metadata.licenseUrl");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         11, this->licenseurl(), target);
@@ -1183,12 +1380,12 @@ void Metadata::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:pb.Metadata)
+  // @@protoc_insertion_point(serialize_to_array_end:legacy_pb.Metadata)
   return target;
 }
 
 size_t Metadata::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:pb.Metadata)
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:legacy_pb.Metadata)
   size_t total_size = 0;
 
   if (has_title()) {
@@ -1220,13 +1417,13 @@ size_t Metadata::RequiredFieldsByteSizeFallback() const {
   }
 
   if (has_version()) {
-    // required .pb.Metadata.Version version = 1;
+    // required .legacy_pb.Metadata.Version version = 1;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->version());
   }
 
   if (has_language()) {
-    // required .pb.Metadata.Language language = 2;
+    // required .legacy_pb.Metadata.Language language = 2;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->language());
   }
@@ -1239,7 +1436,7 @@ size_t Metadata::RequiredFieldsByteSizeFallback() const {
   return total_size;
 }
 size_t Metadata::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.Metadata)
+// @@protoc_insertion_point(message_byte_size_start:legacy_pb.Metadata)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1268,11 +1465,11 @@ size_t Metadata::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->license());
 
-    // required .pb.Metadata.Version version = 1;
+    // required .legacy_pb.Metadata.Version version = 1;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->version());
 
-    // required .pb.Metadata.Language language = 2;
+    // required .legacy_pb.Metadata.Language language = 2;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->language());
 
@@ -1282,30 +1479,35 @@ size_t Metadata::ByteSizeLong() const {
   } else {
     total_size += RequiredFieldsByteSizeFallback();
   }
-  if (_has_bits_[0 / 32] & 240u) {
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x000000f0u) {
     // optional string thumbnail = 9;
-    if (has_thumbnail()) {
+    if (cached_has_bits & 0x00000010u) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->thumbnail());
     }
 
     // optional string preview = 10;
-    if (has_preview()) {
+    if (cached_has_bits & 0x00000020u) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->preview());
     }
 
     // optional string licenseUrl = 11;
-    if (has_licenseurl()) {
+    if (cached_has_bits & 0x00000040u) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->licenseurl());
     }
 
-    // optional .pb.Fee fee = 8;
-    if (has_fee()) {
+    // optional .legacy_pb.Fee fee = 8;
+    if (cached_has_bits & 0x00000080u) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSize(
           *fee_);
@@ -1318,62 +1520,62 @@ size_t Metadata::ByteSizeLong() const {
 }
 
 void Metadata::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.Metadata)
+// @@protoc_insertion_point(generalized_merge_from_start:legacy_pb.Metadata)
   GOOGLE_DCHECK_NE(&from, this);
   const Metadata* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Metadata>(
+      ::google::protobuf::DynamicCastToGenerated<Metadata>(
           &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.Metadata)
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:legacy_pb.Metadata)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.Metadata)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:legacy_pb.Metadata)
     MergeFrom(*source);
   }
 }
 
 void Metadata::MergeFrom(const Metadata& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.Metadata)
+// @@protoc_insertion_point(class_specific_merge_from_start:legacy_pb.Metadata)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 255u) {
+  if (cached_has_bits & 0x000000ffu) {
     if (cached_has_bits & 0x00000001u) {
-      set_has_title();
+      _has_bits_[0] |= 0x00000001u;
       title_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.title_);
     }
     if (cached_has_bits & 0x00000002u) {
-      set_has_description();
+      _has_bits_[0] |= 0x00000002u;
       description_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.description_);
     }
     if (cached_has_bits & 0x00000004u) {
-      set_has_author();
+      _has_bits_[0] |= 0x00000004u;
       author_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.author_);
     }
     if (cached_has_bits & 0x00000008u) {
-      set_has_license();
+      _has_bits_[0] |= 0x00000008u;
       license_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.license_);
     }
     if (cached_has_bits & 0x00000010u) {
-      set_has_thumbnail();
+      _has_bits_[0] |= 0x00000010u;
       thumbnail_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.thumbnail_);
     }
     if (cached_has_bits & 0x00000020u) {
-      set_has_preview();
+      _has_bits_[0] |= 0x00000020u;
       preview_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.preview_);
     }
     if (cached_has_bits & 0x00000040u) {
-      set_has_licenseurl();
+      _has_bits_[0] |= 0x00000040u;
       licenseurl_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.licenseurl_);
     }
     if (cached_has_bits & 0x00000080u) {
-      mutable_fee()->::pb::Fee::MergeFrom(from.fee());
+      mutable_fee()->::legacy_pb::Fee::MergeFrom(from.fee());
     }
   }
-  if (cached_has_bits & 1792u) {
+  if (cached_has_bits & 0x00000700u) {
     if (cached_has_bits & 0x00000100u) {
       version_ = from.version_;
     }
@@ -1388,14 +1590,14 @@ void Metadata::MergeFrom(const Metadata& from) {
 }
 
 void Metadata::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.Metadata)
+// @@protoc_insertion_point(generalized_copy_from_start:legacy_pb.Metadata)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Metadata::CopyFrom(const Metadata& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.Metadata)
+// @@protoc_insertion_point(class_specific_copy_from_start:legacy_pb.Metadata)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1415,6 +1617,8 @@ void Metadata::Swap(Metadata* other) {
 }
 void Metadata::InternalSwap(Metadata* other) {
   using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
   title_.Swap(&other->title_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   description_.Swap(&other->description_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
@@ -1433,24 +1637,23 @@ void Metadata::InternalSwap(Metadata* other) {
   swap(version_, other->version_);
   swap(language_, other->language_);
   swap(nsfw_, other->nsfw_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
 ::google::protobuf::Metadata Metadata::GetMetadata() const {
-  protobuf_metadata_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_metadata_2eproto::file_level_metadata[kIndexInFileMessages];
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_metadata_2eproto);
+  return ::file_level_metadata_metadata_2eproto[kIndexInFileMessages];
 }
 
 
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace pb
+}  // namespace legacy_pb
 namespace google {
 namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::Metadata* Arena::CreateMaybeMessage< ::pb::Metadata >(Arena* arena) {
-  return Arena::CreateInternal< ::pb::Metadata >(arena);
+template<> PROTOBUF_NOINLINE ::legacy_pb::Metadata* Arena::CreateMaybeMessage< ::legacy_pb::Metadata >(Arena* arena) {
+  return Arena::CreateInternal< ::legacy_pb::Metadata >(arena);
 }
 }  // namespace protobuf
 }  // namespace google
 
 // @@protoc_insertion_point(global_scope)
+#include <google/protobuf/port_undef.inc>

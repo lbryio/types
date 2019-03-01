@@ -378,6 +378,28 @@ class Channel final :
 
   // accessors -------------------------------------------------------
 
+  // repeated string tags = 6;
+  int tags_size() const;
+  void clear_tags();
+  static const int kTagsFieldNumber = 6;
+  const ::std::string& tags(int index) const;
+  ::std::string* mutable_tags(int index);
+  void set_tags(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_tags(int index, ::std::string&& value);
+  #endif
+  void set_tags(int index, const char* value);
+  void set_tags(int index, const char* value, size_t size);
+  ::std::string* add_tags();
+  void add_tags(const ::std::string& value);
+  #if LANG_CXX11
+  void add_tags(::std::string&& value);
+  #endif
+  void add_tags(const char* value);
+  void add_tags(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& tags() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* mutable_tags();
+
   // bytes public_key = 1;
   void clear_public_key();
   static const int kPublicKeyFieldNumber = 1;
@@ -481,6 +503,7 @@ class Channel final :
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField<::std::string> tags_;
   ::google::protobuf::internal::ArenaStringPtr public_key_;
   ::google::protobuf::internal::ArenaStringPtr title_;
   ::google::protobuf::internal::ArenaStringPtr description_;
@@ -1598,6 +1621,75 @@ inline void Channel::set_allocated_homepage_url(::std::string* homepage_url) {
   }
   homepage_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), homepage_url);
   // @@protoc_insertion_point(field_set_allocated:pb.Channel.homepage_url)
+}
+
+// repeated string tags = 6;
+inline int Channel::tags_size() const {
+  return tags_.size();
+}
+inline void Channel::clear_tags() {
+  tags_.Clear();
+}
+inline const ::std::string& Channel::tags(int index) const {
+  // @@protoc_insertion_point(field_get:pb.Channel.tags)
+  return tags_.Get(index);
+}
+inline ::std::string* Channel::mutable_tags(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.Channel.tags)
+  return tags_.Mutable(index);
+}
+inline void Channel::set_tags(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pb.Channel.tags)
+  tags_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void Channel::set_tags(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:pb.Channel.tags)
+  tags_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void Channel::set_tags(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  tags_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:pb.Channel.tags)
+}
+inline void Channel::set_tags(int index, const char* value, size_t size) {
+  tags_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:pb.Channel.tags)
+}
+inline ::std::string* Channel::add_tags() {
+  // @@protoc_insertion_point(field_add_mutable:pb.Channel.tags)
+  return tags_.Add();
+}
+inline void Channel::add_tags(const ::std::string& value) {
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:pb.Channel.tags)
+}
+#if LANG_CXX11
+inline void Channel::add_tags(::std::string&& value) {
+  tags_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:pb.Channel.tags)
+}
+#endif
+inline void Channel::add_tags(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  tags_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:pb.Channel.tags)
+}
+inline void Channel::add_tags(const char* value, size_t size) {
+  tags_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:pb.Channel.tags)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+Channel::tags() const {
+  // @@protoc_insertion_point(field_list:pb.Channel.tags)
+  return tags_;
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>*
+Channel::mutable_tags() {
+  // @@protoc_insertion_point(field_mutable_list:pb.Channel.tags)
+  return &tags_;
 }
 
 // string thumbnail_url = 16;
