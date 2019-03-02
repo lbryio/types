@@ -19,23 +19,23 @@
 #endif
 // @@protoc_insertion_point(includes)
 
-namespace pb {
+namespace legacy_pb {
 class CertificateDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Certificate>
       _instance;
 } _Certificate_default_instance_;
-}  // namespace pb
+}  // namespace legacy_pb
 namespace protobuf_certificate_2eproto {
 static void InitDefaultsCertificate() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::pb::_Certificate_default_instance_;
-    new (ptr) ::pb::Certificate();
+    void* ptr = &::legacy_pb::_Certificate_default_instance_;
+    new (ptr) ::legacy_pb::Certificate();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::pb::Certificate::InitAsDefaultInstance();
+  ::legacy_pb::Certificate::InitAsDefaultInstance();
 }
 
 ::google::protobuf::internal::SCCInfo<0> scc_info_Certificate =
@@ -49,24 +49,24 @@ void InitDefaults() {
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[2];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Certificate, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Certificate, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::legacy_pb::Certificate, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::legacy_pb::Certificate, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Certificate, version_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Certificate, keytype_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Certificate, publickey_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::legacy_pb::Certificate, version_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::legacy_pb::Certificate, keytype_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::legacy_pb::Certificate, publickey_),
   1,
   2,
   0,
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 8, sizeof(::pb::Certificate)},
+  { 0, 8, sizeof(::legacy_pb::Certificate)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::pb::_Certificate_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::legacy_pb::_Certificate_default_instance_),
 };
 
 void protobuf_AssignDescriptors() {
@@ -90,16 +90,16 @@ void protobuf_RegisterTypes(const ::std::string&) {
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\021certificate.proto\022\002pb\"\224\001\n\013Certificate\022"
-      "(\n\007version\030\001 \002(\0162\027.pb.Certificate.Versio"
-      "n\022\034\n\007keyType\030\002 \002(\0162\013.pb.KeyType\022\021\n\tpubli"
-      "cKey\030\004 \002(\014\"*\n\007Version\022\023\n\017UNKNOWN_VERSION"
-      "\020\000\022\n\n\006_0_0_1\020\001*Q\n\007KeyType\022\033\n\027UNKNOWN_PUB"
-      "LIC_KEY_TYPE\020\000\022\014\n\010NIST256p\020\001\022\014\n\010NIST384p"
-      "\020\002\022\r\n\tSECP256k1\020\003"
+      "\n\021certificate.proto\022\tlegacy_pb\"\242\001\n\013Certi"
+      "ficate\022/\n\007version\030\001 \002(\0162\036.legacy_pb.Cert"
+      "ificate.Version\022#\n\007keyType\030\002 \002(\0162\022.legac"
+      "y_pb.KeyType\022\021\n\tpublicKey\030\004 \002(\014\"*\n\007Versi"
+      "on\022\023\n\017UNKNOWN_VERSION\020\000\022\n\n\006_0_0_1\020\001*Q\n\007K"
+      "eyType\022\033\n\027UNKNOWN_PUBLIC_KEY_TYPE\020\000\022\014\n\010N"
+      "IST256p\020\001\022\014\n\010NIST384p\020\002\022\r\n\tSECP256k1\020\003"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 257);
+      descriptor, 278);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "certificate.proto", &protobuf_RegisterTypes);
 }
@@ -115,7 +115,7 @@ struct StaticDescriptorInitializer {
   }
 } static_descriptor_initializer;
 }  // namespace protobuf_certificate_2eproto
-namespace pb {
+namespace legacy_pb {
 const ::google::protobuf::EnumDescriptor* Certificate_Version_descriptor() {
   protobuf_certificate_2eproto::protobuf_AssignDescriptorsOnce();
   return protobuf_certificate_2eproto::file_level_enum_descriptors[0];
@@ -169,7 +169,7 @@ Certificate::Certificate()
   ::google::protobuf::internal::InitSCC(
       &protobuf_certificate_2eproto::scc_info_Certificate.base);
   SharedCtor();
-  // @@protoc_insertion_point(constructor:pb.Certificate)
+  // @@protoc_insertion_point(constructor:legacy_pb.Certificate)
 }
 Certificate::Certificate(const Certificate& from)
   : ::google::protobuf::Message(),
@@ -183,7 +183,7 @@ Certificate::Certificate(const Certificate& from)
   ::memcpy(&version_, &from.version_,
     static_cast<size_t>(reinterpret_cast<char*>(&keytype_) -
     reinterpret_cast<char*>(&version_)) + sizeof(keytype_));
-  // @@protoc_insertion_point(copy_constructor:pb.Certificate)
+  // @@protoc_insertion_point(copy_constructor:legacy_pb.Certificate)
 }
 
 void Certificate::SharedCtor() {
@@ -194,7 +194,7 @@ void Certificate::SharedCtor() {
 }
 
 Certificate::~Certificate() {
-  // @@protoc_insertion_point(destructor:pb.Certificate)
+  // @@protoc_insertion_point(destructor:legacy_pb.Certificate)
   SharedDtor();
 }
 
@@ -217,7 +217,7 @@ const Certificate& Certificate::default_instance() {
 
 
 void Certificate::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.Certificate)
+// @@protoc_insertion_point(message_clear_start:legacy_pb.Certificate)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -239,13 +239,13 @@ bool Certificate::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:pb.Certificate)
+  // @@protoc_insertion_point(parse_start:legacy_pb.Certificate)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required .pb.Certificate.Version version = 1;
+      // required .legacy_pb.Certificate.Version version = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
@@ -253,8 +253,8 @@ bool Certificate::MergePartialFromCodedStream(
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          if (::pb::Certificate_Version_IsValid(value)) {
-            set_version(static_cast< ::pb::Certificate_Version >(value));
+          if (::legacy_pb::Certificate_Version_IsValid(value)) {
+            set_version(static_cast< ::legacy_pb::Certificate_Version >(value));
           } else {
             mutable_unknown_fields()->AddVarint(
                 1, static_cast< ::google::protobuf::uint64>(value));
@@ -265,7 +265,7 @@ bool Certificate::MergePartialFromCodedStream(
         break;
       }
 
-      // required .pb.KeyType keyType = 2;
+      // required .legacy_pb.KeyType keyType = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
@@ -273,8 +273,8 @@ bool Certificate::MergePartialFromCodedStream(
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          if (::pb::KeyType_IsValid(value)) {
-            set_keytype(static_cast< ::pb::KeyType >(value));
+          if (::legacy_pb::KeyType_IsValid(value)) {
+            set_keytype(static_cast< ::legacy_pb::KeyType >(value));
           } else {
             mutable_unknown_fields()->AddVarint(
                 2, static_cast< ::google::protobuf::uint64>(value));
@@ -309,28 +309,28 @@ bool Certificate::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:pb.Certificate)
+  // @@protoc_insertion_point(parse_success:legacy_pb.Certificate)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:pb.Certificate)
+  // @@protoc_insertion_point(parse_failure:legacy_pb.Certificate)
   return false;
 #undef DO_
 }
 
 void Certificate::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:pb.Certificate)
+  // @@protoc_insertion_point(serialize_start:legacy_pb.Certificate)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  // required .pb.Certificate.Version version = 1;
+  // required .legacy_pb.Certificate.Version version = 1;
   if (cached_has_bits & 0x00000002u) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       1, this->version(), output);
   }
 
-  // required .pb.KeyType keyType = 2;
+  // required .legacy_pb.KeyType keyType = 2;
   if (cached_has_bits & 0x00000004u) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       2, this->keytype(), output);
@@ -346,24 +346,24 @@ void Certificate::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:pb.Certificate)
+  // @@protoc_insertion_point(serialize_end:legacy_pb.Certificate)
 }
 
 ::google::protobuf::uint8* Certificate::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:pb.Certificate)
+  // @@protoc_insertion_point(serialize_to_array_start:legacy_pb.Certificate)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  // required .pb.Certificate.Version version = 1;
+  // required .legacy_pb.Certificate.Version version = 1;
   if (cached_has_bits & 0x00000002u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       1, this->version(), target);
   }
 
-  // required .pb.KeyType keyType = 2;
+  // required .legacy_pb.KeyType keyType = 2;
   if (cached_has_bits & 0x00000004u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       2, this->keytype(), target);
@@ -380,12 +380,12 @@ void Certificate::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:pb.Certificate)
+  // @@protoc_insertion_point(serialize_to_array_end:legacy_pb.Certificate)
   return target;
 }
 
 size_t Certificate::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:pb.Certificate)
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:legacy_pb.Certificate)
   size_t total_size = 0;
 
   if (has_publickey()) {
@@ -396,13 +396,13 @@ size_t Certificate::RequiredFieldsByteSizeFallback() const {
   }
 
   if (has_version()) {
-    // required .pb.Certificate.Version version = 1;
+    // required .legacy_pb.Certificate.Version version = 1;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->version());
   }
 
   if (has_keytype()) {
-    // required .pb.KeyType keyType = 2;
+    // required .legacy_pb.KeyType keyType = 2;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->keytype());
   }
@@ -410,7 +410,7 @@ size_t Certificate::RequiredFieldsByteSizeFallback() const {
   return total_size;
 }
 size_t Certificate::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.Certificate)
+// @@protoc_insertion_point(message_byte_size_start:legacy_pb.Certificate)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -424,11 +424,11 @@ size_t Certificate::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormatLite::BytesSize(
         this->publickey());
 
-    // required .pb.Certificate.Version version = 1;
+    // required .legacy_pb.Certificate.Version version = 1;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->version());
 
-    // required .pb.KeyType keyType = 2;
+    // required .legacy_pb.KeyType keyType = 2;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->keytype());
 
@@ -441,22 +441,22 @@ size_t Certificate::ByteSizeLong() const {
 }
 
 void Certificate::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.Certificate)
+// @@protoc_insertion_point(generalized_merge_from_start:legacy_pb.Certificate)
   GOOGLE_DCHECK_NE(&from, this);
   const Certificate* source =
       ::google::protobuf::internal::DynamicCastToGenerated<const Certificate>(
           &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.Certificate)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:legacy_pb.Certificate)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.Certificate)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:legacy_pb.Certificate)
     MergeFrom(*source);
   }
 }
 
 void Certificate::MergeFrom(const Certificate& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.Certificate)
+// @@protoc_insertion_point(class_specific_merge_from_start:legacy_pb.Certificate)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -479,14 +479,14 @@ void Certificate::MergeFrom(const Certificate& from) {
 }
 
 void Certificate::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.Certificate)
+// @@protoc_insertion_point(generalized_copy_from_start:legacy_pb.Certificate)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Certificate::CopyFrom(const Certificate& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.Certificate)
+// @@protoc_insertion_point(class_specific_copy_from_start:legacy_pb.Certificate)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -518,11 +518,11 @@ void Certificate::InternalSwap(Certificate* other) {
 
 
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace pb
+}  // namespace legacy_pb
 namespace google {
 namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::Certificate* Arena::CreateMaybeMessage< ::pb::Certificate >(Arena* arena) {
-  return Arena::CreateInternal< ::pb::Certificate >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::legacy_pb::Certificate* Arena::CreateMaybeMessage< ::legacy_pb::Certificate >(Arena* arena) {
+  return Arena::CreateInternal< ::legacy_pb::Certificate >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

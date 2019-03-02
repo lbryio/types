@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package pb3;
+package pb;
 
 message Claim {
     enum Type {

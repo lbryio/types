@@ -19,23 +19,23 @@
 #endif
 // @@protoc_insertion_point(includes)
 
-namespace pb {
+namespace legacy_pb {
 class SignatureDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Signature>
       _instance;
 } _Signature_default_instance_;
-}  // namespace pb
+}  // namespace legacy_pb
 namespace protobuf_signature_2eproto {
 static void InitDefaultsSignature() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::pb::_Signature_default_instance_;
-    new (ptr) ::pb::Signature();
+    void* ptr = &::legacy_pb::_Signature_default_instance_;
+    new (ptr) ::legacy_pb::Signature();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::pb::Signature::InitAsDefaultInstance();
+  ::legacy_pb::Signature::InitAsDefaultInstance();
 }
 
 ::google::protobuf::internal::SCCInfo<0> scc_info_Signature =
@@ -49,26 +49,26 @@ void InitDefaults() {
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Signature, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Signature, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::legacy_pb::Signature, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::legacy_pb::Signature, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Signature, version_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Signature, signaturetype_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Signature, signature_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Signature, certificateid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::legacy_pb::Signature, version_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::legacy_pb::Signature, signaturetype_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::legacy_pb::Signature, signature_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::legacy_pb::Signature, certificateid_),
   2,
   3,
   0,
   1,
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 9, sizeof(::pb::Signature)},
+  { 0, 9, sizeof(::legacy_pb::Signature)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::pb::_Signature_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::legacy_pb::_Signature_default_instance_),
 };
 
 void protobuf_AssignDescriptors() {
@@ -92,15 +92,15 @@ void protobuf_RegisterTypes(const ::std::string&) {
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\017signature.proto\022\002pb\032\021certificate.proto"
-      "\"\255\001\n\tSignature\022&\n\007version\030\001 \002(\0162\025.pb.Sig"
-      "nature.Version\022\"\n\rsignatureType\030\002 \002(\0162\013."
-      "pb.KeyType\022\021\n\tsignature\030\003 \002(\014\022\025\n\rcertifi"
-      "cateId\030\004 \002(\014\"*\n\007Version\022\023\n\017UNKNOWN_VERSI"
-      "ON\020\000\022\n\n\006_0_0_1\020\001"
+      "\n\017signature.proto\022\tlegacy_pb\032\021certificat"
+      "e.proto\"\273\001\n\tSignature\022-\n\007version\030\001 \002(\0162\034"
+      ".legacy_pb.Signature.Version\022)\n\rsignatur"
+      "eType\030\002 \002(\0162\022.legacy_pb.KeyType\022\021\n\tsigna"
+      "ture\030\003 \002(\014\022\025\n\rcertificateId\030\004 \002(\014\"*\n\007Ver"
+      "sion\022\023\n\017UNKNOWN_VERSION\020\000\022\n\n\006_0_0_1\020\001"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 216);
+      descriptor, 237);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "signature.proto", &protobuf_RegisterTypes);
   ::protobuf_certificate_2eproto::AddDescriptors();
@@ -117,7 +117,7 @@ struct StaticDescriptorInitializer {
   }
 } static_descriptor_initializer;
 }  // namespace protobuf_signature_2eproto
-namespace pb {
+namespace legacy_pb {
 const ::google::protobuf::EnumDescriptor* Signature_Version_descriptor() {
   protobuf_signature_2eproto::protobuf_AssignDescriptorsOnce();
   return protobuf_signature_2eproto::file_level_enum_descriptors[0];
@@ -156,7 +156,7 @@ Signature::Signature()
   ::google::protobuf::internal::InitSCC(
       &protobuf_signature_2eproto::scc_info_Signature.base);
   SharedCtor();
-  // @@protoc_insertion_point(constructor:pb.Signature)
+  // @@protoc_insertion_point(constructor:legacy_pb.Signature)
 }
 Signature::Signature(const Signature& from)
   : ::google::protobuf::Message(),
@@ -174,7 +174,7 @@ Signature::Signature(const Signature& from)
   ::memcpy(&version_, &from.version_,
     static_cast<size_t>(reinterpret_cast<char*>(&signaturetype_) -
     reinterpret_cast<char*>(&version_)) + sizeof(signaturetype_));
-  // @@protoc_insertion_point(copy_constructor:pb.Signature)
+  // @@protoc_insertion_point(copy_constructor:legacy_pb.Signature)
 }
 
 void Signature::SharedCtor() {
@@ -186,7 +186,7 @@ void Signature::SharedCtor() {
 }
 
 Signature::~Signature() {
-  // @@protoc_insertion_point(destructor:pb.Signature)
+  // @@protoc_insertion_point(destructor:legacy_pb.Signature)
   SharedDtor();
 }
 
@@ -210,7 +210,7 @@ const Signature& Signature::default_instance() {
 
 
 void Signature::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.Signature)
+// @@protoc_insertion_point(message_clear_start:legacy_pb.Signature)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -237,13 +237,13 @@ bool Signature::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:pb.Signature)
+  // @@protoc_insertion_point(parse_start:legacy_pb.Signature)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required .pb.Signature.Version version = 1;
+      // required .legacy_pb.Signature.Version version = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
@@ -251,8 +251,8 @@ bool Signature::MergePartialFromCodedStream(
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          if (::pb::Signature_Version_IsValid(value)) {
-            set_version(static_cast< ::pb::Signature_Version >(value));
+          if (::legacy_pb::Signature_Version_IsValid(value)) {
+            set_version(static_cast< ::legacy_pb::Signature_Version >(value));
           } else {
             mutable_unknown_fields()->AddVarint(
                 1, static_cast< ::google::protobuf::uint64>(value));
@@ -263,7 +263,7 @@ bool Signature::MergePartialFromCodedStream(
         break;
       }
 
-      // required .pb.KeyType signatureType = 2;
+      // required .legacy_pb.KeyType signatureType = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
@@ -271,8 +271,8 @@ bool Signature::MergePartialFromCodedStream(
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          if (::pb::KeyType_IsValid(value)) {
-            set_signaturetype(static_cast< ::pb::KeyType >(value));
+          if (::legacy_pb::KeyType_IsValid(value)) {
+            set_signaturetype(static_cast< ::legacy_pb::KeyType >(value));
           } else {
             mutable_unknown_fields()->AddVarint(
                 2, static_cast< ::google::protobuf::uint64>(value));
@@ -319,28 +319,28 @@ bool Signature::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:pb.Signature)
+  // @@protoc_insertion_point(parse_success:legacy_pb.Signature)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:pb.Signature)
+  // @@protoc_insertion_point(parse_failure:legacy_pb.Signature)
   return false;
 #undef DO_
 }
 
 void Signature::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:pb.Signature)
+  // @@protoc_insertion_point(serialize_start:legacy_pb.Signature)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  // required .pb.Signature.Version version = 1;
+  // required .legacy_pb.Signature.Version version = 1;
   if (cached_has_bits & 0x00000004u) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       1, this->version(), output);
   }
 
-  // required .pb.KeyType signatureType = 2;
+  // required .legacy_pb.KeyType signatureType = 2;
   if (cached_has_bits & 0x00000008u) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       2, this->signaturetype(), output);
@@ -362,24 +362,24 @@ void Signature::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:pb.Signature)
+  // @@protoc_insertion_point(serialize_end:legacy_pb.Signature)
 }
 
 ::google::protobuf::uint8* Signature::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:pb.Signature)
+  // @@protoc_insertion_point(serialize_to_array_start:legacy_pb.Signature)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  // required .pb.Signature.Version version = 1;
+  // required .legacy_pb.Signature.Version version = 1;
   if (cached_has_bits & 0x00000004u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       1, this->version(), target);
   }
 
-  // required .pb.KeyType signatureType = 2;
+  // required .legacy_pb.KeyType signatureType = 2;
   if (cached_has_bits & 0x00000008u) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       2, this->signaturetype(), target);
@@ -403,12 +403,12 @@ void Signature::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:pb.Signature)
+  // @@protoc_insertion_point(serialize_to_array_end:legacy_pb.Signature)
   return target;
 }
 
 size_t Signature::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:pb.Signature)
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:legacy_pb.Signature)
   size_t total_size = 0;
 
   if (has_signature()) {
@@ -426,13 +426,13 @@ size_t Signature::RequiredFieldsByteSizeFallback() const {
   }
 
   if (has_version()) {
-    // required .pb.Signature.Version version = 1;
+    // required .legacy_pb.Signature.Version version = 1;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->version());
   }
 
   if (has_signaturetype()) {
-    // required .pb.KeyType signatureType = 2;
+    // required .legacy_pb.KeyType signatureType = 2;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->signaturetype());
   }
@@ -440,7 +440,7 @@ size_t Signature::RequiredFieldsByteSizeFallback() const {
   return total_size;
 }
 size_t Signature::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.Signature)
+// @@protoc_insertion_point(message_byte_size_start:legacy_pb.Signature)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -459,11 +459,11 @@ size_t Signature::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormatLite::BytesSize(
         this->certificateid());
 
-    // required .pb.Signature.Version version = 1;
+    // required .legacy_pb.Signature.Version version = 1;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->version());
 
-    // required .pb.KeyType signatureType = 2;
+    // required .legacy_pb.KeyType signatureType = 2;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->signaturetype());
 
@@ -476,22 +476,22 @@ size_t Signature::ByteSizeLong() const {
 }
 
 void Signature::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.Signature)
+// @@protoc_insertion_point(generalized_merge_from_start:legacy_pb.Signature)
   GOOGLE_DCHECK_NE(&from, this);
   const Signature* source =
       ::google::protobuf::internal::DynamicCastToGenerated<const Signature>(
           &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.Signature)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:legacy_pb.Signature)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.Signature)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:legacy_pb.Signature)
     MergeFrom(*source);
   }
 }
 
 void Signature::MergeFrom(const Signature& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.Signature)
+// @@protoc_insertion_point(class_specific_merge_from_start:legacy_pb.Signature)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -518,14 +518,14 @@ void Signature::MergeFrom(const Signature& from) {
 }
 
 void Signature::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.Signature)
+// @@protoc_insertion_point(generalized_copy_from_start:legacy_pb.Signature)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Signature::CopyFrom(const Signature& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.Signature)
+// @@protoc_insertion_point(class_specific_copy_from_start:legacy_pb.Signature)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -559,11 +559,11 @@ void Signature::InternalSwap(Signature* other) {
 
 
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace pb
+}  // namespace legacy_pb
 namespace google {
 namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::Signature* Arena::CreateMaybeMessage< ::pb::Signature >(Arena* arena) {
-  return Arena::CreateInternal< ::pb::Signature >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::legacy_pb::Signature* Arena::CreateMaybeMessage< ::legacy_pb::Signature >(Arena* arena) {
+  return Arena::CreateInternal< ::legacy_pb::Signature >(arena);
 }
 }  // namespace protobuf
 }  // namespace google
