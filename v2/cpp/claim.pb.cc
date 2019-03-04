@@ -168,6 +168,7 @@ const ::google::protobuf::uint32 TableStruct_claim_2eproto::offsets[] PROTOBUF_S
   PROTOBUF_FIELD_OFFSET(::pb::Channel, description_),
   PROTOBUF_FIELD_OFFSET(::pb::Channel, contact_email_),
   PROTOBUF_FIELD_OFFSET(::pb::Channel, homepage_url_),
+  PROTOBUF_FIELD_OFFSET(::pb::Channel, tags_),
   PROTOBUF_FIELD_OFFSET(::pb::Channel, thumbnail_url_),
   PROTOBUF_FIELD_OFFSET(::pb::Channel, cover_url_),
   ~0u,  // no _has_bits_
@@ -216,10 +217,10 @@ const ::google::protobuf::uint32 TableStruct_claim_2eproto::offsets[] PROTOBUF_S
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::pb::Claim)},
   { 8, -1, sizeof(::pb::Channel)},
-  { 20, -1, sizeof(::pb::Stream)},
-  { 40, -1, sizeof(::pb::Fee)},
-  { 48, -1, sizeof(::pb::File)},
-  { 55, -1, sizeof(::pb::Video)},
+  { 21, -1, sizeof(::pb::Stream)},
+  { 41, -1, sizeof(::pb::Fee)},
+  { 49, -1, sizeof(::pb::File)},
+  { 56, -1, sizeof(::pb::Video)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -241,28 +242,29 @@ const char descriptor_table_protodef_claim_2eproto[] =
   "\n\013claim.proto\022\002pb\"\200\001\n\005Claim\022\034\n\004type\030\001 \001("
   "\0162\016.pb.Claim.Type\022\032\n\006stream\030\002 \001(\0132\n.pb.S"
   "tream\022\034\n\007channel\030\003 \001(\0132\013.pb.Channel\"\037\n\004T"
-  "ype\022\n\n\006STREAM\020\000\022\013\n\007CHANNEL\020\001\"\230\001\n\007Channel"
+  "ype\022\n\n\006STREAM\020\000\022\013\n\007CHANNEL\020\001\"\246\001\n\007Channel"
   "\022\022\n\npublic_key\030\001 \001(\014\022\r\n\005title\030\002 \001(\t\022\023\n\013d"
   "escription\030\003 \001(\t\022\025\n\rcontact_email\030\004 \001(\t\022"
-  "\024\n\014homepage_url\030\005 \001(\t\022\025\n\rthumbnail_url\030\020"
-  " \001(\t\022\021\n\tcover_url\030\021 \001(\t\"\253\002\n\006Stream\022\014\n\004ha"
-  "sh\030\001 \001(\014\022\020\n\010language\030\002 \001(\t\022\r\n\005title\030\003 \001("
-  "\t\022\016\n\006author\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\022"
-  "\n\nmedia_type\030\006 \001(\t\022\017\n\007license\030\007 \001(\t\022\026\n\004f"
-  "ile\030\010 \001(\0132\010.pb.File\022\024\n\003fee\030\020 \001(\0132\007.pb.Fe"
-  "e\022\023\n\013license_url\030\021 \001(\t\022\025\n\rthumbnail_url\030"
-  "\022 \001(\t\022\020\n\010duration\030\023 \001(\r\022\014\n\004tags\030\024 \003(\t\022\024\n"
-  "\014release_time\030\025 \001(\003\022\030\n\005video\030\026 \001(\0132\t.pb."
-  "Video\"h\n\003Fee\022\"\n\010currency\030\001 \001(\0162\020.pb.Fee."
-  "Currency\022\017\n\007address\030\002 \001(\014\022\016\n\006amount\030\003 \001("
-  "\004\"\034\n\010Currency\022\007\n\003LBC\020\000\022\007\n\003USD\020\001\"\"\n\004File\022"
-  "\014\n\004name\030\001 \001(\t\022\014\n\004size\030\002 \001(\004\"&\n\005Video\022\r\n\005"
-  "width\030\001 \001(\r\022\016\n\006height\030\002 \001(\rb\006proto3"
+  "\024\n\014homepage_url\030\005 \001(\t\022\014\n\004tags\030\006 \003(\t\022\025\n\rt"
+  "humbnail_url\030\020 \001(\t\022\021\n\tcover_url\030\021 \001(\t\"\253\002"
+  "\n\006Stream\022\014\n\004hash\030\001 \001(\014\022\020\n\010language\030\002 \001(\t"
+  "\022\r\n\005title\030\003 \001(\t\022\016\n\006author\030\004 \001(\t\022\023\n\013descr"
+  "iption\030\005 \001(\t\022\022\n\nmedia_type\030\006 \001(\t\022\017\n\007lice"
+  "nse\030\007 \001(\t\022\026\n\004file\030\010 \001(\0132\010.pb.File\022\024\n\003fee"
+  "\030\020 \001(\0132\007.pb.Fee\022\023\n\013license_url\030\021 \001(\t\022\025\n\r"
+  "thumbnail_url\030\022 \001(\t\022\020\n\010duration\030\023 \001(\r\022\014\n"
+  "\004tags\030\024 \003(\t\022\024\n\014release_time\030\025 \001(\003\022\030\n\005vid"
+  "eo\030\026 \001(\0132\t.pb.Video\"h\n\003Fee\022\"\n\010currency\030\001"
+  " \001(\0162\020.pb.Fee.Currency\022\017\n\007address\030\002 \001(\014\022"
+  "\016\n\006amount\030\003 \001(\004\"\034\n\010Currency\022\007\n\003LBC\020\000\022\007\n\003"
+  "USD\020\001\"\"\n\004File\022\014\n\004name\030\001 \001(\t\022\014\n\004size\030\002 \001("
+  "\004\"&\n\005Video\022\r\n\005width\030\001 \001(\r\022\016\n\006height\030\002 \001("
+  "\rb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_claim_2eproto = {
   false, InitDefaults_claim_2eproto, 
   descriptor_table_protodef_claim_2eproto,
-  "claim.proto", &assign_descriptors_table_claim_2eproto, 795,
+  "claim.proto", &assign_descriptors_table_claim_2eproto, 809,
 };
 
 void AddDescriptors_claim_2eproto() {
@@ -734,6 +736,7 @@ const int Channel::kTitleFieldNumber;
 const int Channel::kDescriptionFieldNumber;
 const int Channel::kContactEmailFieldNumber;
 const int Channel::kHomepageUrlFieldNumber;
+const int Channel::kTagsFieldNumber;
 const int Channel::kThumbnailUrlFieldNumber;
 const int Channel::kCoverUrlFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -745,7 +748,8 @@ Channel::Channel()
 }
 Channel::Channel(const Channel& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr) {
+      _internal_metadata_(nullptr),
+      tags_(from.tags_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   public_key_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.public_key().size() > 0) {
@@ -820,6 +824,7 @@ void Channel::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  tags_.Clear();
   public_key_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   title_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -920,6 +925,25 @@ const char* Channel::_InternalParse(const char* begin, const char* end, void* ob
         GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
         ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
         ptr += size;
+        break;
+      }
+      // repeated string tags = 6;
+      case 6: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
+        do {
+          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          ctx->extra_parse_data().SetFieldName("pb.Channel.tags");
+          object = msg->add_tags();
+          if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+            parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+            goto string_till_end;
+          }
+          GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+          ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+          ptr += size;
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 50 && (ptr += 1));
         break;
       }
       // string thumbnail_url = 16;
@@ -1059,6 +1083,22 @@ bool Channel::MergePartialFromCodedStream(
         break;
       }
 
+      // repeated string tags = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_tags()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->tags(this->tags_size() - 1).data(),
+            static_cast<int>(this->tags(this->tags_size() - 1).length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "pb.Channel.tags"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       // string thumbnail_url = 16;
       case 16: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (130 & 0xFF)) {
@@ -1162,6 +1202,16 @@ void Channel::SerializeWithCachedSizes(
       5, this->homepage_url(), output);
   }
 
+  // repeated string tags = 6;
+  for (int i = 0, n = this->tags_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->tags(i).data(), static_cast<int>(this->tags(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "pb.Channel.tags");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      6, this->tags(i), output);
+  }
+
   // string thumbnail_url = 16;
   if (this->thumbnail_url().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1246,6 +1296,16 @@ void Channel::SerializeWithCachedSizes(
         5, this->homepage_url(), target);
   }
 
+  // repeated string tags = 6;
+  for (int i = 0, n = this->tags_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->tags(i).data(), static_cast<int>(this->tags(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "pb.Channel.tags");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(6, this->tags(i), target);
+  }
+
   // string thumbnail_url = 16;
   if (this->thumbnail_url().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1288,6 +1348,14 @@ size_t Channel::ByteSizeLong() const {
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated string tags = 6;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->tags_size());
+  for (int i = 0, n = this->tags_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->tags(i));
+  }
 
   // bytes public_key = 1;
   if (this->public_key().size() > 0) {
@@ -1365,6 +1433,7 @@ void Channel::MergeFrom(const Channel& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  tags_.MergeFrom(from.tags_);
   if (from.public_key().size() > 0) {
 
     public_key_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.public_key_);
@@ -1420,6 +1489,7 @@ void Channel::Swap(Channel* other) {
 void Channel::InternalSwap(Channel* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  tags_.InternalSwap(CastToBase(&other->tags_));
   public_key_.Swap(&other->public_key_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   title_.Swap(&other->title_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
