@@ -498,6 +498,20 @@ class Channel final :
   ::std::string* release_cover_url();
   void set_allocated_cover_url(::std::string* cover_url);
 
+  // string language = 18;
+  void clear_language();
+  static const int kLanguageFieldNumber = 18;
+  const ::std::string& language() const;
+  void set_language(const ::std::string& value);
+  #if LANG_CXX11
+  void set_language(::std::string&& value);
+  #endif
+  void set_language(const char* value);
+  void set_language(const char* value, size_t size);
+  ::std::string* mutable_language();
+  ::std::string* release_language();
+  void set_allocated_language(::std::string* language);
+
   // @@protoc_insertion_point(class_scope:pb.Channel)
  private:
   class HasBitSetters;
@@ -511,6 +525,7 @@ class Channel final :
   ::google::protobuf::internal::ArenaStringPtr homepage_url_;
   ::google::protobuf::internal::ArenaStringPtr thumbnail_url_;
   ::google::protobuf::internal::ArenaStringPtr cover_url_;
+  ::google::protobuf::internal::ArenaStringPtr language_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_claim_2eproto;
 };
@@ -1796,6 +1811,59 @@ inline void Channel::set_allocated_cover_url(::std::string* cover_url) {
   }
   cover_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), cover_url);
   // @@protoc_insertion_point(field_set_allocated:pb.Channel.cover_url)
+}
+
+// string language = 18;
+inline void Channel::clear_language() {
+  language_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Channel::language() const {
+  // @@protoc_insertion_point(field_get:pb.Channel.language)
+  return language_.GetNoArena();
+}
+inline void Channel::set_language(const ::std::string& value) {
+  
+  language_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:pb.Channel.language)
+}
+#if LANG_CXX11
+inline void Channel::set_language(::std::string&& value) {
+  
+  language_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:pb.Channel.language)
+}
+#endif
+inline void Channel::set_language(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  language_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:pb.Channel.language)
+}
+inline void Channel::set_language(const char* value, size_t size) {
+  
+  language_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:pb.Channel.language)
+}
+inline ::std::string* Channel::mutable_language() {
+  
+  // @@protoc_insertion_point(field_mutable:pb.Channel.language)
+  return language_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Channel::release_language() {
+  // @@protoc_insertion_point(field_release:pb.Channel.language)
+  
+  return language_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Channel::set_allocated_language(::std::string* language) {
+  if (language != nullptr) {
+    
+  } else {
+    
+  }
+  language_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), language);
+  // @@protoc_insertion_point(field_set_allocated:pb.Channel.language)
 }
 
 // -------------------------------------------------------------------

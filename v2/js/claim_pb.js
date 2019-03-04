@@ -416,7 +416,8 @@ proto.pb.Channel.toObject = function(includeInstance, msg) {
     homepageUrl: jspb.Message.getFieldWithDefault(msg, 5, ""),
     tagsList: jspb.Message.getRepeatedField(msg, 6),
     thumbnailUrl: jspb.Message.getFieldWithDefault(msg, 16, ""),
-    coverUrl: jspb.Message.getFieldWithDefault(msg, 17, "")
+    coverUrl: jspb.Message.getFieldWithDefault(msg, 17, ""),
+    language: jspb.Message.getFieldWithDefault(msg, 18, "")
   };
 
   if (includeInstance) {
@@ -484,6 +485,10 @@ proto.pb.Channel.deserializeBinaryFromReader = function(msg, reader) {
     case 17:
       var value = /** @type {string} */ (reader.readString());
       msg.setCoverUrl(value);
+      break;
+    case 18:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLanguage(value);
       break;
     default:
       reader.skipField();
@@ -567,6 +572,13 @@ proto.pb.Channel.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       17,
+      f
+    );
+  }
+  f = message.getLanguage();
+  if (f.length > 0) {
+    writer.writeString(
+      18,
       f
     );
   }
@@ -731,6 +743,21 @@ proto.pb.Channel.prototype.getCoverUrl = function() {
 /** @param {string} value */
 proto.pb.Channel.prototype.setCoverUrl = function(value) {
   jspb.Message.setProto3StringField(this, 17, value);
+};
+
+
+/**
+ * optional string language = 18;
+ * @return {string}
+ */
+proto.pb.Channel.prototype.getLanguage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
+};
+
+
+/** @param {string} value */
+proto.pb.Channel.prototype.setLanguage = function(value) {
+  jspb.Message.setProto3StringField(this, 18, value);
 };
 
 

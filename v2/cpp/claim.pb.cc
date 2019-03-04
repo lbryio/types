@@ -171,6 +171,7 @@ const ::google::protobuf::uint32 TableStruct_claim_2eproto::offsets[] PROTOBUF_S
   PROTOBUF_FIELD_OFFSET(::pb::Channel, tags_),
   PROTOBUF_FIELD_OFFSET(::pb::Channel, thumbnail_url_),
   PROTOBUF_FIELD_OFFSET(::pb::Channel, cover_url_),
+  PROTOBUF_FIELD_OFFSET(::pb::Channel, language_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pb::Stream, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -217,10 +218,10 @@ const ::google::protobuf::uint32 TableStruct_claim_2eproto::offsets[] PROTOBUF_S
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::pb::Claim)},
   { 8, -1, sizeof(::pb::Channel)},
-  { 21, -1, sizeof(::pb::Stream)},
-  { 41, -1, sizeof(::pb::Fee)},
-  { 49, -1, sizeof(::pb::File)},
-  { 56, -1, sizeof(::pb::Video)},
+  { 22, -1, sizeof(::pb::Stream)},
+  { 42, -1, sizeof(::pb::Fee)},
+  { 50, -1, sizeof(::pb::File)},
+  { 57, -1, sizeof(::pb::Video)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -242,29 +243,29 @@ const char descriptor_table_protodef_claim_2eproto[] =
   "\n\013claim.proto\022\002pb\"\200\001\n\005Claim\022\034\n\004type\030\001 \001("
   "\0162\016.pb.Claim.Type\022\032\n\006stream\030\002 \001(\0132\n.pb.S"
   "tream\022\034\n\007channel\030\003 \001(\0132\013.pb.Channel\"\037\n\004T"
-  "ype\022\n\n\006STREAM\020\000\022\013\n\007CHANNEL\020\001\"\246\001\n\007Channel"
+  "ype\022\n\n\006STREAM\020\000\022\013\n\007CHANNEL\020\001\"\270\001\n\007Channel"
   "\022\022\n\npublic_key\030\001 \001(\014\022\r\n\005title\030\002 \001(\t\022\023\n\013d"
   "escription\030\003 \001(\t\022\025\n\rcontact_email\030\004 \001(\t\022"
   "\024\n\014homepage_url\030\005 \001(\t\022\014\n\004tags\030\006 \003(\t\022\025\n\rt"
-  "humbnail_url\030\020 \001(\t\022\021\n\tcover_url\030\021 \001(\t\"\253\002"
-  "\n\006Stream\022\014\n\004hash\030\001 \001(\014\022\020\n\010language\030\002 \001(\t"
-  "\022\r\n\005title\030\003 \001(\t\022\016\n\006author\030\004 \001(\t\022\023\n\013descr"
-  "iption\030\005 \001(\t\022\022\n\nmedia_type\030\006 \001(\t\022\017\n\007lice"
-  "nse\030\007 \001(\t\022\026\n\004file\030\010 \001(\0132\010.pb.File\022\024\n\003fee"
-  "\030\020 \001(\0132\007.pb.Fee\022\023\n\013license_url\030\021 \001(\t\022\025\n\r"
-  "thumbnail_url\030\022 \001(\t\022\020\n\010duration\030\023 \001(\r\022\014\n"
-  "\004tags\030\024 \003(\t\022\024\n\014release_time\030\025 \001(\003\022\030\n\005vid"
-  "eo\030\026 \001(\0132\t.pb.Video\"h\n\003Fee\022\"\n\010currency\030\001"
-  " \001(\0162\020.pb.Fee.Currency\022\017\n\007address\030\002 \001(\014\022"
-  "\016\n\006amount\030\003 \001(\004\"\034\n\010Currency\022\007\n\003LBC\020\000\022\007\n\003"
-  "USD\020\001\"\"\n\004File\022\014\n\004name\030\001 \001(\t\022\014\n\004size\030\002 \001("
-  "\004\"&\n\005Video\022\r\n\005width\030\001 \001(\r\022\016\n\006height\030\002 \001("
-  "\rb\006proto3"
+  "humbnail_url\030\020 \001(\t\022\021\n\tcover_url\030\021 \001(\t\022\020\n"
+  "\010language\030\022 \001(\t\"\253\002\n\006Stream\022\014\n\004hash\030\001 \001(\014"
+  "\022\020\n\010language\030\002 \001(\t\022\r\n\005title\030\003 \001(\t\022\016\n\006aut"
+  "hor\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\022\n\nmedia_"
+  "type\030\006 \001(\t\022\017\n\007license\030\007 \001(\t\022\026\n\004file\030\010 \001("
+  "\0132\010.pb.File\022\024\n\003fee\030\020 \001(\0132\007.pb.Fee\022\023\n\013lic"
+  "ense_url\030\021 \001(\t\022\025\n\rthumbnail_url\030\022 \001(\t\022\020\n"
+  "\010duration\030\023 \001(\r\022\014\n\004tags\030\024 \003(\t\022\024\n\014release"
+  "_time\030\025 \001(\003\022\030\n\005video\030\026 \001(\0132\t.pb.Video\"h\n"
+  "\003Fee\022\"\n\010currency\030\001 \001(\0162\020.pb.Fee.Currency"
+  "\022\017\n\007address\030\002 \001(\014\022\016\n\006amount\030\003 \001(\004\"\034\n\010Cur"
+  "rency\022\007\n\003LBC\020\000\022\007\n\003USD\020\001\"\"\n\004File\022\014\n\004name\030"
+  "\001 \001(\t\022\014\n\004size\030\002 \001(\004\"&\n\005Video\022\r\n\005width\030\001 "
+  "\001(\r\022\016\n\006height\030\002 \001(\rb\006proto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_claim_2eproto = {
   false, InitDefaults_claim_2eproto, 
   descriptor_table_protodef_claim_2eproto,
-  "claim.proto", &assign_descriptors_table_claim_2eproto, 809,
+  "claim.proto", &assign_descriptors_table_claim_2eproto, 827,
 };
 
 void AddDescriptors_claim_2eproto() {
@@ -739,6 +740,7 @@ const int Channel::kHomepageUrlFieldNumber;
 const int Channel::kTagsFieldNumber;
 const int Channel::kThumbnailUrlFieldNumber;
 const int Channel::kCoverUrlFieldNumber;
+const int Channel::kLanguageFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Channel::Channel()
@@ -779,6 +781,10 @@ Channel::Channel(const Channel& from)
   if (from.cover_url().size() > 0) {
     cover_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.cover_url_);
   }
+  language_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.language().size() > 0) {
+    language_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.language_);
+  }
   // @@protoc_insertion_point(copy_constructor:pb.Channel)
 }
 
@@ -792,6 +798,7 @@ void Channel::SharedCtor() {
   homepage_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   thumbnail_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   cover_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  language_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 Channel::~Channel() {
@@ -807,6 +814,7 @@ void Channel::SharedDtor() {
   homepage_url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   thumbnail_url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   cover_url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  language_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void Channel::SetCachedSize(int size) const {
@@ -832,6 +840,7 @@ void Channel::Clear() {
   homepage_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   thumbnail_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   cover_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  language_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -969,6 +978,22 @@ const char* Channel::_InternalParse(const char* begin, const char* end, void* ob
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         ctx->extra_parse_data().SetFieldName("pb.Channel.cover_url");
         object = msg->mutable_cover_url();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
+        break;
+      }
+      // string language = 18;
+      case 18: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 146) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("pb.Channel.language");
+        object = msg->mutable_language();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
           goto string_till_end;
@@ -1129,6 +1154,21 @@ bool Channel::MergePartialFromCodedStream(
         break;
       }
 
+      // string language = 18;
+      case 18: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (146 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_language()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->language().data(), static_cast<int>(this->language().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "pb.Channel.language"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1232,6 +1272,16 @@ void Channel::SerializeWithCachedSizes(
       17, this->cover_url(), output);
   }
 
+  // string language = 18;
+  if (this->language().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->language().data(), static_cast<int>(this->language().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "pb.Channel.language");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      18, this->language(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -1328,6 +1378,17 @@ void Channel::SerializeWithCachedSizes(
         17, this->cover_url(), target);
   }
 
+  // string language = 18;
+  if (this->language().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->language().data(), static_cast<int>(this->language().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "pb.Channel.language");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        18, this->language(), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -1406,6 +1467,13 @@ size_t Channel::ByteSizeLong() const {
         this->cover_url());
   }
 
+  // string language = 18;
+  if (this->language().size() > 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->language());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -1462,6 +1530,10 @@ void Channel::MergeFrom(const Channel& from) {
 
     cover_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.cover_url_);
   }
+  if (from.language().size() > 0) {
+
+    language_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.language_);
+  }
 }
 
 void Channel::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1503,6 +1575,8 @@ void Channel::InternalSwap(Channel* other) {
   thumbnail_url_.Swap(&other->thumbnail_url_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   cover_url_.Swap(&other->cover_url_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  language_.Swap(&other->language_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
 }
 

@@ -23,6 +23,7 @@ message Channel {
 
     string thumbnail_url = 16;
     string cover_url = 17;
+    string language = 18;
 }
 
 message Stream {
