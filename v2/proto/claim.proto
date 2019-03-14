@@ -3,14 +3,10 @@ syntax = "proto3";
 package pb;
 
 message Claim {
-    enum Type {
-        STREAM = 0;
-        CHANNEL = 1;
-    }
-
-    Type type = 1; // do we need this?
-    Stream stream = 2;
-    Channel channel = 3;
+    oneof type {
+      Stream stream = 1;
+      Channel channel = 2;
+   }
 }
 
 message Channel {
