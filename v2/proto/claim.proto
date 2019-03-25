@@ -41,9 +41,11 @@ message Stream {
     Fee fee = 14;
     File file = 15;
 
-    Image image = 16;
-    Video video = 17;
-    Audio audio = 18;
+    oneof type {
+      Image image = 16;
+      Video video = 17;
+      Audio audio = 18;
+   }
 }
 
 message Fee {
