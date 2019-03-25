@@ -75,5 +75,5 @@ message Video {
 }
 
 message Audio {
-    uint32 duration = 3;
+    uint32 duration = 1;
 }
