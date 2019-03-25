@@ -11,34 +11,39 @@ message Claim {
 
 message Channel {
     bytes public_key = 1;
-    string title = 2;
-    string description = 3;
-    string contact_email = 4;
-    string homepage_url = 5;
-    repeated string tags = 6;
 
-    string thumbnail_url = 16;
-    string cover_url = 17;
-    string language = 18;
+    repeated string tags = 2;
+    string title = 3;
+    string description = 4;
+    string thumbnail_url = 5;
+    string language = 6;
+
+    string contact_email = 7;
+    string homepage_url = 8;
+    string cover_url = 9;
 }
 
 message Stream {
     bytes hash = 1;
-    string language = 2;
-    string title = 3;
-    string author = 4;
-    string description = 5;
-    string media_type = 6;
-    string license = 7;
-    File file = 8;
 
-    Fee fee = 16;
-    string license_url = 17;
-    string thumbnail_url = 18;
-    uint32 duration = 19;
-    repeated string tags = 20;
-    int64 release_time = 21; // seconds since UNIX epoch
-    Video video = 22;
+    repeated string tags = 2;
+    string title = 3;
+    string description = 4;
+    string thumbnail_url = 5;
+    string language = 6;
+
+    string author = 7;
+    string license = 8;
+    string license_url = 9;
+    int64 release_time = 10; // seconds since UNIX epoch
+
+    string media_type = 13;
+    Fee fee = 14;
+    File file = 15;
+
+    Image image = 16;
+    Video video = 17;
+    Audio audio = 18;
 }
 
 message Fee {
@@ -46,7 +51,6 @@ message Fee {
         LBC = 0;
         USD = 1;
     }
-
     Currency currency = 1;
     bytes address = 2;
     uint64 amount = 3; // deweys for LBC, cents for USD
@@ -57,7 +61,17 @@ message File {
     uint64 size = 2;
 }
 
+message Image {
+    uint32 width = 1;
+    uint32 height = 2;
+}
+
 message Video {
     uint32 width = 1;
     uint32 height = 2;
+    uint32 duration = 3;
+}
+
+message Audio {
+    uint32 duration = 3;
 }
