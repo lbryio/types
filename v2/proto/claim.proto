@@ -16,8 +16,8 @@ message Channel {
     string description = 3;
     string thumbnail_url = 4;
     repeated string tags = 5;
-    repeated Language language = 6;
-    repeated Location location = 7;
+    repeated Language languages = 6;
+    repeated Location locations = 7;
 
     string contact_email = 8;
     string homepage_url = 9;
@@ -31,8 +31,8 @@ message Stream {
     string description = 3;
     string thumbnail_url = 4;
     repeated string tags = 5;
-    repeated Language language = 6;
-    repeated Location location = 7;
+    repeated Language languages = 6;
+    repeated Location locations = 7;
 
     string author = 8;
     string license = 9;
