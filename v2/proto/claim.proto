@@ -52,12 +52,14 @@ message Stream {
 
 message Fee {
     enum Currency {
-        LBC = 0;
-        USD = 2;
+        UNKNOWN_CURRENCY = 0;
+        LBC = 1;
+        BTC = 2;
+        USD = 3;
     }
     Currency currency = 1;
     bytes address = 2;
-    uint64 amount = 3; // deweys for LBC, cents for USD
+    uint64 amount = 3; // deweys for LBC/BTC, cents for USD
 }
 
 message File {
