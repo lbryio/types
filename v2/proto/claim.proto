@@ -488,8 +488,8 @@ message Location {
     string state = 2;
     string city = 3;
     string code = 4;
-    double latitude = 5;
-    double longitude = 6;
+    sint32 latitude = 5;
+    sint32 longitude = 6;
 
     enum Country {
         UNKNOWN_COUNTRY = 0;
