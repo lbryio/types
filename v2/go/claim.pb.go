@@ -18,7 +18,7 @@ var _ = math.Inf
 // is compatible with the proto package it is being compiled against.
 // A compilation error at this line likely means your copy of the
 // proto package needs to be updated.
-const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
+const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
 type Fee_Currency int32
 
@@ -2087,78 +2087,12 @@ func (m *Claim) GetChannel() *Channel {
 	return nil
 }
 
-// XXX_OneofFuncs is for the internal use of the proto package.
-func (*Claim) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
-	return _Claim_OneofMarshaler, _Claim_OneofUnmarshaler, _Claim_OneofSizer, []interface{}{
+// XXX_OneofWrappers is for the internal use of the proto package.
+func (*Claim) XXX_OneofWrappers() []interface{} {
+	return []interface{}{
 		(*Claim_Stream)(nil),
 		(*Claim_Channel)(nil),
 	}
-}
-
-func _Claim_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
-	m := msg.(*Claim)
-	// type
-	switch x := m.Type.(type) {
-	case *Claim_Stream:
-		b.EncodeVarint(1<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.Stream); err != nil {
-			return err
-		}
-	case *Claim_Channel:
-		b.EncodeVarint(2<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.Channel); err != nil {
-			return err
-		}
-	case nil:
-	default:
-		return fmt.Errorf("Claim.Type has unexpected type %T", x)
-	}
-	return nil
-}
-
-func _Claim_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
-	m := msg.(*Claim)
-	switch tag {
-	case 1: // type.stream
-		if wire != proto.WireBytes {
-			return true, proto.ErrInternalBadWireType
-		}
-		msg := new(Stream)
-		err := b.DecodeMessage(msg)
-		m.Type = &Claim_Stream{msg}
-		return true, err
-	case 2: // type.channel
-		if wire != proto.WireBytes {
-			return true, proto.ErrInternalBadWireType
-		}
-		msg := new(Channel)
-		err := b.DecodeMessage(msg)
-		m.Type = &Claim_Channel{msg}
-		return true, err
-	default:
-		return false, nil
-	}
-}
-
-func _Claim_OneofSizer(msg proto.Message) (n int) {
-	m := msg.(*Claim)
-	// type
-	switch x := m.Type.(type) {
-	case *Claim_Stream:
-		s := proto.Size(x.Stream)
-		n += 1 // tag and wire
-		n += proto.SizeVarint(uint64(s))
-		n += s
-	case *Claim_Channel:
-		s := proto.Size(x.Channel)
-		n += 1 // tag and wire
-		n += proto.SizeVarint(uint64(s))
-		n += s
-	case nil:
-	default:
-		panic(fmt.Sprintf("proto: unexpected type %T in oneof", x))
-	}
-	return n
 }
 
 type Channel struct {
@@ -2470,97 +2404,13 @@ func (m *Stream) GetAudio() *Audio {
 	return nil
 }
 
-// XXX_OneofFuncs is for the internal use of the proto package.
-func (*Stream) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
-	return _Stream_OneofMarshaler, _Stream_OneofUnmarshaler, _Stream_OneofSizer, []interface{}{
+// XXX_OneofWrappers is for the internal use of the proto package.
+func (*Stream) XXX_OneofWrappers() []interface{} {
+	return []interface{}{
 		(*Stream_Image)(nil),
 		(*Stream_Video)(nil),
 		(*Stream_Audio)(nil),
 	}
-}
-
-func _Stream_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
-	m := msg.(*Stream)
-	// type
-	switch x := m.Type.(type) {
-	case *Stream_Image:
-		b.EncodeVarint(16<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.Image); err != nil {
-			return err
-		}
-	case *Stream_Video:
-		b.EncodeVarint(17<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.Video); err != nil {
-			return err
-		}
-	case *Stream_Audio:
-		b.EncodeVarint(18<<3 | proto.WireBytes)
-		if err := b.EncodeMessage(x.Audio); err != nil {
-			return err
-		}
-	case nil:
-	default:
-		return fmt.Errorf("Stream.Type has unexpected type %T", x)
-	}
-	return nil
-}
-
-func _Stream_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
-	m := msg.(*Stream)
-	switch tag {
-	case 16: // type.image
-		if wire != proto.WireBytes {
-			return true, proto.ErrInternalBadWireType
-		}
-		msg := new(Image)
-		err := b.DecodeMessage(msg)
-		m.Type = &Stream_Image{msg}
-		return true, err
-	case 17: // type.video
-		if wire != proto.WireBytes {
-			return true, proto.ErrInternalBadWireType
-		}
-		msg := new(Video)
-		err := b.DecodeMessage(msg)
-		m.Type = &Stream_Video{msg}
-		return true, err
-	case 18: // type.audio
-		if wire != proto.WireBytes {
-			return true, proto.ErrInternalBadWireType
-		}
-		msg := new(Audio)
-		err := b.DecodeMessage(msg)
-		m.Type = &Stream_Audio{msg}
-		return true, err
-	default:
-		return false, nil
-	}
-}
-
-func _Stream_OneofSizer(msg proto.Message) (n int) {
-	m := msg.(*Stream)
-	// type
-	switch x := m.Type.(type) {
-	case *Stream_Image:
-		s := proto.Size(x.Image)
-		n += 2 // tag and wire
-		n += proto.SizeVarint(uint64(s))
-		n += s
-	case *Stream_Video:
-		s := proto.Size(x.Video)
-		n += 2 // tag and wire
-		n += proto.SizeVarint(uint64(s))
-		n += s
-	case *Stream_Audio:
-		s := proto.Size(x.Audio)
-		n += 2 // tag and wire
-		n += proto.SizeVarint(uint64(s))
-		n += s
-	case nil:
-	default:
-		panic(fmt.Sprintf("proto: unexpected type %T in oneof", x))
-	}
-	return n
 }
 
 type Fee struct {
