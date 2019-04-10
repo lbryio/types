@@ -45,12 +45,7 @@ message Stream {
 }
 
 message ClaimList {
-    enum ListType {
-        COLLECTION = 0;
-        DERIVATION = 1;
-    }
     repeated bytes claims = 1;
-    ListType list_type = 2;
 }
 
 message Fee {
