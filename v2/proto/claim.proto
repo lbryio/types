@@ -3,51 +3,54 @@ syntax = "proto3";
 package pb;
 
 message Claim {
+    string title = 1;
+    string description = 2;
+    string thumbnail_url = 3;
+    repeated string tags = 4;
+    repeated Language languages = 5;
+    repeated Location locations = 6;
+
     oneof type {
-      Stream stream = 1;
-      Channel channel = 2;
+        Stream stream = 10;
+        Channel channel = 11;
+        ClaimList claim_list = 12;
    }
 }
 
 message Channel {
     bytes public_key = 1;
-
-    string title = 2;
-    string description = 3;
-    string thumbnail_url = 4;
-    repeated string tags = 5;
-    repeated Language languages = 6;
-    repeated Location locations = 7;
-
-    string contact_email = 8;
-    string homepage_url = 9;
-    string cover_url = 10;
+    string contact_email = 2;
+    string homepage_url = 3;
+    string cover_url = 4;
 }
 
 message Stream {
     bytes sd_hash = 1;
 
-    string title = 2;
-    string description = 3;
-    string thumbnail_url = 4;
-    repeated string tags = 5;
-    repeated Language languages = 6;
-    repeated Location locations = 7;
+    string author = 2;
+    string license = 3;
+    string license_url = 4;
+    int64 release_time = 5; // seconds since UNIX epoch
 
-    string author = 8;
-    string license = 9;
-    string license_url = 10;
-    int64 release_time = 11; // seconds since UNIX epoch
-
-    string media_type = 13;
-    File file = 14;
-    Fee fee = 15;
+    string media_type = 6;
+    File file = 7;
+    Fee fee = 8;
 
     oneof type {
-      Image image = 16;
-      Video video = 17;
-      Audio audio = 18;
-   }
+        Image image = 16;
+        Video video = 17;
+        Audio audio = 18;
+        Software software = 19;
+    }
+}
+
+message ClaimList {
+    enum ListType {
+        COLLECTION = 0;
+        DERIVATION = 1;
+    }
+    repeated bytes claims = 1;
+    ListType list_type = 2;
 }
 
 message Fee {
@@ -63,9 +66,9 @@ message Fee {
 }
 
 message File {
-    bytes hash = 3;
-    string name = 1;
-    uint64 size = 2;
+    bytes hash = 1;
+    string name = 2;
+    uint64 size = 3;
 }
 
 message Image {
@@ -76,11 +79,24 @@ message Image {
 message Video {
     uint32 width = 1;
     uint32 height = 2;
-    uint32 duration = 3;
+    Audio audio = 3;
 }
 
 message Audio {
     uint32 duration = 1;
+}
+
+message Software {
+    enum OS {
+        UNKNOWN_OS = 0;
+        ANY = 1;
+        LINUX = 2;
+        WINDOWS = 3;
+        MAC = 4;
+        ANDROID = 5;
+        IOS = 6;
+    }
+    string os = 1;
 }
 
 // RFC 5646
