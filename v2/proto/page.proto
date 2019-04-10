@@ -49,12 +49,16 @@ message Output {
   // pointer to an output in one of the Page.txs
   bytes tx_hash = 1;
   uint32 nout = 2;
+  oneof meta {
+    ClaimMeta claim = 3;
+  }
+}
 
-  // if this output is a stream claim in a
-  // channel, this is a pointer to an output
-  // representing that channel (should be
-  // available in Page.txs)
-  Output channel = 3;
+message ClaimMeta {
+  Output channel = 1;
+  bool is_winning = 2;
+  uint64 effective_amount = 3;
+  uint64 trending_amount = 4;
 }
 
 message Transaction {
