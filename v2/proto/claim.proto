@@ -10,8 +10,6 @@ message Claim {
     repeated Language languages = 5;
     repeated Location locations = 6;
 
-    bytes parent = 7;
-
     oneof type {
         Stream stream = 10;
         Channel channel = 11;
