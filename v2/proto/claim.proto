@@ -4,9 +4,10 @@ package pb;
 
 message Claim {
     oneof type {
-      Stream stream = 1;
-      Channel channel = 2;
-      ClaimList claim_list = 3;
+        Stream stream = 1;
+        Channel channel = 2;
+        ClaimList claim_list = 3;
+        ClaimReference repost = 4;
     }
     string title = 8;
     string description = 9;
@@ -23,25 +24,13 @@ message Channel {
     Source cover = 4;
 }
 
-message Source {
-    oneof source {
-      string url = 1;
-      bytes sd_hash = 2;
-    }
-}
-
 message Stream {
     Source source = 1;
-
     string author = 2;
     string license = 3;
     string license_url = 4;
     int64 release_time = 5; // seconds since UNIX epoch
-
-    string media_type = 6;
-    File file = 7;
-    Fee fee = 8;
-
+    Fee fee = 6;
     oneof type {
         Image image = 16;
         Video video = 17;
@@ -50,15 +39,30 @@ message Stream {
     }
 }
 
+message ClaimReference {
+    bytes claim_hash = 1;
+}
+
 message ClaimList {
     enum ListType {
         UNKNOWN_LIST_TYPE = 0;
         COLLECTION = 1; // play lists, etc
         DERIVATION = 2; // movie in multiple languages, software for different OSes
-        REPOST = 3;
     }
     ListType list_type = 1;
-    repeated bytes claim_ids = 1;
+    repeated ClaimReference claim_references = 1;
+}
+
+message Source {
+    bytes hash = 1;
+    string name = 2;
+    uint64 size = 3;
+    string media_type = 4;
+    oneof source {
+        string url = 5;
+        bytes sd_hash = 6;
+        //Torrent bittorrent = 7;
+    }
 }
 
 message Fee {
@@ -71,12 +75,6 @@ message Fee {
     Currency currency = 1;
     bytes address = 2;
     uint64 amount = 3; // deweys for LBC/BTC, cents for USD
-}
-
-message File {
-    bytes hash = 1;
-    string name = 2;
-    uint64 size = 3;
 }
 
 message Image {
