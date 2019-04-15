@@ -3,29 +3,35 @@ syntax = "proto3";
 package pb;
 
 message Claim {
-    string title = 1;
-    string description = 2;
-    string thumbnail_url = 3;
-    repeated string tags = 4;
-    repeated Language languages = 5;
-    repeated Location locations = 6;
-
     oneof type {
-        Stream stream = 10;
-        Channel channel = 11;
-        ClaimList claim_list = 12;
-   }
+      Stream stream = 1;
+      Channel channel = 2;
+      ClaimList claim_list = 3;
+    }
+    string title = 8;
+    string description = 9;
+    Source thumbnail = 10;
+    repeated string tags = 11;
+    repeated Language languages = 12;
+    repeated Location locations = 13;
 }
 
 message Channel {
     bytes public_key = 1;
     string contact_email = 2;
     string homepage_url = 3;
-    string cover_url = 4;
+    Source cover = 4;
+}
+
+message Source {
+    oneof source {
+      string url = 1;
+      bytes sd_hash = 2;
+    }
 }
 
 message Stream {
-    bytes sd_hash = 1;
+    Source source = 1;
 
     string author = 2;
     string license = 3;
@@ -45,7 +51,14 @@ message Stream {
 }
 
 message ClaimList {
-    repeated bytes claims = 1;
+    enum ListType {
+        UNKNOWN_LIST_TYPE = 0;
+        COLLECTION = 1; // play lists, etc
+        DERIVATION = 2; // movie in multiple languages, software for different OSes
+        REPOST = 3;
+    }
+    ListType list_type = 1;
+    repeated bytes claim_ids = 1;
 }
 
 message Fee {
