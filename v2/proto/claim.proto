@@ -17,13 +17,6 @@ message Claim {
     repeated Location locations = 13;
 }
 
-message Channel {
-    bytes public_key = 1;
-    string contact_email = 2;
-    string homepage_url = 3;
-    Source cover = 4;
-}
-
 message Stream {
     Source source = 1;
     string author = 2;
@@ -39,6 +32,13 @@ message Stream {
     }
 }
 
+message Channel {
+    bytes public_key = 1;
+    string contact_email = 2;
+    string homepage_url = 3;
+    Source cover = 4;
+}
+
 message ClaimReference {
     bytes claim_hash = 1;
 }
@@ -50,7 +50,7 @@ message ClaimList {
         DERIVATION = 2; // movie in multiple languages, software for different OSes
     }
     ListType list_type = 1;
-    repeated ClaimReference claim_references = 1;
+    repeated ClaimReference claim_references = 2;
 }
 
 message Source {
@@ -58,11 +58,10 @@ message Source {
     string name = 2;
     uint64 size = 3;
     string media_type = 4;
-    oneof source {
-        string url = 5;
-        bytes sd_hash = 6;
-        //Torrent bittorrent = 7;
-    }
+
+    string url = 5;
+    bytes sd_hash = 6;
+    //Torrent bittorrent = 7;
 }
 
 message Fee {
