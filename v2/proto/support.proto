@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package pb;
+
+message Support {
+    oneof type {
+        Edit edit = 1;
+        Comment comment = 2;
+   }
+}
+
+message Edit {
+    string key = 1;
+    string value = 2;
+}
+
+message Comment {
+    string body = 1;
+}
