@@ -25,10 +25,10 @@ message Stream {
     int64 release_time = 5; // seconds since UNIX epoch
     Fee fee = 6;
     oneof type {
-        Image image = 16;
-        Video video = 17;
-        Audio audio = 18;
-        Software software = 19;
+        Image image = 10;
+        Video video = 11;
+        Audio audio = 12;
+        Software software = 13;
     }
 }
 
@@ -37,6 +37,7 @@ message Channel {
     string contact_email = 2;
     string homepage_url = 3;
     Source cover = 4;
+    ClaimList featured = 5;
 }
 
 message ClaimReference {
@@ -61,7 +62,6 @@ message Source {
 
     string url = 5;
     bytes sd_hash = 6;
-    //Torrent bittorrent = 7;
 }
 
 message Fee {
