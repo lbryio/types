@@ -34,8 +34,8 @@ message Stream {
 
 message Channel {
     bytes public_key = 1;
-    string contact_email = 2;
-    string homepage_url = 3;
+    string email = 2;
+    string website_url = 3;
     Source cover = 4;
     ClaimList featured = 5;
 }
