@@ -14,15 +14,20 @@ var global = Function('return this')();
 goog.exportSymbol('proto.pb.Audio', null, global);
 goog.exportSymbol('proto.pb.Channel', null, global);
 goog.exportSymbol('proto.pb.Claim', null, global);
+goog.exportSymbol('proto.pb.ClaimList', null, global);
+goog.exportSymbol('proto.pb.ClaimList.ListType', null, global);
+goog.exportSymbol('proto.pb.ClaimReference', null, global);
 goog.exportSymbol('proto.pb.Fee', null, global);
 goog.exportSymbol('proto.pb.Fee.Currency', null, global);
-goog.exportSymbol('proto.pb.File', null, global);
 goog.exportSymbol('proto.pb.Image', null, global);
 goog.exportSymbol('proto.pb.Language', null, global);
 goog.exportSymbol('proto.pb.Language.Language', null, global);
 goog.exportSymbol('proto.pb.Language.Script', null, global);
 goog.exportSymbol('proto.pb.Location', null, global);
 goog.exportSymbol('proto.pb.Location.Country', null, global);
+goog.exportSymbol('proto.pb.Software', null, global);
+goog.exportSymbol('proto.pb.Software.OS', null, global);
+goog.exportSymbol('proto.pb.Source', null, global);
 goog.exportSymbol('proto.pb.Stream', null, global);
 goog.exportSymbol('proto.pb.Video', null, global);
 
@@ -37,12 +42,19 @@ goog.exportSymbol('proto.pb.Video', null, global);
  * @constructor
  */
 proto.pb.Claim = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.pb.Claim.oneofGroups_);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.pb.Claim.repeatedFields_, proto.pb.Claim.oneofGroups_);
 };
 goog.inherits(proto.pb.Claim, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.pb.Claim.displayName = 'proto.pb.Claim';
 }
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.pb.Claim.repeatedFields_ = [11,12,13];
+
 /**
  * Oneof group definitions for this message. Each group defines the field
  * numbers belonging to that group. When of these fields' value is set, all
@@ -51,7 +63,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.pb.Claim.oneofGroups_ = [[1,2]];
+proto.pb.Claim.oneofGroups_ = [[1,2,3,4]];
 
 /**
  * @enum {number}
@@ -59,7 +71,9 @@ proto.pb.Claim.oneofGroups_ = [[1,2]];
 proto.pb.Claim.TypeCase = {
   TYPE_NOT_SET: 0,
   STREAM: 1,
-  CHANNEL: 2
+  CHANNEL: 2,
+  CLAIM_LIST: 3,
+  REPOST: 4
 };
 
 /**
@@ -99,7 +113,17 @@ proto.pb.Claim.prototype.toObject = function(opt_includeInstance) {
 proto.pb.Claim.toObject = function(includeInstance, msg) {
   var f, obj = {
     stream: (f = msg.getStream()) && proto.pb.Stream.toObject(includeInstance, f),
-    channel: (f = msg.getChannel()) && proto.pb.Channel.toObject(includeInstance, f)
+    channel: (f = msg.getChannel()) && proto.pb.Channel.toObject(includeInstance, f),
+    claimList: (f = msg.getClaimList()) && proto.pb.ClaimList.toObject(includeInstance, f),
+    repost: (f = msg.getRepost()) && proto.pb.ClaimReference.toObject(includeInstance, f),
+    title: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    thumbnail: (f = msg.getThumbnail()) && proto.pb.Source.toObject(includeInstance, f),
+    tagsList: jspb.Message.getRepeatedField(msg, 11),
+    languagesList: jspb.Message.toObjectList(msg.getLanguagesList(),
+    proto.pb.Language.toObject, includeInstance),
+    locationsList: jspb.Message.toObjectList(msg.getLocationsList(),
+    proto.pb.Location.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -146,6 +170,43 @@ proto.pb.Claim.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value,proto.pb.Channel.deserializeBinaryFromReader);
       msg.setChannel(value);
       break;
+    case 3:
+      var value = new proto.pb.ClaimList;
+      reader.readMessage(value,proto.pb.ClaimList.deserializeBinaryFromReader);
+      msg.setClaimList(value);
+      break;
+    case 4:
+      var value = new proto.pb.ClaimReference;
+      reader.readMessage(value,proto.pb.ClaimReference.deserializeBinaryFromReader);
+      msg.setRepost(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTitle(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 10:
+      var value = new proto.pb.Source;
+      reader.readMessage(value,proto.pb.Source.deserializeBinaryFromReader);
+      msg.setThumbnail(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTags(value);
+      break;
+    case 12:
+      var value = new proto.pb.Language;
+      reader.readMessage(value,proto.pb.Language.deserializeBinaryFromReader);
+      msg.addLanguages(value);
+      break;
+    case 13:
+      var value = new proto.pb.Location;
+      reader.readMessage(value,proto.pb.Location.deserializeBinaryFromReader);
+      msg.addLocations(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -189,6 +250,67 @@ proto.pb.Claim.serializeBinaryToWriter = function(message, writer) {
       2,
       f,
       proto.pb.Channel.serializeBinaryToWriter
+    );
+  }
+  f = message.getClaimList();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.pb.ClaimList.serializeBinaryToWriter
+    );
+  }
+  f = message.getRepost();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.pb.ClaimReference.serializeBinaryToWriter
+    );
+  }
+  f = message.getTitle();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = message.getDescription();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = message.getThumbnail();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      proto.pb.Source.serializeBinaryToWriter
+    );
+  }
+  f = message.getTagsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      11,
+      f
+    );
+  }
+  f = message.getLanguagesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      12,
+      f,
+      proto.pb.Language.serializeBinaryToWriter
+    );
+  }
+  f = message.getLocationsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      13,
+      f,
+      proto.pb.Location.serializeBinaryToWriter
     );
   }
 };
@@ -254,6 +376,732 @@ proto.pb.Claim.prototype.hasChannel = function() {
 };
 
 
+/**
+ * optional ClaimList claim_list = 3;
+ * @return {?proto.pb.ClaimList}
+ */
+proto.pb.Claim.prototype.getClaimList = function() {
+  return /** @type{?proto.pb.ClaimList} */ (
+    jspb.Message.getWrapperField(this, proto.pb.ClaimList, 3));
+};
+
+
+/** @param {?proto.pb.ClaimList|undefined} value */
+proto.pb.Claim.prototype.setClaimList = function(value) {
+  jspb.Message.setOneofWrapperField(this, 3, proto.pb.Claim.oneofGroups_[0], value);
+};
+
+
+proto.pb.Claim.prototype.clearClaimList = function() {
+  this.setClaimList(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.pb.Claim.prototype.hasClaimList = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional ClaimReference repost = 4;
+ * @return {?proto.pb.ClaimReference}
+ */
+proto.pb.Claim.prototype.getRepost = function() {
+  return /** @type{?proto.pb.ClaimReference} */ (
+    jspb.Message.getWrapperField(this, proto.pb.ClaimReference, 4));
+};
+
+
+/** @param {?proto.pb.ClaimReference|undefined} value */
+proto.pb.Claim.prototype.setRepost = function(value) {
+  jspb.Message.setOneofWrapperField(this, 4, proto.pb.Claim.oneofGroups_[0], value);
+};
+
+
+proto.pb.Claim.prototype.clearRepost = function() {
+  this.setRepost(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.pb.Claim.prototype.hasRepost = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string title = 8;
+ * @return {string}
+ */
+proto.pb.Claim.prototype.getTitle = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/** @param {string} value */
+proto.pb.Claim.prototype.setTitle = function(value) {
+  jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string description = 9;
+ * @return {string}
+ */
+proto.pb.Claim.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/** @param {string} value */
+proto.pb.Claim.prototype.setDescription = function(value) {
+  jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional Source thumbnail = 10;
+ * @return {?proto.pb.Source}
+ */
+proto.pb.Claim.prototype.getThumbnail = function() {
+  return /** @type{?proto.pb.Source} */ (
+    jspb.Message.getWrapperField(this, proto.pb.Source, 10));
+};
+
+
+/** @param {?proto.pb.Source|undefined} value */
+proto.pb.Claim.prototype.setThumbnail = function(value) {
+  jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+proto.pb.Claim.prototype.clearThumbnail = function() {
+  this.setThumbnail(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.pb.Claim.prototype.hasThumbnail = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * repeated string tags = 11;
+ * @return {!Array.<string>}
+ */
+proto.pb.Claim.prototype.getTagsList = function() {
+  return /** @type {!Array.<string>} */ (jspb.Message.getRepeatedField(this, 11));
+};
+
+
+/** @param {!Array.<string>} value */
+proto.pb.Claim.prototype.setTagsList = function(value) {
+  jspb.Message.setField(this, 11, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.pb.Claim.prototype.addTags = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 11, value, opt_index);
+};
+
+
+proto.pb.Claim.prototype.clearTagsList = function() {
+  this.setTagsList([]);
+};
+
+
+/**
+ * repeated Language languages = 12;
+ * @return {!Array.<!proto.pb.Language>}
+ */
+proto.pb.Claim.prototype.getLanguagesList = function() {
+  return /** @type{!Array.<!proto.pb.Language>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.pb.Language, 12));
+};
+
+
+/** @param {!Array.<!proto.pb.Language>} value */
+proto.pb.Claim.prototype.setLanguagesList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 12, value);
+};
+
+
+/**
+ * @param {!proto.pb.Language=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.pb.Language}
+ */
+proto.pb.Claim.prototype.addLanguages = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.pb.Language, opt_index);
+};
+
+
+proto.pb.Claim.prototype.clearLanguagesList = function() {
+  this.setLanguagesList([]);
+};
+
+
+/**
+ * repeated Location locations = 13;
+ * @return {!Array.<!proto.pb.Location>}
+ */
+proto.pb.Claim.prototype.getLocationsList = function() {
+  return /** @type{!Array.<!proto.pb.Location>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.pb.Location, 13));
+};
+
+
+/** @param {!Array.<!proto.pb.Location>} value */
+proto.pb.Claim.prototype.setLocationsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 13, value);
+};
+
+
+/**
+ * @param {!proto.pb.Location=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.pb.Location}
+ */
+proto.pb.Claim.prototype.addLocations = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 13, opt_value, proto.pb.Location, opt_index);
+};
+
+
+proto.pb.Claim.prototype.clearLocationsList = function() {
+  this.setLocationsList([]);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.pb.Stream = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.pb.Stream.oneofGroups_);
+};
+goog.inherits(proto.pb.Stream, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.pb.Stream.displayName = 'proto.pb.Stream';
+}
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.pb.Stream.oneofGroups_ = [[10,11,12,13]];
+
+/**
+ * @enum {number}
+ */
+proto.pb.Stream.TypeCase = {
+  TYPE_NOT_SET: 0,
+  IMAGE: 10,
+  VIDEO: 11,
+  AUDIO: 12,
+  SOFTWARE: 13
+};
+
+/**
+ * @return {proto.pb.Stream.TypeCase}
+ */
+proto.pb.Stream.prototype.getTypeCase = function() {
+  return /** @type {proto.pb.Stream.TypeCase} */(jspb.Message.computeOneofCase(this, proto.pb.Stream.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.pb.Stream.prototype.toObject = function(opt_includeInstance) {
+  return proto.pb.Stream.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.pb.Stream} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.pb.Stream.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    source: (f = msg.getSource()) && proto.pb.Source.toObject(includeInstance, f),
+    author: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    license: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    licenseUrl: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    releaseTime: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    fee: (f = msg.getFee()) && proto.pb.Fee.toObject(includeInstance, f),
+    image: (f = msg.getImage()) && proto.pb.Image.toObject(includeInstance, f),
+    video: (f = msg.getVideo()) && proto.pb.Video.toObject(includeInstance, f),
+    audio: (f = msg.getAudio()) && proto.pb.Audio.toObject(includeInstance, f),
+    software: (f = msg.getSoftware()) && proto.pb.Software.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.pb.Stream}
+ */
+proto.pb.Stream.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.pb.Stream;
+  return proto.pb.Stream.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.pb.Stream} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.pb.Stream}
+ */
+proto.pb.Stream.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.pb.Source;
+      reader.readMessage(value,proto.pb.Source.deserializeBinaryFromReader);
+      msg.setSource(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAuthor(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLicense(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLicenseUrl(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setReleaseTime(value);
+      break;
+    case 6:
+      var value = new proto.pb.Fee;
+      reader.readMessage(value,proto.pb.Fee.deserializeBinaryFromReader);
+      msg.setFee(value);
+      break;
+    case 10:
+      var value = new proto.pb.Image;
+      reader.readMessage(value,proto.pb.Image.deserializeBinaryFromReader);
+      msg.setImage(value);
+      break;
+    case 11:
+      var value = new proto.pb.Video;
+      reader.readMessage(value,proto.pb.Video.deserializeBinaryFromReader);
+      msg.setVideo(value);
+      break;
+    case 12:
+      var value = new proto.pb.Audio;
+      reader.readMessage(value,proto.pb.Audio.deserializeBinaryFromReader);
+      msg.setAudio(value);
+      break;
+    case 13:
+      var value = new proto.pb.Software;
+      reader.readMessage(value,proto.pb.Software.deserializeBinaryFromReader);
+      msg.setSoftware(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.pb.Stream.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.pb.Stream.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.pb.Stream} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.pb.Stream.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSource();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.pb.Source.serializeBinaryToWriter
+    );
+  }
+  f = message.getAuthor();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getLicense();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getLicenseUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getReleaseTime();
+  if (f !== 0) {
+    writer.writeInt64(
+      5,
+      f
+    );
+  }
+  f = message.getFee();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto.pb.Fee.serializeBinaryToWriter
+    );
+  }
+  f = message.getImage();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      proto.pb.Image.serializeBinaryToWriter
+    );
+  }
+  f = message.getVideo();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      proto.pb.Video.serializeBinaryToWriter
+    );
+  }
+  f = message.getAudio();
+  if (f != null) {
+    writer.writeMessage(
+      12,
+      f,
+      proto.pb.Audio.serializeBinaryToWriter
+    );
+  }
+  f = message.getSoftware();
+  if (f != null) {
+    writer.writeMessage(
+      13,
+      f,
+      proto.pb.Software.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional Source source = 1;
+ * @return {?proto.pb.Source}
+ */
+proto.pb.Stream.prototype.getSource = function() {
+  return /** @type{?proto.pb.Source} */ (
+    jspb.Message.getWrapperField(this, proto.pb.Source, 1));
+};
+
+
+/** @param {?proto.pb.Source|undefined} value */
+proto.pb.Stream.prototype.setSource = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.pb.Stream.prototype.clearSource = function() {
+  this.setSource(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.pb.Stream.prototype.hasSource = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string author = 2;
+ * @return {string}
+ */
+proto.pb.Stream.prototype.getAuthor = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/** @param {string} value */
+proto.pb.Stream.prototype.setAuthor = function(value) {
+  jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string license = 3;
+ * @return {string}
+ */
+proto.pb.Stream.prototype.getLicense = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/** @param {string} value */
+proto.pb.Stream.prototype.setLicense = function(value) {
+  jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string license_url = 4;
+ * @return {string}
+ */
+proto.pb.Stream.prototype.getLicenseUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/** @param {string} value */
+proto.pb.Stream.prototype.setLicenseUrl = function(value) {
+  jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional int64 release_time = 5;
+ * @return {number}
+ */
+proto.pb.Stream.prototype.getReleaseTime = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/** @param {number} value */
+proto.pb.Stream.prototype.setReleaseTime = function(value) {
+  jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional Fee fee = 6;
+ * @return {?proto.pb.Fee}
+ */
+proto.pb.Stream.prototype.getFee = function() {
+  return /** @type{?proto.pb.Fee} */ (
+    jspb.Message.getWrapperField(this, proto.pb.Fee, 6));
+};
+
+
+/** @param {?proto.pb.Fee|undefined} value */
+proto.pb.Stream.prototype.setFee = function(value) {
+  jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+proto.pb.Stream.prototype.clearFee = function() {
+  this.setFee(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.pb.Stream.prototype.hasFee = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional Image image = 10;
+ * @return {?proto.pb.Image}
+ */
+proto.pb.Stream.prototype.getImage = function() {
+  return /** @type{?proto.pb.Image} */ (
+    jspb.Message.getWrapperField(this, proto.pb.Image, 10));
+};
+
+
+/** @param {?proto.pb.Image|undefined} value */
+proto.pb.Stream.prototype.setImage = function(value) {
+  jspb.Message.setOneofWrapperField(this, 10, proto.pb.Stream.oneofGroups_[0], value);
+};
+
+
+proto.pb.Stream.prototype.clearImage = function() {
+  this.setImage(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.pb.Stream.prototype.hasImage = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional Video video = 11;
+ * @return {?proto.pb.Video}
+ */
+proto.pb.Stream.prototype.getVideo = function() {
+  return /** @type{?proto.pb.Video} */ (
+    jspb.Message.getWrapperField(this, proto.pb.Video, 11));
+};
+
+
+/** @param {?proto.pb.Video|undefined} value */
+proto.pb.Stream.prototype.setVideo = function(value) {
+  jspb.Message.setOneofWrapperField(this, 11, proto.pb.Stream.oneofGroups_[0], value);
+};
+
+
+proto.pb.Stream.prototype.clearVideo = function() {
+  this.setVideo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.pb.Stream.prototype.hasVideo = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional Audio audio = 12;
+ * @return {?proto.pb.Audio}
+ */
+proto.pb.Stream.prototype.getAudio = function() {
+  return /** @type{?proto.pb.Audio} */ (
+    jspb.Message.getWrapperField(this, proto.pb.Audio, 12));
+};
+
+
+/** @param {?proto.pb.Audio|undefined} value */
+proto.pb.Stream.prototype.setAudio = function(value) {
+  jspb.Message.setOneofWrapperField(this, 12, proto.pb.Stream.oneofGroups_[0], value);
+};
+
+
+proto.pb.Stream.prototype.clearAudio = function() {
+  this.setAudio(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.pb.Stream.prototype.hasAudio = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional Software software = 13;
+ * @return {?proto.pb.Software}
+ */
+proto.pb.Stream.prototype.getSoftware = function() {
+  return /** @type{?proto.pb.Software} */ (
+    jspb.Message.getWrapperField(this, proto.pb.Software, 13));
+};
+
+
+/** @param {?proto.pb.Software|undefined} value */
+proto.pb.Stream.prototype.setSoftware = function(value) {
+  jspb.Message.setOneofWrapperField(this, 13, proto.pb.Stream.oneofGroups_[0], value);
+};
+
+
+proto.pb.Stream.prototype.clearSoftware = function() {
+  this.setSoftware(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.pb.Stream.prototype.hasSoftware = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
 
 /**
  * Generated by JsPbCodeGenerator.
@@ -266,19 +1114,12 @@ proto.pb.Claim.prototype.hasChannel = function() {
  * @constructor
  */
 proto.pb.Channel = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.pb.Channel.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.pb.Channel, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.pb.Channel.displayName = 'proto.pb.Channel';
 }
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.pb.Channel.repeatedFields_ = [5,6,7];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -309,17 +1150,10 @@ proto.pb.Channel.prototype.toObject = function(opt_includeInstance) {
 proto.pb.Channel.toObject = function(includeInstance, msg) {
   var f, obj = {
     publicKey: msg.getPublicKey_asB64(),
-    title: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    thumbnailUrl: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    tagsList: jspb.Message.getRepeatedField(msg, 5),
-    languagesList: jspb.Message.toObjectList(msg.getLanguagesList(),
-    proto.pb.Language.toObject, includeInstance),
-    locationsList: jspb.Message.toObjectList(msg.getLocationsList(),
-    proto.pb.Location.toObject, includeInstance),
-    contactEmail: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    homepageUrl: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    coverUrl: jspb.Message.getFieldWithDefault(msg, 10, "")
+    email: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    websiteUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    cover: (f = msg.getCover()) && proto.pb.Source.toObject(includeInstance, f),
+    featured: (f = msg.getFeatured()) && proto.pb.ClaimList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -362,41 +1196,21 @@ proto.pb.Channel.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTitle(value);
+      msg.setEmail(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
+      msg.setWebsiteUrl(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setThumbnailUrl(value);
+      var value = new proto.pb.Source;
+      reader.readMessage(value,proto.pb.Source.deserializeBinaryFromReader);
+      msg.setCover(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addTags(value);
-      break;
-    case 6:
-      var value = new proto.pb.Language;
-      reader.readMessage(value,proto.pb.Language.deserializeBinaryFromReader);
-      msg.addLanguages(value);
-      break;
-    case 7:
-      var value = new proto.pb.Location;
-      reader.readMessage(value,proto.pb.Location.deserializeBinaryFromReader);
-      msg.addLocations(value);
-      break;
-    case 8:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setContactEmail(value);
-      break;
-    case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setHomepageUrl(value);
-      break;
-    case 10:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCoverUrl(value);
+      var value = new proto.pb.ClaimList;
+      reader.readMessage(value,proto.pb.ClaimList.deserializeBinaryFromReader);
+      msg.setFeatured(value);
       break;
     default:
       reader.skipField();
@@ -434,69 +1248,34 @@ proto.pb.Channel.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getTitle();
+  f = message.getEmail();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getDescription();
+  f = message.getWebsiteUrl();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getThumbnailUrl();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getCover();
+  if (f != null) {
+    writer.writeMessage(
       4,
-      f
+      f,
+      proto.pb.Source.serializeBinaryToWriter
     );
   }
-  f = message.getTagsList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
+  f = message.getFeatured();
+  if (f != null) {
+    writer.writeMessage(
       5,
-      f
-    );
-  }
-  f = message.getLanguagesList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      6,
       f,
-      proto.pb.Language.serializeBinaryToWriter
-    );
-  }
-  f = message.getLocationsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      7,
-      f,
-      proto.pb.Location.serializeBinaryToWriter
-    );
-  }
-  f = message.getContactEmail();
-  if (f.length > 0) {
-    writer.writeString(
-      8,
-      f
-    );
-  }
-  f = message.getHomepageUrl();
-  if (f.length > 0) {
-    writer.writeString(
-      9,
-      f
-    );
-  }
-  f = message.getCoverUrl();
-  if (f.length > 0) {
-    writer.writeString(
-      10,
-      f
+      proto.pb.ClaimList.serializeBinaryToWriter
     );
   }
 };
@@ -542,183 +1321,92 @@ proto.pb.Channel.prototype.setPublicKey = function(value) {
 
 
 /**
- * optional string title = 2;
+ * optional string email = 2;
  * @return {string}
  */
-proto.pb.Channel.prototype.getTitle = function() {
+proto.pb.Channel.prototype.getEmail = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
-proto.pb.Channel.prototype.setTitle = function(value) {
+proto.pb.Channel.prototype.setEmail = function(value) {
   jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string description = 3;
+ * optional string website_url = 3;
  * @return {string}
  */
-proto.pb.Channel.prototype.getDescription = function() {
+proto.pb.Channel.prototype.getWebsiteUrl = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
-proto.pb.Channel.prototype.setDescription = function(value) {
+proto.pb.Channel.prototype.setWebsiteUrl = function(value) {
   jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string thumbnail_url = 4;
- * @return {string}
+ * optional Source cover = 4;
+ * @return {?proto.pb.Source}
  */
-proto.pb.Channel.prototype.getThumbnailUrl = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.pb.Channel.prototype.getCover = function() {
+  return /** @type{?proto.pb.Source} */ (
+    jspb.Message.getWrapperField(this, proto.pb.Source, 4));
 };
 
 
-/** @param {string} value */
-proto.pb.Channel.prototype.setThumbnailUrl = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+/** @param {?proto.pb.Source|undefined} value */
+proto.pb.Channel.prototype.setCover = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.pb.Channel.prototype.clearCover = function() {
+  this.setCover(undefined);
 };
 
 
 /**
- * repeated string tags = 5;
- * @return {!Array.<string>}
+ * Returns whether this field is set.
+ * @return {!boolean}
  */
-proto.pb.Channel.prototype.getTagsList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getRepeatedField(this, 5));
-};
-
-
-/** @param {!Array.<string>} value */
-proto.pb.Channel.prototype.setTagsList = function(value) {
-  jspb.Message.setField(this, 5, value || []);
+proto.pb.Channel.prototype.hasCover = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * @param {!string} value
- * @param {number=} opt_index
+ * optional ClaimList featured = 5;
+ * @return {?proto.pb.ClaimList}
  */
-proto.pb.Channel.prototype.addTags = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+proto.pb.Channel.prototype.getFeatured = function() {
+  return /** @type{?proto.pb.ClaimList} */ (
+    jspb.Message.getWrapperField(this, proto.pb.ClaimList, 5));
 };
 
 
-proto.pb.Channel.prototype.clearTagsList = function() {
-  this.setTagsList([]);
+/** @param {?proto.pb.ClaimList|undefined} value */
+proto.pb.Channel.prototype.setFeatured = function(value) {
+  jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+proto.pb.Channel.prototype.clearFeatured = function() {
+  this.setFeatured(undefined);
 };
 
 
 /**
- * repeated Language languages = 6;
- * @return {!Array.<!proto.pb.Language>}
+ * Returns whether this field is set.
+ * @return {!boolean}
  */
-proto.pb.Channel.prototype.getLanguagesList = function() {
-  return /** @type{!Array.<!proto.pb.Language>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.pb.Language, 6));
-};
-
-
-/** @param {!Array.<!proto.pb.Language>} value */
-proto.pb.Channel.prototype.setLanguagesList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 6, value);
-};
-
-
-/**
- * @param {!proto.pb.Language=} opt_value
- * @param {number=} opt_index
- * @return {!proto.pb.Language}
- */
-proto.pb.Channel.prototype.addLanguages = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.pb.Language, opt_index);
-};
-
-
-proto.pb.Channel.prototype.clearLanguagesList = function() {
-  this.setLanguagesList([]);
-};
-
-
-/**
- * repeated Location locations = 7;
- * @return {!Array.<!proto.pb.Location>}
- */
-proto.pb.Channel.prototype.getLocationsList = function() {
-  return /** @type{!Array.<!proto.pb.Location>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.pb.Location, 7));
-};
-
-
-/** @param {!Array.<!proto.pb.Location>} value */
-proto.pb.Channel.prototype.setLocationsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 7, value);
-};
-
-
-/**
- * @param {!proto.pb.Location=} opt_value
- * @param {number=} opt_index
- * @return {!proto.pb.Location}
- */
-proto.pb.Channel.prototype.addLocations = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.pb.Location, opt_index);
-};
-
-
-proto.pb.Channel.prototype.clearLocationsList = function() {
-  this.setLocationsList([]);
-};
-
-
-/**
- * optional string contact_email = 8;
- * @return {string}
- */
-proto.pb.Channel.prototype.getContactEmail = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
-};
-
-
-/** @param {string} value */
-proto.pb.Channel.prototype.setContactEmail = function(value) {
-  jspb.Message.setProto3StringField(this, 8, value);
-};
-
-
-/**
- * optional string homepage_url = 9;
- * @return {string}
- */
-proto.pb.Channel.prototype.getHomepageUrl = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
-};
-
-
-/** @param {string} value */
-proto.pb.Channel.prototype.setHomepageUrl = function(value) {
-  jspb.Message.setProto3StringField(this, 9, value);
-};
-
-
-/**
- * optional string cover_url = 10;
- * @return {string}
- */
-proto.pb.Channel.prototype.getCoverUrl = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
-};
-
-
-/** @param {string} value */
-proto.pb.Channel.prototype.setCoverUrl = function(value) {
-  jspb.Message.setProto3StringField(this, 10, value);
+proto.pb.Channel.prototype.hasFeatured = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -733,47 +1421,13 @@ proto.pb.Channel.prototype.setCoverUrl = function(value) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.pb.Stream = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.pb.Stream.repeatedFields_, proto.pb.Stream.oneofGroups_);
+proto.pb.ClaimReference = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.pb.Stream, jspb.Message);
+goog.inherits(proto.pb.ClaimReference, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.pb.Stream.displayName = 'proto.pb.Stream';
+  proto.pb.ClaimReference.displayName = 'proto.pb.ClaimReference';
 }
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.pb.Stream.repeatedFields_ = [5,6,7];
-
-/**
- * Oneof group definitions for this message. Each group defines the field
- * numbers belonging to that group. When of these fields' value is set, all
- * other fields in the group are cleared. During deserialization, if multiple
- * fields are encountered for a group, only the last value seen will be kept.
- * @private {!Array<!Array<number>>}
- * @const
- */
-proto.pb.Stream.oneofGroups_ = [[16,17,18]];
-
-/**
- * @enum {number}
- */
-proto.pb.Stream.TypeCase = {
-  TYPE_NOT_SET: 0,
-  IMAGE: 16,
-  VIDEO: 17,
-  AUDIO: 18
-};
-
-/**
- * @return {proto.pb.Stream.TypeCase}
- */
-proto.pb.Stream.prototype.getTypeCase = function() {
-  return /** @type {proto.pb.Stream.TypeCase} */(jspb.Message.computeOneofCase(this, proto.pb.Stream.oneofGroups_[0]));
-};
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -787,8 +1441,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.pb.Stream.prototype.toObject = function(opt_includeInstance) {
-  return proto.pb.Stream.toObject(opt_includeInstance, this);
+proto.pb.ClaimReference.prototype.toObject = function(opt_includeInstance) {
+  return proto.pb.ClaimReference.toObject(opt_includeInstance, this);
 };
 
 
@@ -797,31 +1451,13 @@ proto.pb.Stream.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.pb.Stream} msg The msg instance to transform.
+ * @param {!proto.pb.ClaimReference} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.pb.Stream.toObject = function(includeInstance, msg) {
+proto.pb.ClaimReference.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sdHash: msg.getSdHash_asB64(),
-    title: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    thumbnailUrl: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    tagsList: jspb.Message.getRepeatedField(msg, 5),
-    languagesList: jspb.Message.toObjectList(msg.getLanguagesList(),
-    proto.pb.Language.toObject, includeInstance),
-    locationsList: jspb.Message.toObjectList(msg.getLocationsList(),
-    proto.pb.Location.toObject, includeInstance),
-    author: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    license: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    licenseUrl: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    releaseTime: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    mediaType: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    file: (f = msg.getFile()) && proto.pb.File.toObject(includeInstance, f),
-    fee: (f = msg.getFee()) && proto.pb.Fee.toObject(includeInstance, f),
-    image: (f = msg.getImage()) && proto.pb.Image.toObject(includeInstance, f),
-    video: (f = msg.getVideo()) && proto.pb.Video.toObject(includeInstance, f),
-    audio: (f = msg.getAudio()) && proto.pb.Audio.toObject(includeInstance, f)
+    claimHash: msg.getClaimHash_asB64()
   };
 
   if (includeInstance) {
@@ -835,23 +1471,23 @@ proto.pb.Stream.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.pb.Stream}
+ * @return {!proto.pb.ClaimReference}
  */
-proto.pb.Stream.deserializeBinary = function(bytes) {
+proto.pb.ClaimReference.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.pb.Stream;
-  return proto.pb.Stream.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.pb.ClaimReference;
+  return proto.pb.ClaimReference.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.pb.Stream} msg The message object to deserialize into.
+ * @param {!proto.pb.ClaimReference} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.pb.Stream}
+ * @return {!proto.pb.ClaimReference}
  */
-proto.pb.Stream.deserializeBinaryFromReader = function(msg, reader) {
+proto.pb.ClaimReference.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -860,78 +1496,7 @@ proto.pb.Stream.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
-      msg.setSdHash(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTitle(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setThumbnailUrl(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addTags(value);
-      break;
-    case 6:
-      var value = new proto.pb.Language;
-      reader.readMessage(value,proto.pb.Language.deserializeBinaryFromReader);
-      msg.addLanguages(value);
-      break;
-    case 7:
-      var value = new proto.pb.Location;
-      reader.readMessage(value,proto.pb.Location.deserializeBinaryFromReader);
-      msg.addLocations(value);
-      break;
-    case 8:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setAuthor(value);
-      break;
-    case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLicense(value);
-      break;
-    case 10:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLicenseUrl(value);
-      break;
-    case 11:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setReleaseTime(value);
-      break;
-    case 13:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMediaType(value);
-      break;
-    case 14:
-      var value = new proto.pb.File;
-      reader.readMessage(value,proto.pb.File.deserializeBinaryFromReader);
-      msg.setFile(value);
-      break;
-    case 15:
-      var value = new proto.pb.Fee;
-      reader.readMessage(value,proto.pb.Fee.deserializeBinaryFromReader);
-      msg.setFee(value);
-      break;
-    case 16:
-      var value = new proto.pb.Image;
-      reader.readMessage(value,proto.pb.Image.deserializeBinaryFromReader);
-      msg.setImage(value);
-      break;
-    case 17:
-      var value = new proto.pb.Video;
-      reader.readMessage(value,proto.pb.Video.deserializeBinaryFromReader);
-      msg.setVideo(value);
-      break;
-    case 18:
-      var value = new proto.pb.Audio;
-      reader.readMessage(value,proto.pb.Audio.deserializeBinaryFromReader);
-      msg.setAudio(value);
+      msg.setClaimHash(value);
       break;
     default:
       reader.skipField();
@@ -946,9 +1511,9 @@ proto.pb.Stream.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.pb.Stream.prototype.serializeBinary = function() {
+proto.pb.ClaimReference.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.pb.Stream.serializeBinaryToWriter(this, writer);
+  proto.pb.ClaimReference.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -956,538 +1521,587 @@ proto.pb.Stream.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.pb.Stream} message
+ * @param {!proto.pb.ClaimReference} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.pb.Stream.serializeBinaryToWriter = function(message, writer) {
+proto.pb.ClaimReference.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSdHash_asU8();
+  f = message.getClaimHash_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       1,
       f
     );
   }
-  f = message.getTitle();
+};
+
+
+/**
+ * optional bytes claim_hash = 1;
+ * @return {!(string|Uint8Array)}
+ */
+proto.pb.ClaimReference.prototype.getClaimHash = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * optional bytes claim_hash = 1;
+ * This is a type-conversion wrapper around `getClaimHash()`
+ * @return {string}
+ */
+proto.pb.ClaimReference.prototype.getClaimHash_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getClaimHash()));
+};
+
+
+/**
+ * optional bytes claim_hash = 1;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getClaimHash()`
+ * @return {!Uint8Array}
+ */
+proto.pb.ClaimReference.prototype.getClaimHash_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getClaimHash()));
+};
+
+
+/** @param {!(string|Uint8Array)} value */
+proto.pb.ClaimReference.prototype.setClaimHash = function(value) {
+  jspb.Message.setProto3BytesField(this, 1, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.pb.ClaimList = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.pb.ClaimList.repeatedFields_, null);
+};
+goog.inherits(proto.pb.ClaimList, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.pb.ClaimList.displayName = 'proto.pb.ClaimList';
+}
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.pb.ClaimList.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.pb.ClaimList.prototype.toObject = function(opt_includeInstance) {
+  return proto.pb.ClaimList.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.pb.ClaimList} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.pb.ClaimList.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    listType: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    claimReferencesList: jspb.Message.toObjectList(msg.getClaimReferencesList(),
+    proto.pb.ClaimReference.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.pb.ClaimList}
+ */
+proto.pb.ClaimList.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.pb.ClaimList;
+  return proto.pb.ClaimList.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.pb.ClaimList} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.pb.ClaimList}
+ */
+proto.pb.ClaimList.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!proto.pb.ClaimList.ListType} */ (reader.readEnum());
+      msg.setListType(value);
+      break;
+    case 2:
+      var value = new proto.pb.ClaimReference;
+      reader.readMessage(value,proto.pb.ClaimReference.deserializeBinaryFromReader);
+      msg.addClaimReferences(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.pb.ClaimList.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.pb.ClaimList.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.pb.ClaimList} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.pb.ClaimList.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getListType();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      1,
+      f
+    );
+  }
+  f = message.getClaimReferencesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      proto.pb.ClaimReference.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * @enum {number}
+ */
+proto.pb.ClaimList.ListType = {
+  UNKNOWN_LIST_TYPE: 0,
+  COLLECTION: 1,
+  DERIVATION: 2
+};
+
+/**
+ * optional ListType list_type = 1;
+ * @return {!proto.pb.ClaimList.ListType}
+ */
+proto.pb.ClaimList.prototype.getListType = function() {
+  return /** @type {!proto.pb.ClaimList.ListType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/** @param {!proto.pb.ClaimList.ListType} value */
+proto.pb.ClaimList.prototype.setListType = function(value) {
+  jspb.Message.setProto3EnumField(this, 1, value);
+};
+
+
+/**
+ * repeated ClaimReference claim_references = 2;
+ * @return {!Array.<!proto.pb.ClaimReference>}
+ */
+proto.pb.ClaimList.prototype.getClaimReferencesList = function() {
+  return /** @type{!Array.<!proto.pb.ClaimReference>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.pb.ClaimReference, 2));
+};
+
+
+/** @param {!Array.<!proto.pb.ClaimReference>} value */
+proto.pb.ClaimList.prototype.setClaimReferencesList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.pb.ClaimReference=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.pb.ClaimReference}
+ */
+proto.pb.ClaimList.prototype.addClaimReferences = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.pb.ClaimReference, opt_index);
+};
+
+
+proto.pb.ClaimList.prototype.clearClaimReferencesList = function() {
+  this.setClaimReferencesList([]);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.pb.Source = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.pb.Source, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.pb.Source.displayName = 'proto.pb.Source';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.pb.Source.prototype.toObject = function(opt_includeInstance) {
+  return proto.pb.Source.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.pb.Source} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.pb.Source.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    hash: msg.getHash_asB64(),
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    size: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    mediaType: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    url: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    sdHash: msg.getSdHash_asB64()
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.pb.Source}
+ */
+proto.pb.Source.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.pb.Source;
+  return proto.pb.Source.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.pb.Source} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.pb.Source}
+ */
+proto.pb.Source.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setHash(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setSize(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMediaType(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUrl(value);
+      break;
+    case 6:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setSdHash(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.pb.Source.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.pb.Source.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.pb.Source} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.pb.Source.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getHash_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      1,
+      f
+    );
+  }
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getDescription();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getThumbnailUrl();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = message.getTagsList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      5,
-      f
-    );
-  }
-  f = message.getLanguagesList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      6,
-      f,
-      proto.pb.Language.serializeBinaryToWriter
-    );
-  }
-  f = message.getLocationsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      7,
-      f,
-      proto.pb.Location.serializeBinaryToWriter
-    );
-  }
-  f = message.getAuthor();
-  if (f.length > 0) {
-    writer.writeString(
-      8,
-      f
-    );
-  }
-  f = message.getLicense();
-  if (f.length > 0) {
-    writer.writeString(
-      9,
-      f
-    );
-  }
-  f = message.getLicenseUrl();
-  if (f.length > 0) {
-    writer.writeString(
-      10,
-      f
-    );
-  }
-  f = message.getReleaseTime();
+  f = message.getSize();
   if (f !== 0) {
-    writer.writeInt64(
-      11,
+    writer.writeUint64(
+      3,
       f
     );
   }
   f = message.getMediaType();
   if (f.length > 0) {
     writer.writeString(
-      13,
+      4,
       f
     );
   }
-  f = message.getFile();
-  if (f != null) {
-    writer.writeMessage(
-      14,
-      f,
-      proto.pb.File.serializeBinaryToWriter
+  f = message.getUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
     );
   }
-  f = message.getFee();
-  if (f != null) {
-    writer.writeMessage(
-      15,
-      f,
-      proto.pb.Fee.serializeBinaryToWriter
-    );
-  }
-  f = message.getImage();
-  if (f != null) {
-    writer.writeMessage(
-      16,
-      f,
-      proto.pb.Image.serializeBinaryToWriter
-    );
-  }
-  f = message.getVideo();
-  if (f != null) {
-    writer.writeMessage(
-      17,
-      f,
-      proto.pb.Video.serializeBinaryToWriter
-    );
-  }
-  f = message.getAudio();
-  if (f != null) {
-    writer.writeMessage(
-      18,
-      f,
-      proto.pb.Audio.serializeBinaryToWriter
+  f = message.getSdHash_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      6,
+      f
     );
   }
 };
 
 
 /**
- * optional bytes sd_hash = 1;
+ * optional bytes hash = 1;
  * @return {!(string|Uint8Array)}
  */
-proto.pb.Stream.prototype.getSdHash = function() {
+proto.pb.Source.prototype.getHash = function() {
   return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * optional bytes sd_hash = 1;
+ * optional bytes hash = 1;
+ * This is a type-conversion wrapper around `getHash()`
+ * @return {string}
+ */
+proto.pb.Source.prototype.getHash_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getHash()));
+};
+
+
+/**
+ * optional bytes hash = 1;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getHash()`
+ * @return {!Uint8Array}
+ */
+proto.pb.Source.prototype.getHash_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getHash()));
+};
+
+
+/** @param {!(string|Uint8Array)} value */
+proto.pb.Source.prototype.setHash = function(value) {
+  jspb.Message.setProto3BytesField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.pb.Source.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/** @param {string} value */
+proto.pb.Source.prototype.setName = function(value) {
+  jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional uint64 size = 3;
+ * @return {number}
+ */
+proto.pb.Source.prototype.getSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/** @param {number} value */
+proto.pb.Source.prototype.setSize = function(value) {
+  jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional string media_type = 4;
+ * @return {string}
+ */
+proto.pb.Source.prototype.getMediaType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/** @param {string} value */
+proto.pb.Source.prototype.setMediaType = function(value) {
+  jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string url = 5;
+ * @return {string}
+ */
+proto.pb.Source.prototype.getUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/** @param {string} value */
+proto.pb.Source.prototype.setUrl = function(value) {
+  jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional bytes sd_hash = 6;
+ * @return {!(string|Uint8Array)}
+ */
+proto.pb.Source.prototype.getSdHash = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * optional bytes sd_hash = 6;
  * This is a type-conversion wrapper around `getSdHash()`
  * @return {string}
  */
-proto.pb.Stream.prototype.getSdHash_asB64 = function() {
+proto.pb.Source.prototype.getSdHash_asB64 = function() {
   return /** @type {string} */ (jspb.Message.bytesAsB64(
       this.getSdHash()));
 };
 
 
 /**
- * optional bytes sd_hash = 1;
+ * optional bytes sd_hash = 6;
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getSdHash()`
  * @return {!Uint8Array}
  */
-proto.pb.Stream.prototype.getSdHash_asU8 = function() {
+proto.pb.Source.prototype.getSdHash_asU8 = function() {
   return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
       this.getSdHash()));
 };
 
 
 /** @param {!(string|Uint8Array)} value */
-proto.pb.Stream.prototype.setSdHash = function(value) {
-  jspb.Message.setProto3BytesField(this, 1, value);
-};
-
-
-/**
- * optional string title = 2;
- * @return {string}
- */
-proto.pb.Stream.prototype.getTitle = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/** @param {string} value */
-proto.pb.Stream.prototype.setTitle = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string description = 3;
- * @return {string}
- */
-proto.pb.Stream.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/** @param {string} value */
-proto.pb.Stream.prototype.setDescription = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string thumbnail_url = 4;
- * @return {string}
- */
-proto.pb.Stream.prototype.getThumbnailUrl = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/** @param {string} value */
-proto.pb.Stream.prototype.setThumbnailUrl = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * repeated string tags = 5;
- * @return {!Array.<string>}
- */
-proto.pb.Stream.prototype.getTagsList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getRepeatedField(this, 5));
-};
-
-
-/** @param {!Array.<string>} value */
-proto.pb.Stream.prototype.setTagsList = function(value) {
-  jspb.Message.setField(this, 5, value || []);
-};
-
-
-/**
- * @param {!string} value
- * @param {number=} opt_index
- */
-proto.pb.Stream.prototype.addTags = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 5, value, opt_index);
-};
-
-
-proto.pb.Stream.prototype.clearTagsList = function() {
-  this.setTagsList([]);
-};
-
-
-/**
- * repeated Language languages = 6;
- * @return {!Array.<!proto.pb.Language>}
- */
-proto.pb.Stream.prototype.getLanguagesList = function() {
-  return /** @type{!Array.<!proto.pb.Language>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.pb.Language, 6));
-};
-
-
-/** @param {!Array.<!proto.pb.Language>} value */
-proto.pb.Stream.prototype.setLanguagesList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 6, value);
-};
-
-
-/**
- * @param {!proto.pb.Language=} opt_value
- * @param {number=} opt_index
- * @return {!proto.pb.Language}
- */
-proto.pb.Stream.prototype.addLanguages = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.pb.Language, opt_index);
-};
-
-
-proto.pb.Stream.prototype.clearLanguagesList = function() {
-  this.setLanguagesList([]);
-};
-
-
-/**
- * repeated Location locations = 7;
- * @return {!Array.<!proto.pb.Location>}
- */
-proto.pb.Stream.prototype.getLocationsList = function() {
-  return /** @type{!Array.<!proto.pb.Location>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.pb.Location, 7));
-};
-
-
-/** @param {!Array.<!proto.pb.Location>} value */
-proto.pb.Stream.prototype.setLocationsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 7, value);
-};
-
-
-/**
- * @param {!proto.pb.Location=} opt_value
- * @param {number=} opt_index
- * @return {!proto.pb.Location}
- */
-proto.pb.Stream.prototype.addLocations = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.pb.Location, opt_index);
-};
-
-
-proto.pb.Stream.prototype.clearLocationsList = function() {
-  this.setLocationsList([]);
-};
-
-
-/**
- * optional string author = 8;
- * @return {string}
- */
-proto.pb.Stream.prototype.getAuthor = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
-};
-
-
-/** @param {string} value */
-proto.pb.Stream.prototype.setAuthor = function(value) {
-  jspb.Message.setProto3StringField(this, 8, value);
-};
-
-
-/**
- * optional string license = 9;
- * @return {string}
- */
-proto.pb.Stream.prototype.getLicense = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
-};
-
-
-/** @param {string} value */
-proto.pb.Stream.prototype.setLicense = function(value) {
-  jspb.Message.setProto3StringField(this, 9, value);
-};
-
-
-/**
- * optional string license_url = 10;
- * @return {string}
- */
-proto.pb.Stream.prototype.getLicenseUrl = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
-};
-
-
-/** @param {string} value */
-proto.pb.Stream.prototype.setLicenseUrl = function(value) {
-  jspb.Message.setProto3StringField(this, 10, value);
-};
-
-
-/**
- * optional int64 release_time = 11;
- * @return {number}
- */
-proto.pb.Stream.prototype.getReleaseTime = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
-};
-
-
-/** @param {number} value */
-proto.pb.Stream.prototype.setReleaseTime = function(value) {
-  jspb.Message.setProto3IntField(this, 11, value);
-};
-
-
-/**
- * optional string media_type = 13;
- * @return {string}
- */
-proto.pb.Stream.prototype.getMediaType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
-};
-
-
-/** @param {string} value */
-proto.pb.Stream.prototype.setMediaType = function(value) {
-  jspb.Message.setProto3StringField(this, 13, value);
-};
-
-
-/**
- * optional File file = 14;
- * @return {?proto.pb.File}
- */
-proto.pb.Stream.prototype.getFile = function() {
-  return /** @type{?proto.pb.File} */ (
-    jspb.Message.getWrapperField(this, proto.pb.File, 14));
-};
-
-
-/** @param {?proto.pb.File|undefined} value */
-proto.pb.Stream.prototype.setFile = function(value) {
-  jspb.Message.setWrapperField(this, 14, value);
-};
-
-
-proto.pb.Stream.prototype.clearFile = function() {
-  this.setFile(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.pb.Stream.prototype.hasFile = function() {
-  return jspb.Message.getField(this, 14) != null;
-};
-
-
-/**
- * optional Fee fee = 15;
- * @return {?proto.pb.Fee}
- */
-proto.pb.Stream.prototype.getFee = function() {
-  return /** @type{?proto.pb.Fee} */ (
-    jspb.Message.getWrapperField(this, proto.pb.Fee, 15));
-};
-
-
-/** @param {?proto.pb.Fee|undefined} value */
-proto.pb.Stream.prototype.setFee = function(value) {
-  jspb.Message.setWrapperField(this, 15, value);
-};
-
-
-proto.pb.Stream.prototype.clearFee = function() {
-  this.setFee(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.pb.Stream.prototype.hasFee = function() {
-  return jspb.Message.getField(this, 15) != null;
-};
-
-
-/**
- * optional Image image = 16;
- * @return {?proto.pb.Image}
- */
-proto.pb.Stream.prototype.getImage = function() {
-  return /** @type{?proto.pb.Image} */ (
-    jspb.Message.getWrapperField(this, proto.pb.Image, 16));
-};
-
-
-/** @param {?proto.pb.Image|undefined} value */
-proto.pb.Stream.prototype.setImage = function(value) {
-  jspb.Message.setOneofWrapperField(this, 16, proto.pb.Stream.oneofGroups_[0], value);
-};
-
-
-proto.pb.Stream.prototype.clearImage = function() {
-  this.setImage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.pb.Stream.prototype.hasImage = function() {
-  return jspb.Message.getField(this, 16) != null;
-};
-
-
-/**
- * optional Video video = 17;
- * @return {?proto.pb.Video}
- */
-proto.pb.Stream.prototype.getVideo = function() {
-  return /** @type{?proto.pb.Video} */ (
-    jspb.Message.getWrapperField(this, proto.pb.Video, 17));
-};
-
-
-/** @param {?proto.pb.Video|undefined} value */
-proto.pb.Stream.prototype.setVideo = function(value) {
-  jspb.Message.setOneofWrapperField(this, 17, proto.pb.Stream.oneofGroups_[0], value);
-};
-
-
-proto.pb.Stream.prototype.clearVideo = function() {
-  this.setVideo(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.pb.Stream.prototype.hasVideo = function() {
-  return jspb.Message.getField(this, 17) != null;
-};
-
-
-/**
- * optional Audio audio = 18;
- * @return {?proto.pb.Audio}
- */
-proto.pb.Stream.prototype.getAudio = function() {
-  return /** @type{?proto.pb.Audio} */ (
-    jspb.Message.getWrapperField(this, proto.pb.Audio, 18));
-};
-
-
-/** @param {?proto.pb.Audio|undefined} value */
-proto.pb.Stream.prototype.setAudio = function(value) {
-  jspb.Message.setOneofWrapperField(this, 18, proto.pb.Stream.oneofGroups_[0], value);
-};
-
-
-proto.pb.Stream.prototype.clearAudio = function() {
-  this.setAudio(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.pb.Stream.prototype.hasAudio = function() {
-  return jspb.Message.getField(this, 18) != null;
+proto.pb.Source.prototype.setSdHash = function(value) {
+  jspb.Message.setProto3BytesField(this, 6, value);
 };
 
 
@@ -1732,226 +2346,6 @@ proto.pb.Fee.prototype.setAmount = function(value) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.pb.File = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.pb.File, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.pb.File.displayName = 'proto.pb.File';
-}
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.pb.File.prototype.toObject = function(opt_includeInstance) {
-  return proto.pb.File.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.pb.File} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.pb.File.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    hash: msg.getHash_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    size: jspb.Message.getFieldWithDefault(msg, 2, 0)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.pb.File}
- */
-proto.pb.File.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.pb.File;
-  return proto.pb.File.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.pb.File} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.pb.File}
- */
-proto.pb.File.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 3:
-      var value = /** @type {!Uint8Array} */ (reader.readBytes());
-      msg.setHash(value);
-      break;
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
-      break;
-    case 2:
-      var value = /** @type {number} */ (reader.readUint64());
-      msg.setSize(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.pb.File.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.pb.File.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.pb.File} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.pb.File.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getHash_asU8();
-  if (f.length > 0) {
-    writer.writeBytes(
-      3,
-      f
-    );
-  }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getSize();
-  if (f !== 0) {
-    writer.writeUint64(
-      2,
-      f
-    );
-  }
-};
-
-
-/**
- * optional bytes hash = 3;
- * @return {!(string|Uint8Array)}
- */
-proto.pb.File.prototype.getHash = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * optional bytes hash = 3;
- * This is a type-conversion wrapper around `getHash()`
- * @return {string}
- */
-proto.pb.File.prototype.getHash_asB64 = function() {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getHash()));
-};
-
-
-/**
- * optional bytes hash = 3;
- * Note that Uint8Array is not supported on all browsers.
- * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getHash()`
- * @return {!Uint8Array}
- */
-proto.pb.File.prototype.getHash_asU8 = function() {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getHash()));
-};
-
-
-/** @param {!(string|Uint8Array)} value */
-proto.pb.File.prototype.setHash = function(value) {
-  jspb.Message.setProto3BytesField(this, 3, value);
-};
-
-
-/**
- * optional string name = 1;
- * @return {string}
- */
-proto.pb.File.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/** @param {string} value */
-proto.pb.File.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional uint64 size = 2;
- * @return {number}
- */
-proto.pb.File.prototype.getSize = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/** @param {number} value */
-proto.pb.File.prototype.setSize = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
-};
-
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
 proto.pb.Image = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -2159,7 +2553,7 @@ proto.pb.Video.toObject = function(includeInstance, msg) {
   var f, obj = {
     width: jspb.Message.getFieldWithDefault(msg, 1, 0),
     height: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    duration: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    audio: (f = msg.getAudio()) && proto.pb.Audio.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2205,8 +2599,9 @@ proto.pb.Video.deserializeBinaryFromReader = function(msg, reader) {
       msg.setHeight(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setDuration(value);
+      var value = new proto.pb.Audio;
+      reader.readMessage(value,proto.pb.Audio.deserializeBinaryFromReader);
+      msg.setAudio(value);
       break;
     default:
       reader.skipField();
@@ -2251,11 +2646,12 @@ proto.pb.Video.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getDuration();
-  if (f !== 0) {
-    writer.writeUint32(
+  f = message.getAudio();
+  if (f != null) {
+    writer.writeMessage(
       3,
-      f
+      f,
+      proto.pb.Audio.serializeBinaryToWriter
     );
   }
 };
@@ -2292,17 +2688,32 @@ proto.pb.Video.prototype.setHeight = function(value) {
 
 
 /**
- * optional uint32 duration = 3;
- * @return {number}
+ * optional Audio audio = 3;
+ * @return {?proto.pb.Audio}
  */
-proto.pb.Video.prototype.getDuration = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+proto.pb.Video.prototype.getAudio = function() {
+  return /** @type{?proto.pb.Audio} */ (
+    jspb.Message.getWrapperField(this, proto.pb.Audio, 3));
 };
 
 
-/** @param {number} value */
-proto.pb.Video.prototype.setDuration = function(value) {
-  jspb.Message.setProto3IntField(this, 3, value);
+/** @param {?proto.pb.Audio|undefined} value */
+proto.pb.Video.prototype.setAudio = function(value) {
+  jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+proto.pb.Video.prototype.clearAudio = function() {
+  this.setAudio(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.pb.Video.prototype.hasAudio = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -2445,6 +2856,161 @@ proto.pb.Audio.prototype.getDuration = function() {
 /** @param {number} value */
 proto.pb.Audio.prototype.setDuration = function(value) {
   jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.pb.Software = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.pb.Software, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.pb.Software.displayName = 'proto.pb.Software';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.pb.Software.prototype.toObject = function(opt_includeInstance) {
+  return proto.pb.Software.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.pb.Software} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.pb.Software.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    os: jspb.Message.getFieldWithDefault(msg, 1, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.pb.Software}
+ */
+proto.pb.Software.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.pb.Software;
+  return proto.pb.Software.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.pb.Software} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.pb.Software}
+ */
+proto.pb.Software.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOs(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.pb.Software.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.pb.Software.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.pb.Software} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.pb.Software.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getOs();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * @enum {number}
+ */
+proto.pb.Software.OS = {
+  UNKNOWN_OS: 0,
+  ANY: 1,
+  LINUX: 2,
+  WINDOWS: 3,
+  MAC: 4,
+  ANDROID: 5,
+  IOS: 6
+};
+
+/**
+ * optional string os = 1;
+ * @return {string}
+ */
+proto.pb.Software.prototype.getOs = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/** @param {string} value */
+proto.pb.Software.prototype.setOs = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
