@@ -6,7 +6,7 @@ message Claim {
     oneof type {
         Stream stream = 1;
         Channel channel = 2;
-        ClaimList claim_list = 3;
+        ClaimList collection = 3;
         ClaimReference repost = 4;
     }
     string title = 8;
@@ -84,7 +84,8 @@ message Image {
 message Video {
     uint32 width = 1;
     uint32 height = 2;
-    Audio audio = 3;
+    uint32 duration = 3;
+    Audio audio = 15;
 }
 
 message Audio {
