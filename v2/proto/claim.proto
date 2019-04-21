@@ -46,8 +46,7 @@ message ClaimReference {
 
 message ClaimList {
     enum ListType {
-        UNKNOWN_LIST_TYPE = 0;
-        COLLECTION = 1; // play lists, etc
+        COLLECTION = 0; // play lists, etc
         DERIVATION = 2; // movie in multiple languages, software for different OSes
     }
     ListType list_type = 1;
