@@ -129,14 +129,13 @@ extern VideoDefaultTypeInternal _Video_default_instance_;
 namespace pb {
 
 enum ClaimList_ListType {
-  ClaimList_ListType_UNKNOWN_LIST_TYPE = 0,
-  ClaimList_ListType_COLLECTION = 1,
+  ClaimList_ListType_COLLECTION = 0,
   ClaimList_ListType_DERIVATION = 2,
   ClaimList_ListType_ClaimList_ListType_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
   ClaimList_ListType_ClaimList_ListType_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
 };
 bool ClaimList_ListType_IsValid(int value);
-const ClaimList_ListType ClaimList_ListType_ListType_MIN = ClaimList_ListType_UNKNOWN_LIST_TYPE;
+const ClaimList_ListType ClaimList_ListType_ListType_MIN = ClaimList_ListType_COLLECTION;
 const ClaimList_ListType ClaimList_ListType_ListType_MAX = ClaimList_ListType_DERIVATION;
 const int ClaimList_ListType_ListType_ARRAYSIZE = ClaimList_ListType_ListType_MAX + 1;
 
@@ -925,7 +924,7 @@ class Claim : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   enum TypeCase {
     kStream = 1,
     kChannel = 2,
-    kClaimList = 3,
+    kCollection = 3,
     kRepost = 4,
     TYPE_NOT_SET = 0,
   };
@@ -1084,14 +1083,14 @@ class Claim : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::pb::Channel* mutable_channel();
   void set_allocated_channel(::pb::Channel* channel);
 
-  // .pb.ClaimList claim_list = 3;
-  bool has_claim_list() const;
-  void clear_claim_list();
-  static const int kClaimListFieldNumber = 3;
-  const ::pb::ClaimList& claim_list() const;
-  ::pb::ClaimList* release_claim_list();
-  ::pb::ClaimList* mutable_claim_list();
-  void set_allocated_claim_list(::pb::ClaimList* claim_list);
+  // .pb.ClaimList collection = 3;
+  bool has_collection() const;
+  void clear_collection();
+  static const int kCollectionFieldNumber = 3;
+  const ::pb::ClaimList& collection() const;
+  ::pb::ClaimList* release_collection();
+  ::pb::ClaimList* mutable_collection();
+  void set_allocated_collection(::pb::ClaimList* collection);
 
   // .pb.ClaimReference repost = 4;
   bool has_repost() const;
@@ -1107,7 +1106,7 @@ class Claim : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
  private:
   void set_has_stream();
   void set_has_channel();
-  void set_has_claim_list();
+  void set_has_collection();
   void set_has_repost();
 
   inline bool has_type() const;
@@ -1125,7 +1124,7 @@ class Claim : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
     TypeUnion() {}
     ::pb::Stream* stream_;
     ::pb::Channel* channel_;
-    ::pb::ClaimList* claim_list_;
+    ::pb::ClaimList* collection_;
     ::pb::ClaimReference* repost_;
   } type_;
   mutable int _cached_size_;
@@ -1707,8 +1706,6 @@ class ClaimList : public ::google::protobuf::Message /* @@protoc_insertion_point
   // nested types ----------------------------------------------------
 
   typedef ClaimList_ListType ListType;
-  static const ListType UNKNOWN_LIST_TYPE =
-    ClaimList_ListType_UNKNOWN_LIST_TYPE;
   static const ListType COLLECTION =
     ClaimList_ListType_COLLECTION;
   static const ListType DERIVATION =
@@ -2279,10 +2276,10 @@ class Video : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
 
   // accessors -------------------------------------------------------
 
-  // .pb.Audio audio = 3;
+  // .pb.Audio audio = 15;
   bool has_audio() const;
   void clear_audio();
-  static const int kAudioFieldNumber = 3;
+  static const int kAudioFieldNumber = 15;
   const ::pb::Audio& audio() const;
   ::pb::Audio* release_audio();
   ::pb::Audio* mutable_audio();
@@ -2300,6 +2297,12 @@ class Video : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::google::protobuf::uint32 height() const;
   void set_height(::google::protobuf::uint32 value);
 
+  // uint32 duration = 3;
+  void clear_duration();
+  static const int kDurationFieldNumber = 3;
+  ::google::protobuf::uint32 duration() const;
+  void set_duration(::google::protobuf::uint32 value);
+
   // @@protoc_insertion_point(class_scope:pb.Video)
  private:
 
@@ -2307,6 +2310,7 @@ class Video : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::pb::Audio* audio_;
   ::google::protobuf::uint32 width_;
   ::google::protobuf::uint32 height_;
+  ::google::protobuf::uint32 duration_;
   mutable int _cached_size_;
   friend struct ::protobuf_claim_2eproto::TableStruct;
   friend void ::protobuf_claim_2eproto::InitDefaultsVideoImpl();
@@ -4251,44 +4255,44 @@ inline ::pb::Channel* Claim::mutable_channel() {
   return type_.channel_;
 }
 
-// .pb.ClaimList claim_list = 3;
-inline bool Claim::has_claim_list() const {
-  return type_case() == kClaimList;
+// .pb.ClaimList collection = 3;
+inline bool Claim::has_collection() const {
+  return type_case() == kCollection;
 }
-inline void Claim::set_has_claim_list() {
-  _oneof_case_[0] = kClaimList;
+inline void Claim::set_has_collection() {
+  _oneof_case_[0] = kCollection;
 }
-inline void Claim::clear_claim_list() {
-  if (has_claim_list()) {
-    delete type_.claim_list_;
+inline void Claim::clear_collection() {
+  if (has_collection()) {
+    delete type_.collection_;
     clear_has_type();
   }
 }
-inline ::pb::ClaimList* Claim::release_claim_list() {
-  // @@protoc_insertion_point(field_release:pb.Claim.claim_list)
-  if (has_claim_list()) {
+inline ::pb::ClaimList* Claim::release_collection() {
+  // @@protoc_insertion_point(field_release:pb.Claim.collection)
+  if (has_collection()) {
     clear_has_type();
-      ::pb::ClaimList* temp = type_.claim_list_;
-    type_.claim_list_ = NULL;
+      ::pb::ClaimList* temp = type_.collection_;
+    type_.collection_ = NULL;
     return temp;
   } else {
     return NULL;
   }
 }
-inline const ::pb::ClaimList& Claim::claim_list() const {
-  // @@protoc_insertion_point(field_get:pb.Claim.claim_list)
-  return has_claim_list()
-      ? *type_.claim_list_
+inline const ::pb::ClaimList& Claim::collection() const {
+  // @@protoc_insertion_point(field_get:pb.Claim.collection)
+  return has_collection()
+      ? *type_.collection_
       : *reinterpret_cast< ::pb::ClaimList*>(&::pb::_ClaimList_default_instance_);
 }
-inline ::pb::ClaimList* Claim::mutable_claim_list() {
-  if (!has_claim_list()) {
+inline ::pb::ClaimList* Claim::mutable_collection() {
+  if (!has_collection()) {
     clear_type();
-    set_has_claim_list();
-    type_.claim_list_ = new ::pb::ClaimList;
+    set_has_collection();
+    type_.collection_ = new ::pb::ClaimList;
   }
-  // @@protoc_insertion_point(field_mutable:pb.Claim.claim_list)
-  return type_.claim_list_;
+  // @@protoc_insertion_point(field_mutable:pb.Claim.collection)
+  return type_.collection_;
 }
 
 // .pb.ClaimReference repost = 4;
@@ -5871,7 +5875,21 @@ inline void Video::set_height(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:pb.Video.height)
 }
 
-// .pb.Audio audio = 3;
+// uint32 duration = 3;
+inline void Video::clear_duration() {
+  duration_ = 0u;
+}
+inline ::google::protobuf::uint32 Video::duration() const {
+  // @@protoc_insertion_point(field_get:pb.Video.duration)
+  return duration_;
+}
+inline void Video::set_duration(::google::protobuf::uint32 value) {
+  
+  duration_ = value;
+  // @@protoc_insertion_point(field_set:pb.Video.duration)
+}
+
+// .pb.Audio audio = 15;
 inline bool Video::has_audio() const {
   return this != internal_default_instance() && audio_ != NULL;
 }

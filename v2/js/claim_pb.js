@@ -72,7 +72,7 @@ proto.pb.Claim.TypeCase = {
   TYPE_NOT_SET: 0,
   STREAM: 1,
   CHANNEL: 2,
-  CLAIM_LIST: 3,
+  COLLECTION: 3,
   REPOST: 4
 };
 
@@ -114,7 +114,7 @@ proto.pb.Claim.toObject = function(includeInstance, msg) {
   var f, obj = {
     stream: (f = msg.getStream()) && proto.pb.Stream.toObject(includeInstance, f),
     channel: (f = msg.getChannel()) && proto.pb.Channel.toObject(includeInstance, f),
-    claimList: (f = msg.getClaimList()) && proto.pb.ClaimList.toObject(includeInstance, f),
+    collection: (f = msg.getCollection()) && proto.pb.ClaimList.toObject(includeInstance, f),
     repost: (f = msg.getRepost()) && proto.pb.ClaimReference.toObject(includeInstance, f),
     title: jspb.Message.getFieldWithDefault(msg, 8, ""),
     description: jspb.Message.getFieldWithDefault(msg, 9, ""),
@@ -173,7 +173,7 @@ proto.pb.Claim.deserializeBinaryFromReader = function(msg, reader) {
     case 3:
       var value = new proto.pb.ClaimList;
       reader.readMessage(value,proto.pb.ClaimList.deserializeBinaryFromReader);
-      msg.setClaimList(value);
+      msg.setCollection(value);
       break;
     case 4:
       var value = new proto.pb.ClaimReference;
@@ -252,7 +252,7 @@ proto.pb.Claim.serializeBinaryToWriter = function(message, writer) {
       proto.pb.Channel.serializeBinaryToWriter
     );
   }
-  f = message.getClaimList();
+  f = message.getCollection();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -377,23 +377,23 @@ proto.pb.Claim.prototype.hasChannel = function() {
 
 
 /**
- * optional ClaimList claim_list = 3;
+ * optional ClaimList collection = 3;
  * @return {?proto.pb.ClaimList}
  */
-proto.pb.Claim.prototype.getClaimList = function() {
+proto.pb.Claim.prototype.getCollection = function() {
   return /** @type{?proto.pb.ClaimList} */ (
     jspb.Message.getWrapperField(this, proto.pb.ClaimList, 3));
 };
 
 
 /** @param {?proto.pb.ClaimList|undefined} value */
-proto.pb.Claim.prototype.setClaimList = function(value) {
+proto.pb.Claim.prototype.setCollection = function(value) {
   jspb.Message.setOneofWrapperField(this, 3, proto.pb.Claim.oneofGroups_[0], value);
 };
 
 
-proto.pb.Claim.prototype.clearClaimList = function() {
-  this.setClaimList(undefined);
+proto.pb.Claim.prototype.clearCollection = function() {
+  this.setCollection(undefined);
 };
 
 
@@ -401,7 +401,7 @@ proto.pb.Claim.prototype.clearClaimList = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.pb.Claim.prototype.hasClaimList = function() {
+proto.pb.Claim.prototype.hasCollection = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -1729,8 +1729,7 @@ proto.pb.ClaimList.serializeBinaryToWriter = function(message, writer) {
  * @enum {number}
  */
 proto.pb.ClaimList.ListType = {
-  UNKNOWN_LIST_TYPE: 0,
-  COLLECTION: 1,
+  COLLECTION: 0,
   DERIVATION: 2
 };
 
@@ -2553,6 +2552,7 @@ proto.pb.Video.toObject = function(includeInstance, msg) {
   var f, obj = {
     width: jspb.Message.getFieldWithDefault(msg, 1, 0),
     height: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    duration: jspb.Message.getFieldWithDefault(msg, 3, 0),
     audio: (f = msg.getAudio()) && proto.pb.Audio.toObject(includeInstance, f)
   };
 
@@ -2599,6 +2599,10 @@ proto.pb.Video.deserializeBinaryFromReader = function(msg, reader) {
       msg.setHeight(value);
       break;
     case 3:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setDuration(value);
+      break;
+    case 15:
       var value = new proto.pb.Audio;
       reader.readMessage(value,proto.pb.Audio.deserializeBinaryFromReader);
       msg.setAudio(value);
@@ -2646,10 +2650,17 @@ proto.pb.Video.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getDuration();
+  if (f !== 0) {
+    writer.writeUint32(
+      3,
+      f
+    );
+  }
   f = message.getAudio();
   if (f != null) {
     writer.writeMessage(
-      3,
+      15,
       f,
       proto.pb.Audio.serializeBinaryToWriter
     );
@@ -2688,18 +2699,33 @@ proto.pb.Video.prototype.setHeight = function(value) {
 
 
 /**
- * optional Audio audio = 3;
+ * optional uint32 duration = 3;
+ * @return {number}
+ */
+proto.pb.Video.prototype.getDuration = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/** @param {number} value */
+proto.pb.Video.prototype.setDuration = function(value) {
+  jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional Audio audio = 15;
  * @return {?proto.pb.Audio}
  */
 proto.pb.Video.prototype.getAudio = function() {
   return /** @type{?proto.pb.Audio} */ (
-    jspb.Message.getWrapperField(this, proto.pb.Audio, 3));
+    jspb.Message.getWrapperField(this, proto.pb.Audio, 15));
 };
 
 
 /** @param {?proto.pb.Audio|undefined} value */
 proto.pb.Video.prototype.setAudio = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  jspb.Message.setWrapperField(this, 15, value);
 };
 
 
@@ -2713,7 +2739,7 @@ proto.pb.Video.prototype.clearAudio = function() {
  * @return {!boolean}
  */
 proto.pb.Video.prototype.hasAudio = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
