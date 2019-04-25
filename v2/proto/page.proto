@@ -57,13 +57,14 @@ message Output {
 message ClaimMeta {
   Output channel = 1;
   bool is_winning = 2;
-  uint64 effective_amount = 3;
-  uint64 trending_amount = 4;
+  uint64 activation_height = 3;
+  uint64 effective_amount = 4;
+  uint64 trending_amount = 5;
 }
 
 message Transaction {
   // entire raw transaction
-  bytes tx = 1;
+  bytes raw = 1;
 
   // height progression
   //   -1: in mempool but has unconfirmed inputs
