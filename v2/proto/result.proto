@@ -1,52 +1,14 @@
-// Page message can represent the results of
-// paginated queries to a server which return
-// transactions and outputs. This should be
-// enough to cover just about every blockchain
-// type in LBRY: claims, supports, payments, etc.
-//
-// Assembling Result Page
-// 
-// To prevent unnecessarily duplicating the same
-// raw TX many times if the result is TXOs in
-// the same transaction, the Page is split between
-// a list of `txos` (pointers) and a list of `txs`
-// (actual raw transactions). To assemble the page,
-//
-//  1) Loop over all `txs`, parsing them into a TX
-//     object as desired and adding them into a
-//     mapping keyed by "tx hash -> TX object". 
-//
-//  2) Create a new list to hold the page results.
-//
-//  3) Loop over all `txos` adding it along with the
-//     TX retrieved from previously created TX mapping.
-//     Optionally, lookup and include the channel `txo`
-//     using the same process.
-//
-//  4) You should now have a list of TXOs with their
-//     associated TX and for claims in a channel also
-//     associated channel TXO and TX.
-//
-// If the Page object is used strictly to return a list
-// of TXs then the `txos` attribute will be empty. The
-// semantics of which field is being paginated (`txos` vs
-// `txs`) is determined in context of the RPC API. An
-// RPC method such as `get_transactions` is likely to
-// be paginating the `txs` list.
-//
 syntax = "proto3";
 
 package pb;
 
-message Page {
+message Outputs {
   repeated Output txos = 1;
-  repeated Transaction txs = 2;
-  uint32 total = 3;
-  uint32 offset = 4;
+  uint32 total = 2;
+  uint32 offset = 3;
 }
 
 message Output {
-  // pointer to an output in one of the Page.txs
   bytes tx_hash = 1;
   uint32 nout = 2;
   oneof meta {
@@ -60,6 +22,12 @@ message ClaimMeta {
   uint64 activation_height = 3;
   uint64 effective_amount = 4;
   uint64 trending_amount = 5;
+}
+
+message Transactions {
+  repeated Transaction txs = 1;
+  uint32 total = 2;
+  uint32 offset = 3;
 }
 
 message Transaction {
