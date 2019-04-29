@@ -54,13 +54,13 @@ message ClaimList {
 }
 
 message Source {
-    bytes hash = 1;
+    bytes hash = 1; // SHA-256 hash of the entire unencrypted file
     string name = 2;
     uint64 size = 3;
     string media_type = 4;
 
     string url = 5;
-    bytes sd_hash = 6;
+    bytes sd_hash = 6; // SHA-384 hash of the streams manifest blob
 }
 
 message Fee {
