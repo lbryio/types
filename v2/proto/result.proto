@@ -11,35 +11,28 @@ message Outputs {
 message Output {
   bytes tx_hash = 1;
   uint32 nout = 2;
+  uint32 height = 3;
   oneof meta {
-    ClaimMeta claim = 3;
+    ClaimMeta claim = 7;
+    Error error = 15;
   }
 }
 
 message ClaimMeta {
   Output channel = 1;
-  bool is_winning = 2;
-  uint64 activation_height = 3;
+  bool is_controlling = 2;
+  uint32 activation_height = 3;
   uint64 effective_amount = 4;
   uint64 trending_amount = 5;
+  uint32 claims_in_channel = 6;
 }
 
-message Transactions {
-  repeated Transaction txs = 1;
-  uint32 total = 2;
-  uint32 offset = 3;
-}
-
-message Transaction {
-  // entire raw transaction
-  bytes raw = 1;
-
-  // height progression
-  //   -1: in mempool but has unconfirmed inputs
-  //    0: in mempool and all inputs confirmed
-  // +num: confirmed in a specific block (height)
-  int32 height = 2;
-
-  // position in block from top, only if height > 0
-  uint32 position = 3;
+message Error {
+  enum Code {
+    UNKNOWN_CODE = 0;
+    NOT_FOUND = 1;
+    INVALID = 2;
+  }
+  Code code = 1;
+  string text = 2;
 }
