@@ -54,7 +54,7 @@ message ClaimList {
 }
 
 message Source {
-    bytes hash = 1; // SHA-256 hash of the entire unencrypted file
+    bytes hash = 1; // SHA-384 hash of the entire unencrypted file
     string name = 2;
     uint64 size = 3;
     string media_type = 4;
