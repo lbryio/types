@@ -26,9 +26,9 @@ message ClaimMeta {
   uint64 support_amount = 5;
   uint32 claims_in_channel = 6;
   uint32 trending_group = 7;
-  sint64 trending_mixed = 8;
-  sint64 trending_local = 9;
-  sint64 trending_global = 10;
+  float trending_mixed = 8;
+  float trending_local = 9;
+  float trending_global = 10;
 }
 
 message Error {
