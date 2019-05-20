@@ -23,8 +23,12 @@ message ClaimMeta {
   bool is_controlling = 2;
   uint32 activation_height = 3;
   uint64 effective_amount = 4;
-  uint64 trending_amount = 5;
+  uint64 support_amount = 5;
   uint32 claims_in_channel = 6;
+  uint32 trending_group = 7;
+  sint64 trending_mixed = 8;
+  sint64 trending_local = 9;
+  sint64 trending_global = 10;
 }
 
 message Error {
