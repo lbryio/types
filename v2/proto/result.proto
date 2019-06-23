@@ -4,8 +4,9 @@ package pb;
 
 message Outputs {
   repeated Output txos = 1;
-  uint32 total = 2;
-  uint32 offset = 3;
+  repeated Output extra_txos = 2;
+  uint32 total = 3;
+  uint32 offset = 4;
 }
 
 message Output {
@@ -20,15 +21,21 @@ message Output {
 
 message ClaimMeta {
   Output channel = 1;
-  bool is_controlling = 2;
-  uint32 activation_height = 3;
-  uint64 effective_amount = 4;
-  uint64 support_amount = 5;
-  uint32 claims_in_channel = 6;
-  uint32 trending_group = 7;
-  float trending_mixed = 8;
-  float trending_local = 9;
-  float trending_global = 10;
+  string short_url = 2;
+  string canonical_url = 3;
+  bool is_controlling = 4;
+  uint32 take_over_height = 5;
+  uint32 creation_height = 6;
+  uint32 activation_height = 7;
+  uint32 expiration_height = 8;
+  uint32 claims_in_channel = 9;
+
+  uint64 effective_amount = 10;
+  uint64 support_amount = 11;
+  uint32 trending_group = 12;
+  float trending_mixed = 13;
+  float trending_local = 14;
+  float trending_global = 15;
 }
 
 message Error {
