@@ -61,6 +61,7 @@ message Source {
 
     string url = 5;
     bytes sd_hash = 6; // SHA-384 hash of the streams manifest blob
+    bytes bt_infohash = 7; // 20-byte SHA1 hash used to reference a torrent file
 }
 
 message Fee {
