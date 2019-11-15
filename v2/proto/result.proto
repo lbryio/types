@@ -29,13 +29,14 @@ message ClaimMeta {
   uint32 activation_height = 7;
   uint32 expiration_height = 8;
   uint32 claims_in_channel = 9;
+  uint32 reposted = 10;
 
-  uint64 effective_amount = 10;
-  uint64 support_amount = 11;
-  uint32 trending_group = 12;
-  float trending_mixed = 13;
-  float trending_local = 14;
-  float trending_global = 15;
+  uint64 effective_amount = 20;
+  uint64 support_amount = 21;
+  uint32 trending_group = 22;
+  float trending_mixed = 23;
+  float trending_local = 24;
+  float trending_global = 25;
 }
 
 message Error {
