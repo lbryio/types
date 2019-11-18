@@ -21,15 +21,16 @@ message Output {
 
 message ClaimMeta {
   Output channel = 1;
-  string short_url = 2;
-  string canonical_url = 3;
-  bool is_controlling = 4;
-  uint32 take_over_height = 5;
-  uint32 creation_height = 6;
-  uint32 activation_height = 7;
-  uint32 expiration_height = 8;
-  uint32 claims_in_channel = 9;
-  uint32 reposted = 10;
+  Output repost = 2;
+  string short_url = 3;
+  string canonical_url = 4;
+  bool is_controlling = 5;
+  uint32 take_over_height = 6;
+  uint32 creation_height = 7;
+  uint32 activation_height = 8;
+  uint32 expiration_height = 9;
+  uint32 claims_in_channel = 10;
+  uint32 reposted = 11;
 
   uint64 effective_amount = 20;
   uint64 support_amount = 21;
