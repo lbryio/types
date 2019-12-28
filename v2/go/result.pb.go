@@ -49,10 +49,10 @@ func (Error_Code) EnumDescriptor() ([]byte, []int) {
 }
 
 type Outputs struct {
-	Txos                 []*Output `protobuf:"bytes,1,rep,name=txos,proto3" json:"txos,omitempty"`
-	ExtraTxos            []*Output `protobuf:"bytes,2,rep,name=extra_txos,json=extraTxos,proto3" json:"extra_txos,omitempty"`
-	Total                uint32    `protobuf:"varint,3,opt,name=total,proto3" json:"total,omitempty"`
-	Offset               uint32    `protobuf:"varint,4,opt,name=offset,proto3" json:"offset,omitempty"`
+	Txos                 []*Output `protobuf:"bytes,1,rep,name=txos,proto3" json:"txos"`
+	ExtraTxos            []*Output `protobuf:"bytes,2,rep,name=extra_txos,json=extraTxos,proto3" json:"extra_txos"`
+	Total                uint32    `protobuf:"varint,3,opt,name=total,proto3" json:"total"`
+	Offset               uint32    `protobuf:"varint,4,opt,name=offset,proto3" json:"offset"`
 	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
 	XXX_unrecognized     []byte    `json:"-"`
 	XXX_sizecache        int32     `json:"-"`
@@ -112,9 +112,9 @@ func (m *Outputs) GetOffset() uint32 {
 }
 
 type Output struct {
-	TxHash []byte `protobuf:"bytes,1,opt,name=tx_hash,json=txHash,proto3" json:"tx_hash,omitempty"`
-	Nout   uint32 `protobuf:"varint,2,opt,name=nout,proto3" json:"nout,omitempty"`
-	Height uint32 `protobuf:"varint,3,opt,name=height,proto3" json:"height,omitempty"`
+	TxHash []byte `protobuf:"bytes,1,opt,name=tx_hash,json=txHash,proto3" json:"tx_hash"`
+	Nout   uint32 `protobuf:"varint,2,opt,name=nout,proto3" json:"nout"`
+	Height uint32 `protobuf:"varint,3,opt,name=height,proto3" json:"height"`
 	// Types that are valid to be assigned to Meta:
 	//	*Output_Claim
 	//	*Output_Error
@@ -216,23 +216,23 @@ func (*Output) XXX_OneofWrappers() []interface{} {
 }
 
 type ClaimMeta struct {
-	Channel              *Output  `protobuf:"bytes,1,opt,name=channel,proto3" json:"channel,omitempty"`
-	Repost               *Output  `protobuf:"bytes,2,opt,name=repost,proto3" json:"repost,omitempty"`
-	ShortUrl             string   `protobuf:"bytes,3,opt,name=short_url,json=shortUrl,proto3" json:"short_url,omitempty"`
-	CanonicalUrl         string   `protobuf:"bytes,4,opt,name=canonical_url,json=canonicalUrl,proto3" json:"canonical_url,omitempty"`
-	IsControlling        bool     `protobuf:"varint,5,opt,name=is_controlling,json=isControlling,proto3" json:"is_controlling,omitempty"`
-	TakeOverHeight       uint32   `protobuf:"varint,6,opt,name=take_over_height,json=takeOverHeight,proto3" json:"take_over_height,omitempty"`
-	CreationHeight       uint32   `protobuf:"varint,7,opt,name=creation_height,json=creationHeight,proto3" json:"creation_height,omitempty"`
-	ActivationHeight     uint32   `protobuf:"varint,8,opt,name=activation_height,json=activationHeight,proto3" json:"activation_height,omitempty"`
-	ExpirationHeight     uint32   `protobuf:"varint,9,opt,name=expiration_height,json=expirationHeight,proto3" json:"expiration_height,omitempty"`
-	ClaimsInChannel      uint32   `protobuf:"varint,10,opt,name=claims_in_channel,json=claimsInChannel,proto3" json:"claims_in_channel,omitempty"`
-	Reposted             uint32   `protobuf:"varint,11,opt,name=reposted,proto3" json:"reposted,omitempty"`
-	EffectiveAmount      uint64   `protobuf:"varint,20,opt,name=effective_amount,json=effectiveAmount,proto3" json:"effective_amount,omitempty"`
-	SupportAmount        uint64   `protobuf:"varint,21,opt,name=support_amount,json=supportAmount,proto3" json:"support_amount,omitempty"`
-	TrendingGroup        uint32   `protobuf:"varint,22,opt,name=trending_group,json=trendingGroup,proto3" json:"trending_group,omitempty"`
-	TrendingMixed        float32  `protobuf:"fixed32,23,opt,name=trending_mixed,json=trendingMixed,proto3" json:"trending_mixed,omitempty"`
-	TrendingLocal        float32  `protobuf:"fixed32,24,opt,name=trending_local,json=trendingLocal,proto3" json:"trending_local,omitempty"`
-	TrendingGlobal       float32  `protobuf:"fixed32,25,opt,name=trending_global,json=trendingGlobal,proto3" json:"trending_global,omitempty"`
+	Channel              *Output  `protobuf:"bytes,1,opt,name=channel,proto3" json:"channel"`
+	Repost               *Output  `protobuf:"bytes,2,opt,name=repost,proto3" json:"repost"`
+	ShortUrl             string   `protobuf:"bytes,3,opt,name=short_url,json=shortUrl,proto3" json:"short_url"`
+	CanonicalUrl         string   `protobuf:"bytes,4,opt,name=canonical_url,json=canonicalUrl,proto3" json:"canonical_url"`
+	IsControlling        bool     `protobuf:"varint,5,opt,name=is_controlling,json=isControlling,proto3" json:"is_controlling"`
+	TakeOverHeight       uint32   `protobuf:"varint,6,opt,name=take_over_height,json=takeOverHeight,proto3" json:"take_over_height"`
+	CreationHeight       uint32   `protobuf:"varint,7,opt,name=creation_height,json=creationHeight,proto3" json:"creation_height"`
+	ActivationHeight     uint32   `protobuf:"varint,8,opt,name=activation_height,json=activationHeight,proto3" json:"activation_height"`
+	ExpirationHeight     uint32   `protobuf:"varint,9,opt,name=expiration_height,json=expirationHeight,proto3" json:"expiration_height"`
+	ClaimsInChannel      uint32   `protobuf:"varint,10,opt,name=claims_in_channel,json=claimsInChannel,proto3" json:"claims_in_channel"`
+	Reposted             uint32   `protobuf:"varint,11,opt,name=reposted,proto3" json:"reposted"`
+	EffectiveAmount      uint64   `protobuf:"varint,20,opt,name=effective_amount,json=effectiveAmount,proto3" json:"effective_amount"`
+	SupportAmount        uint64   `protobuf:"varint,21,opt,name=support_amount,json=supportAmount,proto3" json:"support_amount"`
+	TrendingGroup        uint32   `protobuf:"varint,22,opt,name=trending_group,json=trendingGroup,proto3" json:"trending_group"`
+	TrendingMixed        float32  `protobuf:"fixed32,23,opt,name=trending_mixed,json=trendingMixed,proto3" json:"trending_mixed"`
+	TrendingLocal        float32  `protobuf:"fixed32,24,opt,name=trending_local,json=trendingLocal,proto3" json:"trending_local"`
+	TrendingGlobal       float32  `protobuf:"fixed32,25,opt,name=trending_global,json=trendingGlobal,proto3" json:"trending_global"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -383,8 +383,8 @@ func (m *ClaimMeta) GetTrendingGlobal() float32 {
 }
 
 type Error struct {
-	Code                 Error_Code `protobuf:"varint,1,opt,name=code,proto3,enum=pb.Error_Code" json:"code,omitempty"`
-	Text                 string     `protobuf:"bytes,2,opt,name=text,proto3" json:"text,omitempty"`
+	Code                 Error_Code `protobuf:"varint,1,opt,name=code,proto3,enum=pb.Error_Code" json:"code"`
+	Text                 string     `protobuf:"bytes,2,opt,name=text,proto3" json:"text"`
 	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
 	XXX_unrecognized     []byte     `json:"-"`
 	XXX_sizecache        int32      `json:"-"`

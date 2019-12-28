@@ -2928,12 +2928,12 @@ type Claim struct {
 	//	*Claim_Collection
 	//	*Claim_Repost
 	Type                 isClaim_Type `protobuf_oneof:"type"`
-	Title                string       `protobuf:"bytes,8,opt,name=title,proto3" json:"title,omitempty"`
-	Description          string       `protobuf:"bytes,9,opt,name=description,proto3" json:"description,omitempty"`
-	Thumbnail            *Source      `protobuf:"bytes,10,opt,name=thumbnail,proto3" json:"thumbnail,omitempty"`
-	Tags                 []string     `protobuf:"bytes,11,rep,name=tags,proto3" json:"tags,omitempty"`
-	Languages            []*Language  `protobuf:"bytes,12,rep,name=languages,proto3" json:"languages,omitempty"`
-	Locations            []*Location  `protobuf:"bytes,13,rep,name=locations,proto3" json:"locations,omitempty"`
+	Title                string       `protobuf:"bytes,8,opt,name=title,proto3" json:"title"`
+	Description          string       `protobuf:"bytes,9,opt,name=description,proto3" json:"description"`
+	Thumbnail            *Source      `protobuf:"bytes,10,opt,name=thumbnail,proto3" json:"thumbnail"`
+	Tags                 []string     `protobuf:"bytes,11,rep,name=tags,proto3" json:"tags"`
+	Languages            []*Language  `protobuf:"bytes,12,rep,name=languages,proto3" json:"languages"`
+	Locations            []*Location  `protobuf:"bytes,13,rep,name=locations,proto3" json:"locations"`
 	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
 	XXX_unrecognized     []byte       `json:"-"`
 	XXX_sizecache        int32        `json:"-"`
@@ -3080,12 +3080,12 @@ func (*Claim) XXX_OneofWrappers() []interface{} {
 }
 
 type Stream struct {
-	Source      *Source `protobuf:"bytes,1,opt,name=source,proto3" json:"source,omitempty"`
-	Author      string  `protobuf:"bytes,2,opt,name=author,proto3" json:"author,omitempty"`
-	License     string  `protobuf:"bytes,3,opt,name=license,proto3" json:"license,omitempty"`
-	LicenseUrl  string  `protobuf:"bytes,4,opt,name=license_url,json=licenseUrl,proto3" json:"license_url,omitempty"`
-	ReleaseTime int64   `protobuf:"varint,5,opt,name=release_time,json=releaseTime,proto3" json:"release_time,omitempty"`
-	Fee         *Fee    `protobuf:"bytes,6,opt,name=fee,proto3" json:"fee,omitempty"`
+	Source      *Source `protobuf:"bytes,1,opt,name=source,proto3" json:"source"`
+	Author      string  `protobuf:"bytes,2,opt,name=author,proto3" json:"author"`
+	License     string  `protobuf:"bytes,3,opt,name=license,proto3" json:"license"`
+	LicenseUrl  string  `protobuf:"bytes,4,opt,name=license_url,json=licenseUrl,proto3" json:"license_url"`
+	ReleaseTime int64   `protobuf:"varint,5,opt,name=release_time,json=releaseTime,proto3" json:"release_time"`
+	Fee         *Fee    `protobuf:"bytes,6,opt,name=fee,proto3" json:"fee"`
 	// Types that are valid to be assigned to Type:
 	//	*Stream_Image
 	//	*Stream_Video
@@ -3238,11 +3238,11 @@ func (*Stream) XXX_OneofWrappers() []interface{} {
 }
 
 type Channel struct {
-	PublicKey            []byte     `protobuf:"bytes,1,opt,name=public_key,json=publicKey,proto3" json:"public_key,omitempty"`
-	Email                string     `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
-	WebsiteUrl           string     `protobuf:"bytes,3,opt,name=website_url,json=websiteUrl,proto3" json:"website_url,omitempty"`
-	Cover                *Source    `protobuf:"bytes,4,opt,name=cover,proto3" json:"cover,omitempty"`
-	Featured             *ClaimList `protobuf:"bytes,5,opt,name=featured,proto3" json:"featured,omitempty"`
+	PublicKey            []byte     `protobuf:"bytes,1,opt,name=public_key,json=publicKey,proto3" json:"public_key"`
+	Email                string     `protobuf:"bytes,2,opt,name=email,proto3" json:"email"`
+	WebsiteUrl           string     `protobuf:"bytes,3,opt,name=website_url,json=websiteUrl,proto3" json:"website_url"`
+	Cover                *Source    `protobuf:"bytes,4,opt,name=cover,proto3" json:"cover"`
+	Featured             *ClaimList `protobuf:"bytes,5,opt,name=featured,proto3" json:"featured"`
 	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
 	XXX_unrecognized     []byte     `json:"-"`
 	XXX_sizecache        int32      `json:"-"`
@@ -3309,7 +3309,7 @@ func (m *Channel) GetFeatured() *ClaimList {
 }
 
 type ClaimReference struct {
-	ClaimHash            []byte   `protobuf:"bytes,1,opt,name=claim_hash,json=claimHash,proto3" json:"claim_hash,omitempty"`
+	ClaimHash            []byte   `protobuf:"bytes,1,opt,name=claim_hash,json=claimHash,proto3" json:"claim_hash"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -3348,8 +3348,8 @@ func (m *ClaimReference) GetClaimHash() []byte {
 }
 
 type ClaimList struct {
-	ListType             ClaimList_ListType `protobuf:"varint,1,opt,name=list_type,json=listType,proto3,enum=pb.ClaimList_ListType" json:"list_type,omitempty"`
-	ClaimReferences      []*ClaimReference  `protobuf:"bytes,2,rep,name=claim_references,json=claimReferences,proto3" json:"claim_references,omitempty"`
+	ListType             ClaimList_ListType `protobuf:"varint,1,opt,name=list_type,json=listType,proto3,enum=pb.ClaimList_ListType" json:"list_type"`
+	ClaimReferences      []*ClaimReference  `protobuf:"bytes,2,rep,name=claim_references,json=claimReferences,proto3" json:"claim_references"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
 	XXX_unrecognized     []byte             `json:"-"`
 	XXX_sizecache        int32              `json:"-"`
@@ -3395,13 +3395,13 @@ func (m *ClaimList) GetClaimReferences() []*ClaimReference {
 }
 
 type Source struct {
-	Hash                 []byte   `protobuf:"bytes,1,opt,name=hash,proto3" json:"hash,omitempty"`
-	Name                 string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Size                 uint64   `protobuf:"varint,3,opt,name=size,proto3" json:"size,omitempty"`
-	MediaType            string   `protobuf:"bytes,4,opt,name=media_type,json=mediaType,proto3" json:"media_type,omitempty"`
-	Url                  string   `protobuf:"bytes,5,opt,name=url,proto3" json:"url,omitempty"`
-	SdHash               []byte   `protobuf:"bytes,6,opt,name=sd_hash,json=sdHash,proto3" json:"sd_hash,omitempty"`
-	BtInfohash           []byte   `protobuf:"bytes,7,opt,name=bt_infohash,json=btInfohash,proto3" json:"bt_infohash,omitempty"`
+	Hash                 []byte   `protobuf:"bytes,1,opt,name=hash,proto3" json:"hash"`
+	Name                 string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name"`
+	Size                 uint64   `protobuf:"varint,3,opt,name=size,proto3" json:"size"`
+	MediaType            string   `protobuf:"bytes,4,opt,name=media_type,json=mediaType,proto3" json:"media_type"`
+	Url                  string   `protobuf:"bytes,5,opt,name=url,proto3" json:"url"`
+	SdHash               []byte   `protobuf:"bytes,6,opt,name=sd_hash,json=sdHash,proto3" json:"sd_hash"`
+	BtInfohash           []byte   `protobuf:"bytes,7,opt,name=bt_infohash,json=btInfohash,proto3" json:"bt_infohash"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -3482,9 +3482,9 @@ func (m *Source) GetBtInfohash() []byte {
 }
 
 type Fee struct {
-	Currency             Fee_Currency `protobuf:"varint,1,opt,name=currency,proto3,enum=pb.Fee_Currency" json:"currency,omitempty"`
-	Address              []byte       `protobuf:"bytes,2,opt,name=address,proto3" json:"address,omitempty"`
-	Amount               uint64       `protobuf:"varint,3,opt,name=amount,proto3" json:"amount,omitempty"`
+	Currency             Fee_Currency `protobuf:"varint,1,opt,name=currency,proto3,enum=pb.Fee_Currency" json:"currency"`
+	Address              []byte       `protobuf:"bytes,2,opt,name=address,proto3" json:"address"`
+	Amount               uint64       `protobuf:"varint,3,opt,name=amount,proto3" json:"amount"`
 	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
 	XXX_unrecognized     []byte       `json:"-"`
 	XXX_sizecache        int32        `json:"-"`
@@ -3537,8 +3537,8 @@ func (m *Fee) GetAmount() uint64 {
 }
 
 type Image struct {
-	Width                uint32   `protobuf:"varint,1,opt,name=width,proto3" json:"width,omitempty"`
-	Height               uint32   `protobuf:"varint,2,opt,name=height,proto3" json:"height,omitempty"`
+	Width                uint32   `protobuf:"varint,1,opt,name=width,proto3" json:"width"`
+	Height               uint32   `protobuf:"varint,2,opt,name=height,proto3" json:"height"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -3584,10 +3584,10 @@ func (m *Image) GetHeight() uint32 {
 }
 
 type Video struct {
-	Width                uint32   `protobuf:"varint,1,opt,name=width,proto3" json:"width,omitempty"`
-	Height               uint32   `protobuf:"varint,2,opt,name=height,proto3" json:"height,omitempty"`
-	Duration             uint32   `protobuf:"varint,3,opt,name=duration,proto3" json:"duration,omitempty"`
-	Audio                *Audio   `protobuf:"bytes,15,opt,name=audio,proto3" json:"audio,omitempty"`
+	Width                uint32   `protobuf:"varint,1,opt,name=width,proto3" json:"width"`
+	Height               uint32   `protobuf:"varint,2,opt,name=height,proto3" json:"height"`
+	Duration             uint32   `protobuf:"varint,3,opt,name=duration,proto3" json:"duration"`
+	Audio                *Audio   `protobuf:"bytes,15,opt,name=audio,proto3" json:"audio"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -3647,7 +3647,7 @@ func (m *Video) GetAudio() *Audio {
 }
 
 type Audio struct {
-	Duration             uint32   `protobuf:"varint,1,opt,name=duration,proto3" json:"duration,omitempty"`
+	Duration             uint32   `protobuf:"varint,1,opt,name=duration,proto3" json:"duration"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -3686,7 +3686,7 @@ func (m *Audio) GetDuration() uint32 {
 }
 
 type Software struct {
-	Os                   string   `protobuf:"bytes,1,opt,name=os,proto3" json:"os,omitempty"`
+	Os                   string   `protobuf:"bytes,1,opt,name=os,proto3" json:"os"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -3726,9 +3726,9 @@ func (m *Software) GetOs() string {
 
 // RFC 5646
 type Language struct {
-	Language             Language_Language `protobuf:"varint,1,opt,name=language,proto3,enum=pb.Language_Language" json:"language,omitempty"`
-	Script               Language_Script   `protobuf:"varint,2,opt,name=script,proto3,enum=pb.Language_Script" json:"script,omitempty"`
-	Region               Location_Country  `protobuf:"varint,3,opt,name=region,proto3,enum=pb.Location_Country" json:"region,omitempty"`
+	Language             Language_Language `protobuf:"varint,1,opt,name=language,proto3,enum=pb.Language_Language" json:"language"`
+	Script               Language_Script   `protobuf:"varint,2,opt,name=script,proto3,enum=pb.Language_Script" json:"script"`
+	Region               Location_Country  `protobuf:"varint,3,opt,name=region,proto3,enum=pb.Location_Country" json:"region"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
 	XXX_unrecognized     []byte            `json:"-"`
 	XXX_sizecache        int32             `json:"-"`
@@ -3781,12 +3781,12 @@ func (m *Language) GetRegion() Location_Country {
 }
 
 type Location struct {
-	Country              Location_Country `protobuf:"varint,1,opt,name=country,proto3,enum=pb.Location_Country" json:"country,omitempty"`
-	State                string           `protobuf:"bytes,2,opt,name=state,proto3" json:"state,omitempty"`
-	City                 string           `protobuf:"bytes,3,opt,name=city,proto3" json:"city,omitempty"`
-	Code                 string           `protobuf:"bytes,4,opt,name=code,proto3" json:"code,omitempty"`
-	Latitude             int32            `protobuf:"zigzag32,5,opt,name=latitude,proto3" json:"latitude,omitempty"`
-	Longitude            int32            `protobuf:"zigzag32,6,opt,name=longitude,proto3" json:"longitude,omitempty"`
+	Country              Location_Country `protobuf:"varint,1,opt,name=country,proto3,enum=pb.Location_Country" json:"country"`
+	State                string           `protobuf:"bytes,2,opt,name=state,proto3" json:"state"`
+	City                 string           `protobuf:"bytes,3,opt,name=city,proto3" json:"city"`
+	Code                 string           `protobuf:"bytes,4,opt,name=code,proto3" json:"code"`
+	Latitude             int32            `protobuf:"zigzag32,5,opt,name=latitude,proto3" json:"latitude"`
+	Longitude            int32            `protobuf:"zigzag32,6,opt,name=longitude,proto3" json:"longitude"`
 	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
 	XXX_unrecognized     []byte           `json:"-"`
 	XXX_sizecache        int32            `json:"-"`

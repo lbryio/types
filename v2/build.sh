@@ -29,3 +29,5 @@ find $DIR/go $DIR/python $DIR/js $DIR/cpp -type f -delete
 
 
 protoc --proto_path="$DIR/proto" --python_out="$DIR/python" --go_out="$DIR/go" --js_out="import_style=commonjs,binary:$DIR/js" --cpp_out="$DIR/cpp" $DIR/proto/*.proto
+
+ls "$DIR"/go/*.pb.go | xargs -n1 -IX bash -c "sed -e 's/,omitempty//' X > X.tmp && mv X{.tmp,}"

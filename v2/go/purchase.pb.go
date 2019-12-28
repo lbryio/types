@@ -21,7 +21,7 @@ var _ = math.Inf
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
 type Purchase struct {
-	ClaimHash            []byte   `protobuf:"bytes,1,opt,name=claim_hash,json=claimHash,proto3" json:"claim_hash,omitempty"`
+	ClaimHash            []byte   `protobuf:"bytes,1,opt,name=claim_hash,json=claimHash,proto3" json:"claim_hash"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
