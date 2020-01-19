@@ -7,6 +7,8 @@ message Outputs {
   repeated Output extra_txos = 2;
   uint32 total = 3;
   uint32 offset = 4;
+  repeated Blocked blocked = 5;
+  uint32 blocked_total = 6;
 }
 
 message Output {
@@ -45,7 +47,18 @@ message Error {
     UNKNOWN_CODE = 0;
     NOT_FOUND = 1;
     INVALID = 2;
+    BLOCKED = 3;
   }
   Code code = 1;
   string text = 2;
+  Blocked blocked = 3;
+}
+
+message Blocked {
+  uint32 count = 1;
+  oneof reason {
+    bytes reposted_in_channel = 2;
+    bytes in_channel = 3;
+    string has_tag = 4;
+  }
 }
