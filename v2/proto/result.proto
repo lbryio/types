@@ -56,9 +56,5 @@ message Error {
 
 message Blocked {
   uint32 count = 1;
-  oneof reason {
-    bytes reposted_in_channel = 2;
-    bytes in_channel = 3;
-    string has_tag = 4;
-  }
+  bytes channel_hash = 2;
 }
