@@ -56,5 +56,5 @@ message Error {
 
 message Blocked {
   uint32 count = 1;
-  bytes channel_hash = 2;
+  Output channel = 2;
 }
