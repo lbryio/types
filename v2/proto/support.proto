@@ -3,12 +3,16 @@ syntax = "proto3";
 package pb;
 
 message Support {
-    oneof type {
-        Edit edit = 1;
-        Comment comment = 2;
-   }
+  string emoji = 1;
+  /*
+  oneof type {
+    Edit edit = 1;
+    Comment comment = 2;
+  }
+  */
 }
 
+/*
 message Edit {
     string key = 1;
     string value = 2;
@@ -17,3 +21,4 @@ message Edit {
 message Comment {
     string body = 1;
 }
+*/
