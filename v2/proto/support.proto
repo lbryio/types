@@ -6,7 +6,9 @@ message Support {
   string emoji = 1;
   string comment = 2;
   /*
-  Edit edit = 1;
+  oneof type {
+    Edit edit = 1;
+  }
   */
 }
 
