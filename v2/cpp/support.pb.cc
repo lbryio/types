@@ -14,26 +14,23 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace pb {
-class SupportDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Support> _instance;
-} _Support_default_instance_;
+constexpr Support::Support(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : emoji_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , comment_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct SupportDefaultTypeInternal {
+  constexpr SupportDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SupportDefaultTypeInternal() {}
+  union {
+    Support _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SupportDefaultTypeInternal _Support_default_instance_;
 }  // namespace pb
-static void InitDefaultsscc_info_Support_support_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::pb::_Support_default_instance_;
-    new (ptr) ::pb::Support();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::pb::Support::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Support_support_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Support_support_2eproto}, {}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_support_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_support_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_support_2eproto = nullptr;
@@ -45,6 +42,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_support_2eproto::offsets[] PRO
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::pb::Support, emoji_),
+  PROTOBUF_FIELD_OFFSET(::pb::Support, comment_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::pb::Support)},
@@ -55,30 +53,29 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_support_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\rsupport.proto\022\002pb\"\030\n\007Support\022\r\n\005emoji\030"
-  "\001 \001(\tb\006proto3"
+  "\n\rsupport.proto\022\002pb\")\n\007Support\022\r\n\005emoji\030"
+  "\001 \001(\t\022\017\n\007comment\030\002 \001(\tB\037Z\035github.com/lbr"
+  "yio/types/go/pbb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_support_2eproto_deps[1] = {
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_support_2eproto_sccs[1] = {
-  &scc_info_Support_support_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_support_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_support_2eproto = {
-  false, false, descriptor_table_protodef_support_2eproto, "support.proto", 53,
-  &descriptor_table_support_2eproto_once, descriptor_table_support_2eproto_sccs, descriptor_table_support_2eproto_deps, 1, 0,
+  false, false, 103, descriptor_table_protodef_support_2eproto, "support.proto", 
+  &descriptor_table_support_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_support_2eproto::offsets,
-  file_level_metadata_support_2eproto, 1, file_level_enum_descriptors_support_2eproto, file_level_service_descriptors_support_2eproto,
+  file_level_metadata_support_2eproto, file_level_enum_descriptors_support_2eproto, file_level_service_descriptors_support_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
+descriptor_table_support_2eproto_metadata_getter(int index) {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_support_2eproto);
+  return descriptor_table_support_2eproto.file_level_metadata[index];
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_support_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_support_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_support_2eproto(&descriptor_table_support_2eproto);
 namespace pb {
 
 // ===================================================================
 
-void Support::InitAsDefaultInstance() {
-}
 class Support::_Internal {
  public:
 };
@@ -94,15 +91,20 @@ Support::Support(const Support& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   emoji_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_emoji().empty()) {
-    emoji_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_emoji(),
+    emoji_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_emoji(), 
+      GetArena());
+  }
+  comment_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_comment().empty()) {
+    comment_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_comment(), 
       GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:pb.Support)
 }
 
 void Support::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Support_support_2eproto.base);
-  emoji_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+emoji_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+comment_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Support::~Support() {
@@ -114,6 +116,7 @@ Support::~Support() {
 void Support::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   emoji_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  comment_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Support::ArenaDtor(void* object) {
@@ -125,11 +128,6 @@ void Support::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Support::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Support& Support::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Support_support_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Support::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.Support)
@@ -137,13 +135,13 @@ void Support::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  emoji_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  emoji_.ClearToEmpty();
+  comment_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Support::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -155,6 +153,15 @@ const char* Support::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           auto str = _internal_mutable_emoji();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.Support.emoji"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string comment = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_comment();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.Support.comment"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -196,6 +203,16 @@ failure:
         1, this->_internal_emoji(), target);
   }
 
+  // string comment = 2;
+  if (this->comment().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_comment().data(), static_cast<int>(this->_internal_comment().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pb.Support.comment");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_comment(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -217,6 +234,13 @@ size_t Support::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_emoji());
+  }
+
+  // string comment = 2;
+  if (this->comment().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_comment());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -253,6 +277,9 @@ void Support::MergeFrom(const Support& from) {
   if (from.emoji().size() > 0) {
     _internal_set_emoji(from._internal_emoji());
   }
+  if (from.comment().size() > 0) {
+    _internal_set_comment(from._internal_comment());
+  }
 }
 
 void Support::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -277,6 +304,7 @@ void Support::InternalSwap(Support* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   emoji_.Swap(&other->emoji_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  comment_.Swap(&other->comment_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Support::GetMetadata() const {

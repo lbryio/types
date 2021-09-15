@@ -2,11 +2,14 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
@@ -867,10 +870,7 @@ proto.pb.ClaimMeta.toObject = function(includeInstance, msg) {
     reposted: jspb.Message.getFieldWithDefault(msg, 11, 0),
     effectiveAmount: jspb.Message.getFieldWithDefault(msg, 20, 0),
     supportAmount: jspb.Message.getFieldWithDefault(msg, 21, 0),
-    trendingGroup: jspb.Message.getFieldWithDefault(msg, 22, 0),
-    trendingMixed: jspb.Message.getFloatingPointFieldWithDefault(msg, 23, 0.0),
-    trendingLocal: jspb.Message.getFloatingPointFieldWithDefault(msg, 24, 0.0),
-    trendingGlobal: jspb.Message.getFloatingPointFieldWithDefault(msg, 25, 0.0)
+    trendingScore: jspb.Message.getFloatingPointFieldWithDefault(msg, 22, 0.0)
   };
 
   if (includeInstance) {
@@ -962,20 +962,8 @@ proto.pb.ClaimMeta.deserializeBinaryFromReader = function(msg, reader) {
       msg.setSupportAmount(value);
       break;
     case 22:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setTrendingGroup(value);
-      break;
-    case 23:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setTrendingMixed(value);
-      break;
-    case 24:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setTrendingLocal(value);
-      break;
-    case 25:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setTrendingGlobal(value);
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setTrendingScore(value);
       break;
     default:
       reader.skipField();
@@ -1099,31 +1087,10 @@ proto.pb.ClaimMeta.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getTrendingGroup();
-  if (f !== 0) {
-    writer.writeUint32(
+  f = message.getTrendingScore();
+  if (f !== 0.0) {
+    writer.writeDouble(
       22,
-      f
-    );
-  }
-  f = message.getTrendingMixed();
-  if (f !== 0.0) {
-    writer.writeFloat(
-      23,
-      f
-    );
-  }
-  f = message.getTrendingLocal();
-  if (f !== 0.0) {
-    writer.writeFloat(
-      24,
-      f
-    );
-  }
-  f = message.getTrendingGlobal();
-  if (f !== 0.0) {
-    writer.writeFloat(
-      25,
       f
     );
   }
@@ -1403,11 +1370,11 @@ proto.pb.ClaimMeta.prototype.setSupportAmount = function(value) {
 
 
 /**
- * optional uint32 trending_group = 22;
+ * optional double trending_score = 22;
  * @return {number}
  */
-proto.pb.ClaimMeta.prototype.getTrendingGroup = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 22, 0));
+proto.pb.ClaimMeta.prototype.getTrendingScore = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 22, 0.0));
 };
 
 
@@ -1415,62 +1382,8 @@ proto.pb.ClaimMeta.prototype.getTrendingGroup = function() {
  * @param {number} value
  * @return {!proto.pb.ClaimMeta} returns this
  */
-proto.pb.ClaimMeta.prototype.setTrendingGroup = function(value) {
-  return jspb.Message.setProto3IntField(this, 22, value);
-};
-
-
-/**
- * optional float trending_mixed = 23;
- * @return {number}
- */
-proto.pb.ClaimMeta.prototype.getTrendingMixed = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 23, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.pb.ClaimMeta} returns this
- */
-proto.pb.ClaimMeta.prototype.setTrendingMixed = function(value) {
-  return jspb.Message.setProto3FloatField(this, 23, value);
-};
-
-
-/**
- * optional float trending_local = 24;
- * @return {number}
- */
-proto.pb.ClaimMeta.prototype.getTrendingLocal = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 24, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.pb.ClaimMeta} returns this
- */
-proto.pb.ClaimMeta.prototype.setTrendingLocal = function(value) {
-  return jspb.Message.setProto3FloatField(this, 24, value);
-};
-
-
-/**
- * optional float trending_global = 25;
- * @return {number}
- */
-proto.pb.ClaimMeta.prototype.getTrendingGlobal = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 25, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.pb.ClaimMeta} returns this
- */
-proto.pb.ClaimMeta.prototype.setTrendingGlobal = function(value) {
-  return jspb.Message.setProto3FloatField(this, 25, value);
+proto.pb.ClaimMeta.prototype.setTrendingScore = function(value) {
+  return jspb.Message.setProto3FloatField(this, 22, value);
 };
 
 

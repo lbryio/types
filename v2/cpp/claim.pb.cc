@@ -14,279 +14,208 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_claim_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Audio_claim_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_claim_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Channel_claim_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_claim_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ClaimList_claim_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_claim_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ClaimReference_claim_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_claim_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Fee_claim_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_claim_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Image_claim_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_claim_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Language_claim_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_claim_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Location_claim_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_claim_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Software_claim_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_claim_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Source_claim_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_claim_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<6> scc_info_Stream_claim_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_claim_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Video_claim_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace pb {
-class ClaimDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Claim> _instance;
-  const ::pb::Stream* stream_;
-  const ::pb::Channel* channel_;
-  const ::pb::ClaimList* collection_;
-  const ::pb::ClaimReference* repost_;
-} _Claim_default_instance_;
-class StreamDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Stream> _instance;
-  const ::pb::Image* image_;
-  const ::pb::Video* video_;
-  const ::pb::Audio* audio_;
-  const ::pb::Software* software_;
-} _Stream_default_instance_;
-class ChannelDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Channel> _instance;
-} _Channel_default_instance_;
-class ClaimReferenceDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ClaimReference> _instance;
-} _ClaimReference_default_instance_;
-class ClaimListDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ClaimList> _instance;
-} _ClaimList_default_instance_;
-class SourceDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Source> _instance;
-} _Source_default_instance_;
-class FeeDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Fee> _instance;
-} _Fee_default_instance_;
-class ImageDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Image> _instance;
-} _Image_default_instance_;
-class VideoDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Video> _instance;
-} _Video_default_instance_;
-class AudioDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Audio> _instance;
-} _Audio_default_instance_;
-class SoftwareDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Software> _instance;
-} _Software_default_instance_;
-class LanguageDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Language> _instance;
-} _Language_default_instance_;
-class LocationDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Location> _instance;
-} _Location_default_instance_;
+constexpr Claim::Claim(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : tags_()
+  , languages_()
+  , locations_()
+  , title_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , thumbnail_(nullptr)
+  , _oneof_case_{}{}
+struct ClaimDefaultTypeInternal {
+  constexpr ClaimDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ClaimDefaultTypeInternal() {}
+  union {
+    Claim _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ClaimDefaultTypeInternal _Claim_default_instance_;
+constexpr Stream::Stream(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : author_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , license_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , license_url_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , source_(nullptr)
+  , fee_(nullptr)
+  , release_time_(PROTOBUF_LONGLONG(0))
+  , _oneof_case_{}{}
+struct StreamDefaultTypeInternal {
+  constexpr StreamDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~StreamDefaultTypeInternal() {}
+  union {
+    Stream _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StreamDefaultTypeInternal _Stream_default_instance_;
+constexpr Channel::Channel(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : public_key_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , website_url_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , cover_(nullptr)
+  , featured_(nullptr){}
+struct ChannelDefaultTypeInternal {
+  constexpr ChannelDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ChannelDefaultTypeInternal() {}
+  union {
+    Channel _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ChannelDefaultTypeInternal _Channel_default_instance_;
+constexpr ClaimReference::ClaimReference(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : claim_hash_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ClaimReferenceDefaultTypeInternal {
+  constexpr ClaimReferenceDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ClaimReferenceDefaultTypeInternal() {}
+  union {
+    ClaimReference _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ClaimReferenceDefaultTypeInternal _ClaimReference_default_instance_;
+constexpr ClaimList::ClaimList(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : claim_references_()
+  , list_type_(0)
+{}
+struct ClaimListDefaultTypeInternal {
+  constexpr ClaimListDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ClaimListDefaultTypeInternal() {}
+  union {
+    ClaimList _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ClaimListDefaultTypeInternal _ClaimList_default_instance_;
+constexpr Source::Source(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : hash_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , media_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , url_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , sd_hash_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , bt_infohash_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , size_(PROTOBUF_ULONGLONG(0)){}
+struct SourceDefaultTypeInternal {
+  constexpr SourceDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SourceDefaultTypeInternal() {}
+  union {
+    Source _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SourceDefaultTypeInternal _Source_default_instance_;
+constexpr Fee::Fee(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : address_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , amount_(PROTOBUF_ULONGLONG(0))
+  , currency_(0)
+{}
+struct FeeDefaultTypeInternal {
+  constexpr FeeDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~FeeDefaultTypeInternal() {}
+  union {
+    Fee _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT FeeDefaultTypeInternal _Fee_default_instance_;
+constexpr Image::Image(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : width_(0u)
+  , height_(0u){}
+struct ImageDefaultTypeInternal {
+  constexpr ImageDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ImageDefaultTypeInternal() {}
+  union {
+    Image _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ImageDefaultTypeInternal _Image_default_instance_;
+constexpr Video::Video(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : audio_(nullptr)
+  , width_(0u)
+  , height_(0u)
+  , duration_(0u){}
+struct VideoDefaultTypeInternal {
+  constexpr VideoDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~VideoDefaultTypeInternal() {}
+  union {
+    Video _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT VideoDefaultTypeInternal _Video_default_instance_;
+constexpr Audio::Audio(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : duration_(0u){}
+struct AudioDefaultTypeInternal {
+  constexpr AudioDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AudioDefaultTypeInternal() {}
+  union {
+    Audio _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AudioDefaultTypeInternal _Audio_default_instance_;
+constexpr Software::Software(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : os_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct SoftwareDefaultTypeInternal {
+  constexpr SoftwareDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SoftwareDefaultTypeInternal() {}
+  union {
+    Software _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SoftwareDefaultTypeInternal _Software_default_instance_;
+constexpr Language::Language(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : language_(0)
+
+  , script_(0)
+
+  , region_(0)
+{}
+struct LanguageDefaultTypeInternal {
+  constexpr LanguageDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~LanguageDefaultTypeInternal() {}
+  union {
+    Language _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT LanguageDefaultTypeInternal _Language_default_instance_;
+constexpr Location::Location(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : state_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , city_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , country_(0)
+
+  , latitude_(0)
+  , longitude_(0){}
+struct LocationDefaultTypeInternal {
+  constexpr LocationDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~LocationDefaultTypeInternal() {}
+  union {
+    Location _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT LocationDefaultTypeInternal _Location_default_instance_;
 }  // namespace pb
-static void InitDefaultsscc_info_Audio_claim_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::pb::_Audio_default_instance_;
-    new (ptr) ::pb::Audio();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::pb::Audio::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Audio_claim_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Audio_claim_2eproto}, {}};
-
-static void InitDefaultsscc_info_Channel_claim_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::pb::_Channel_default_instance_;
-    new (ptr) ::pb::Channel();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::pb::Channel::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Channel_claim_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_Channel_claim_2eproto}, {
-      &scc_info_Source_claim_2eproto.base,
-      &scc_info_ClaimList_claim_2eproto.base,}};
-
-static void InitDefaultsscc_info_Claim_claim_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::pb::_Claim_default_instance_;
-    new (ptr) ::pb::Claim();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::pb::Claim::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<7> scc_info_Claim_claim_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 7, 0, InitDefaultsscc_info_Claim_claim_2eproto}, {
-      &scc_info_Stream_claim_2eproto.base,
-      &scc_info_Channel_claim_2eproto.base,
-      &scc_info_ClaimList_claim_2eproto.base,
-      &scc_info_ClaimReference_claim_2eproto.base,
-      &scc_info_Source_claim_2eproto.base,
-      &scc_info_Language_claim_2eproto.base,
-      &scc_info_Location_claim_2eproto.base,}};
-
-static void InitDefaultsscc_info_ClaimList_claim_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::pb::_ClaimList_default_instance_;
-    new (ptr) ::pb::ClaimList();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::pb::ClaimList::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ClaimList_claim_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ClaimList_claim_2eproto}, {
-      &scc_info_ClaimReference_claim_2eproto.base,}};
-
-static void InitDefaultsscc_info_ClaimReference_claim_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::pb::_ClaimReference_default_instance_;
-    new (ptr) ::pb::ClaimReference();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::pb::ClaimReference::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ClaimReference_claim_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ClaimReference_claim_2eproto}, {}};
-
-static void InitDefaultsscc_info_Fee_claim_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::pb::_Fee_default_instance_;
-    new (ptr) ::pb::Fee();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::pb::Fee::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Fee_claim_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Fee_claim_2eproto}, {}};
-
-static void InitDefaultsscc_info_Image_claim_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::pb::_Image_default_instance_;
-    new (ptr) ::pb::Image();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::pb::Image::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Image_claim_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Image_claim_2eproto}, {}};
-
-static void InitDefaultsscc_info_Language_claim_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::pb::_Language_default_instance_;
-    new (ptr) ::pb::Language();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::pb::Language::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Language_claim_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Language_claim_2eproto}, {}};
-
-static void InitDefaultsscc_info_Location_claim_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::pb::_Location_default_instance_;
-    new (ptr) ::pb::Location();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::pb::Location::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Location_claim_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Location_claim_2eproto}, {}};
-
-static void InitDefaultsscc_info_Software_claim_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::pb::_Software_default_instance_;
-    new (ptr) ::pb::Software();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::pb::Software::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Software_claim_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Software_claim_2eproto}, {}};
-
-static void InitDefaultsscc_info_Source_claim_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::pb::_Source_default_instance_;
-    new (ptr) ::pb::Source();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::pb::Source::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Source_claim_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Source_claim_2eproto}, {}};
-
-static void InitDefaultsscc_info_Stream_claim_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::pb::_Stream_default_instance_;
-    new (ptr) ::pb::Stream();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::pb::Stream::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<6> scc_info_Stream_claim_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 6, 0, InitDefaultsscc_info_Stream_claim_2eproto}, {
-      &scc_info_Source_claim_2eproto.base,
-      &scc_info_Fee_claim_2eproto.base,
-      &scc_info_Image_claim_2eproto.base,
-      &scc_info_Video_claim_2eproto.base,
-      &scc_info_Audio_claim_2eproto.base,
-      &scc_info_Software_claim_2eproto.base,}};
-
-static void InitDefaultsscc_info_Video_claim_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::pb::_Video_default_instance_;
-    new (ptr) ::pb::Video();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::pb::Video::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Video_claim_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Video_claim_2eproto}, {
-      &scc_info_Audio_claim_2eproto.base,}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_claim_2eproto[13];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_claim_2eproto[6];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_claim_2eproto = nullptr;
@@ -297,10 +226,10 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_claim_2eproto::offsets[] PROTO
   ~0u,  // no _extensions_
   PROTOBUF_FIELD_OFFSET(::pb::Claim, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
-  offsetof(::pb::ClaimDefaultTypeInternal, stream_),
-  offsetof(::pb::ClaimDefaultTypeInternal, channel_),
-  offsetof(::pb::ClaimDefaultTypeInternal, collection_),
-  offsetof(::pb::ClaimDefaultTypeInternal, repost_),
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::pb::Claim, title_),
   PROTOBUF_FIELD_OFFSET(::pb::Claim, description_),
   PROTOBUF_FIELD_OFFSET(::pb::Claim, thumbnail_),
@@ -319,10 +248,10 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_claim_2eproto::offsets[] PROTO
   PROTOBUF_FIELD_OFFSET(::pb::Stream, license_url_),
   PROTOBUF_FIELD_OFFSET(::pb::Stream, release_time_),
   PROTOBUF_FIELD_OFFSET(::pb::Stream, fee_),
-  offsetof(::pb::StreamDefaultTypeInternal, image_),
-  offsetof(::pb::StreamDefaultTypeInternal, video_),
-  offsetof(::pb::StreamDefaultTypeInternal, audio_),
-  offsetof(::pb::StreamDefaultTypeInternal, software_),
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::pb::Stream, type_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pb::Channel, _internal_metadata_),
@@ -712,35 +641,24 @@ const char descriptor_table_protodef_claim_2eproto[] PROTOBUF_SECTION_VARIABLE(p
   "\022\t\n\004R061\020\207\004\022\t\n\004R016\020\210\004\022\t\n\004R184\020\211\004\022\t\n\004R25"
   "8\020\212\004\022\t\n\004R570\020\213\004\022\t\n\004R612\020\214\004\022\t\n\004R882\020\215\004\022\t\n"
   "\004R772\020\216\004\022\t\n\004R776\020\217\004\022\t\n\004R798\020\220\004\022\t\n\004R876\020\221"
-  "\004b\006proto3"
+  "\004B\037Z\035github.com/lbryio/types/go/pbb\006prot"
+  "o3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_claim_2eproto_deps[1] = {
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_claim_2eproto_sccs[13] = {
-  &scc_info_Audio_claim_2eproto.base,
-  &scc_info_Channel_claim_2eproto.base,
-  &scc_info_Claim_claim_2eproto.base,
-  &scc_info_ClaimList_claim_2eproto.base,
-  &scc_info_ClaimReference_claim_2eproto.base,
-  &scc_info_Fee_claim_2eproto.base,
-  &scc_info_Image_claim_2eproto.base,
-  &scc_info_Language_claim_2eproto.base,
-  &scc_info_Location_claim_2eproto.base,
-  &scc_info_Software_claim_2eproto.base,
-  &scc_info_Source_claim_2eproto.base,
-  &scc_info_Stream_claim_2eproto.base,
-  &scc_info_Video_claim_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_claim_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_claim_2eproto = {
-  false, false, descriptor_table_protodef_claim_2eproto, "claim.proto", 10569,
-  &descriptor_table_claim_2eproto_once, descriptor_table_claim_2eproto_sccs, descriptor_table_claim_2eproto_deps, 13, 0,
+  false, false, 10602, descriptor_table_protodef_claim_2eproto, "claim.proto", 
+  &descriptor_table_claim_2eproto_once, nullptr, 0, 13,
   schemas, file_default_instances, TableStruct_claim_2eproto::offsets,
-  file_level_metadata_claim_2eproto, 13, file_level_enum_descriptors_claim_2eproto, file_level_service_descriptors_claim_2eproto,
+  file_level_metadata_claim_2eproto, file_level_enum_descriptors_claim_2eproto, file_level_service_descriptors_claim_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
+descriptor_table_claim_2eproto_metadata_getter(int index) {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_claim_2eproto);
+  return descriptor_table_claim_2eproto.file_level_metadata[index];
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_claim_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_claim_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_claim_2eproto(&descriptor_table_claim_2eproto);
 namespace pb {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ClaimList_ListType_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_claim_2eproto);
@@ -2703,18 +2621,6 @@ constexpr int Location::Country_ARRAYSIZE;
 
 // ===================================================================
 
-void Claim::InitAsDefaultInstance() {
-  ::pb::_Claim_default_instance_.stream_ = const_cast< ::pb::Stream*>(
-      ::pb::Stream::internal_default_instance());
-  ::pb::_Claim_default_instance_.channel_ = const_cast< ::pb::Channel*>(
-      ::pb::Channel::internal_default_instance());
-  ::pb::_Claim_default_instance_.collection_ = const_cast< ::pb::ClaimList*>(
-      ::pb::ClaimList::internal_default_instance());
-  ::pb::_Claim_default_instance_.repost_ = const_cast< ::pb::ClaimReference*>(
-      ::pb::ClaimReference::internal_default_instance());
-  ::pb::_Claim_default_instance_._instance.get_mutable()->thumbnail_ = const_cast< ::pb::Source*>(
-      ::pb::Source::internal_default_instance());
-}
 class Claim::_Internal {
  public:
   static const ::pb::Stream& stream(const Claim* msg);
@@ -2821,12 +2727,12 @@ Claim::Claim(const Claim& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   title_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_title().empty()) {
-    title_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_title(),
+    title_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_title(), 
       GetArena());
   }
   description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_description().empty()) {
-    description_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_description(),
+    description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_description(), 
       GetArena());
   }
   if (from._internal_has_thumbnail()) {
@@ -2860,11 +2766,10 @@ Claim::Claim(const Claim& from)
 }
 
 void Claim::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Claim_claim_2eproto.base);
-  title_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  thumbnail_ = nullptr;
-  clear_has_type();
+title_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+thumbnail_ = nullptr;
+clear_has_type();
 }
 
 Claim::~Claim() {
@@ -2892,11 +2797,6 @@ void Claim::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Claim::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Claim& Claim::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Claim_claim_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Claim::clear_type() {
 // @@protoc_insertion_point(one_of_clear_start:pb.Claim)
@@ -2942,8 +2842,8 @@ void Claim::Clear() {
   tags_.Clear();
   languages_.Clear();
   locations_.Clear();
-  title_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  description_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  title_.ClearToEmpty();
+  description_.ClearToEmpty();
   if (GetArena() == nullptr && thumbnail_ != nullptr) {
     delete thumbnail_;
   }
@@ -2954,7 +2854,6 @@ void Claim::Clear() {
 
 const char* Claim::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3361,20 +3260,6 @@ void Claim::InternalSwap(Claim* other) {
 
 // ===================================================================
 
-void Stream::InitAsDefaultInstance() {
-  ::pb::_Stream_default_instance_._instance.get_mutable()->source_ = const_cast< ::pb::Source*>(
-      ::pb::Source::internal_default_instance());
-  ::pb::_Stream_default_instance_._instance.get_mutable()->fee_ = const_cast< ::pb::Fee*>(
-      ::pb::Fee::internal_default_instance());
-  ::pb::_Stream_default_instance_.image_ = const_cast< ::pb::Image*>(
-      ::pb::Image::internal_default_instance());
-  ::pb::_Stream_default_instance_.video_ = const_cast< ::pb::Video*>(
-      ::pb::Video::internal_default_instance());
-  ::pb::_Stream_default_instance_.audio_ = const_cast< ::pb::Audio*>(
-      ::pb::Audio::internal_default_instance());
-  ::pb::_Stream_default_instance_.software_ = const_cast< ::pb::Software*>(
-      ::pb::Software::internal_default_instance());
-}
 class Stream::_Internal {
  public:
   static const ::pb::Source& source(const Stream* msg);
@@ -3480,17 +3365,17 @@ Stream::Stream(const Stream& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   author_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_author().empty()) {
-    author_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_author(),
+    author_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_author(), 
       GetArena());
   }
   license_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_license().empty()) {
-    license_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_license(),
+    license_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_license(), 
       GetArena());
   }
   license_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_license_url().empty()) {
-    license_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_license_url(),
+    license_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_license_url(), 
       GetArena());
   }
   if (from._internal_has_source()) {
@@ -3530,14 +3415,14 @@ Stream::Stream(const Stream& from)
 }
 
 void Stream::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Stream_claim_2eproto.base);
-  author_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  license_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  license_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&source_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&release_time_) -
-      reinterpret_cast<char*>(&source_)) + sizeof(release_time_));
-  clear_has_type();
+author_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+license_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+license_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&source_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&release_time_) -
+    reinterpret_cast<char*>(&source_)) + sizeof(release_time_));
+clear_has_type();
 }
 
 Stream::~Stream() {
@@ -3567,11 +3452,6 @@ void Stream::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Stream::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Stream& Stream::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Stream_claim_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Stream::clear_type() {
 // @@protoc_insertion_point(one_of_clear_start:pb.Stream)
@@ -3614,9 +3494,9 @@ void Stream::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  author_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  license_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  license_url_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  author_.ClearToEmpty();
+  license_.ClearToEmpty();
+  license_url_.ClearToEmpty();
   if (GetArena() == nullptr && source_ != nullptr) {
     delete source_;
   }
@@ -3632,7 +3512,6 @@ void Stream::Clear() {
 
 const char* Stream::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4030,12 +3909,6 @@ void Stream::InternalSwap(Stream* other) {
 
 // ===================================================================
 
-void Channel::InitAsDefaultInstance() {
-  ::pb::_Channel_default_instance_._instance.get_mutable()->cover_ = const_cast< ::pb::Source*>(
-      ::pb::Source::internal_default_instance());
-  ::pb::_Channel_default_instance_._instance.get_mutable()->featured_ = const_cast< ::pb::ClaimList*>(
-      ::pb::ClaimList::internal_default_instance());
-}
 class Channel::_Internal {
  public:
   static const ::pb::Source& cover(const Channel* msg);
@@ -4061,17 +3934,17 @@ Channel::Channel(const Channel& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   public_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_public_key().empty()) {
-    public_key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_public_key(),
+    public_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_public_key(), 
       GetArena());
   }
   email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_email().empty()) {
-    email_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_email(),
+    email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_email(), 
       GetArena());
   }
   website_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_website_url().empty()) {
-    website_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_website_url(),
+    website_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_website_url(), 
       GetArena());
   }
   if (from._internal_has_cover()) {
@@ -4088,13 +3961,13 @@ Channel::Channel(const Channel& from)
 }
 
 void Channel::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Channel_claim_2eproto.base);
-  public_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  website_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&cover_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&featured_) -
-      reinterpret_cast<char*>(&cover_)) + sizeof(featured_));
+public_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+website_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&cover_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&featured_) -
+    reinterpret_cast<char*>(&cover_)) + sizeof(featured_));
 }
 
 Channel::~Channel() {
@@ -4121,11 +3994,6 @@ void Channel::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Channel::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Channel& Channel::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Channel_claim_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Channel::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.Channel)
@@ -4133,9 +4001,9 @@ void Channel::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  public_key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  email_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  website_url_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  public_key_.ClearToEmpty();
+  email_.ClearToEmpty();
+  website_url_.ClearToEmpty();
   if (GetArena() == nullptr && cover_ != nullptr) {
     delete cover_;
   }
@@ -4149,7 +4017,6 @@ void Channel::Clear() {
 
 const char* Channel::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4403,8 +4270,6 @@ void Channel::InternalSwap(Channel* other) {
 
 // ===================================================================
 
-void ClaimReference::InitAsDefaultInstance() {
-}
 class ClaimReference::_Internal {
  public:
 };
@@ -4420,15 +4285,14 @@ ClaimReference::ClaimReference(const ClaimReference& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   claim_hash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_claim_hash().empty()) {
-    claim_hash_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_claim_hash(),
+    claim_hash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_claim_hash(), 
       GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:pb.ClaimReference)
 }
 
 void ClaimReference::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ClaimReference_claim_2eproto.base);
-  claim_hash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+claim_hash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 ClaimReference::~ClaimReference() {
@@ -4451,11 +4315,6 @@ void ClaimReference::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void ClaimReference::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ClaimReference& ClaimReference::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ClaimReference_claim_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ClaimReference::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.ClaimReference)
@@ -4463,13 +4322,12 @@ void ClaimReference::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  claim_hash_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  claim_hash_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ClaimReference::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4607,8 +4465,6 @@ void ClaimReference::InternalSwap(ClaimReference* other) {
 
 // ===================================================================
 
-void ClaimList::InitAsDefaultInstance() {
-}
 class ClaimList::_Internal {
  public:
 };
@@ -4629,8 +4485,7 @@ ClaimList::ClaimList(const ClaimList& from)
 }
 
 void ClaimList::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ClaimList_claim_2eproto.base);
-  list_type_ = 0;
+list_type_ = 0;
 }
 
 ClaimList::~ClaimList() {
@@ -4652,11 +4507,6 @@ void ClaimList::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void ClaimList::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ClaimList& ClaimList::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ClaimList_claim_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ClaimList::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.ClaimList)
@@ -4671,7 +4521,6 @@ void ClaimList::Clear() {
 
 const char* ClaimList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4838,8 +4687,6 @@ void ClaimList::InternalSwap(ClaimList* other) {
 
 // ===================================================================
 
-void Source::InitAsDefaultInstance() {
-}
 class Source::_Internal {
  public:
 };
@@ -4855,32 +4702,32 @@ Source::Source(const Source& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   hash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_hash().empty()) {
-    hash_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_hash(),
+    hash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_hash(), 
       GetArena());
   }
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_name(),
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
       GetArena());
   }
   media_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_media_type().empty()) {
-    media_type_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_media_type(),
+    media_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_media_type(), 
       GetArena());
   }
   url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_url().empty()) {
-    url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_url(),
+    url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_url(), 
       GetArena());
   }
   sd_hash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_sd_hash().empty()) {
-    sd_hash_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_sd_hash(),
+    sd_hash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_sd_hash(), 
       GetArena());
   }
   bt_infohash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_bt_infohash().empty()) {
-    bt_infohash_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_bt_infohash(),
+    bt_infohash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_bt_infohash(), 
       GetArena());
   }
   size_ = from.size_;
@@ -4888,14 +4735,13 @@ Source::Source(const Source& from)
 }
 
 void Source::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Source_claim_2eproto.base);
-  hash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  media_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  sd_hash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  bt_infohash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  size_ = PROTOBUF_ULONGLONG(0);
+hash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+media_type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+sd_hash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+bt_infohash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+size_ = PROTOBUF_ULONGLONG(0);
 }
 
 Source::~Source() {
@@ -4923,11 +4769,6 @@ void Source::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Source::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Source& Source::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Source_claim_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Source::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.Source)
@@ -4935,19 +4776,18 @@ void Source::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  hash_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  media_type_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  url_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  sd_hash_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  bt_infohash_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  hash_.ClearToEmpty();
+  name_.ClearToEmpty();
+  media_type_.ClearToEmpty();
+  url_.ClearToEmpty();
+  sd_hash_.ClearToEmpty();
+  bt_infohash_.ClearToEmpty();
   size_ = PROTOBUF_ULONGLONG(0);
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Source::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -5249,8 +5089,6 @@ void Source::InternalSwap(Source* other) {
 
 // ===================================================================
 
-void Fee::InitAsDefaultInstance() {
-}
 class Fee::_Internal {
  public:
 };
@@ -5266,7 +5104,7 @@ Fee::Fee(const Fee& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_address().empty()) {
-    address_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_address(),
+    address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_address(), 
       GetArena());
   }
   ::memcpy(&amount_, &from.amount_,
@@ -5276,11 +5114,11 @@ Fee::Fee(const Fee& from)
 }
 
 void Fee::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Fee_claim_2eproto.base);
-  address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&amount_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&currency_) -
-      reinterpret_cast<char*>(&amount_)) + sizeof(currency_));
+address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&amount_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&currency_) -
+    reinterpret_cast<char*>(&amount_)) + sizeof(currency_));
 }
 
 Fee::~Fee() {
@@ -5303,11 +5141,6 @@ void Fee::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Fee::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Fee& Fee::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Fee_claim_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Fee::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.Fee)
@@ -5315,7 +5148,7 @@ void Fee::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  address_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  address_.ClearToEmpty();
   ::memset(&amount_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&currency_) -
       reinterpret_cast<char*>(&amount_)) + sizeof(currency_));
@@ -5324,7 +5157,6 @@ void Fee::Clear() {
 
 const char* Fee::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -5515,8 +5347,6 @@ void Fee::InternalSwap(Fee* other) {
 
 // ===================================================================
 
-void Image::InitAsDefaultInstance() {
-}
 class Image::_Internal {
  public:
 };
@@ -5537,9 +5367,10 @@ Image::Image(const Image& from)
 }
 
 void Image::SharedCtor() {
-  ::memset(&width_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&height_) -
-      reinterpret_cast<char*>(&width_)) + sizeof(height_));
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&width_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&height_) -
+    reinterpret_cast<char*>(&width_)) + sizeof(height_));
 }
 
 Image::~Image() {
@@ -5561,11 +5392,6 @@ void Image::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Image::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Image& Image::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Image_claim_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Image::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.Image)
@@ -5581,7 +5407,6 @@ void Image::Clear() {
 
 const char* Image::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -5746,10 +5571,6 @@ void Image::InternalSwap(Image* other) {
 
 // ===================================================================
 
-void Video::InitAsDefaultInstance() {
-  ::pb::_Video_default_instance_._instance.get_mutable()->audio_ = const_cast< ::pb::Audio*>(
-      ::pb::Audio::internal_default_instance());
-}
 class Video::_Internal {
  public:
   static const ::pb::Audio& audio(const Video* msg);
@@ -5780,10 +5601,10 @@ Video::Video(const Video& from)
 }
 
 void Video::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Video_claim_2eproto.base);
-  ::memset(&audio_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&duration_) -
-      reinterpret_cast<char*>(&audio_)) + sizeof(duration_));
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&audio_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&duration_) -
+    reinterpret_cast<char*>(&audio_)) + sizeof(duration_));
 }
 
 Video::~Video() {
@@ -5806,11 +5627,6 @@ void Video::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Video::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Video& Video::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Video_claim_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Video::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.Video)
@@ -5830,7 +5646,6 @@ void Video::Clear() {
 
 const char* Video::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -6043,8 +5858,6 @@ void Video::InternalSwap(Video* other) {
 
 // ===================================================================
 
-void Audio::InitAsDefaultInstance() {
-}
 class Audio::_Internal {
  public:
 };
@@ -6063,7 +5876,7 @@ Audio::Audio(const Audio& from)
 }
 
 void Audio::SharedCtor() {
-  duration_ = 0u;
+duration_ = 0u;
 }
 
 Audio::~Audio() {
@@ -6085,11 +5898,6 @@ void Audio::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Audio::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Audio& Audio::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Audio_claim_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Audio::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.Audio)
@@ -6103,7 +5911,6 @@ void Audio::Clear() {
 
 const char* Audio::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -6240,8 +6047,6 @@ void Audio::InternalSwap(Audio* other) {
 
 // ===================================================================
 
-void Software::InitAsDefaultInstance() {
-}
 class Software::_Internal {
  public:
 };
@@ -6257,15 +6062,14 @@ Software::Software(const Software& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   os_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_os().empty()) {
-    os_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_os(),
+    os_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_os(), 
       GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:pb.Software)
 }
 
 void Software::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Software_claim_2eproto.base);
-  os_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+os_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Software::~Software() {
@@ -6288,11 +6092,6 @@ void Software::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Software::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Software& Software::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Software_claim_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Software::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.Software)
@@ -6300,13 +6099,12 @@ void Software::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  os_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  os_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Software::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -6449,8 +6247,6 @@ void Software::InternalSwap(Software* other) {
 
 // ===================================================================
 
-void Language::InitAsDefaultInstance() {
-}
 class Language::_Internal {
  public:
 };
@@ -6471,9 +6267,10 @@ Language::Language(const Language& from)
 }
 
 void Language::SharedCtor() {
-  ::memset(&language_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&region_) -
-      reinterpret_cast<char*>(&language_)) + sizeof(region_));
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&language_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&region_) -
+    reinterpret_cast<char*>(&language_)) + sizeof(region_));
 }
 
 Language::~Language() {
@@ -6495,11 +6292,6 @@ void Language::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Language::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Language& Language::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Language_claim_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Language::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.Language)
@@ -6515,7 +6307,6 @@ void Language::Clear() {
 
 const char* Language::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -6706,8 +6497,6 @@ void Language::InternalSwap(Language* other) {
 
 // ===================================================================
 
-void Location::InitAsDefaultInstance() {
-}
 class Location::_Internal {
  public:
 };
@@ -6723,17 +6512,17 @@ Location::Location(const Location& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   state_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_state().empty()) {
-    state_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_state(),
+    state_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_state(), 
       GetArena());
   }
   city_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_city().empty()) {
-    city_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_city(),
+    city_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_city(), 
       GetArena());
   }
   code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_code().empty()) {
-    code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_code(),
+    code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_code(), 
       GetArena());
   }
   ::memcpy(&country_, &from.country_,
@@ -6743,13 +6532,13 @@ Location::Location(const Location& from)
 }
 
 void Location::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Location_claim_2eproto.base);
-  state_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  city_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&country_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&longitude_) -
-      reinterpret_cast<char*>(&country_)) + sizeof(longitude_));
+state_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+city_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&country_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&longitude_) -
+    reinterpret_cast<char*>(&country_)) + sizeof(longitude_));
 }
 
 Location::~Location() {
@@ -6774,11 +6563,6 @@ void Location::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Location::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Location& Location::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Location_claim_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Location::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.Location)
@@ -6786,9 +6570,9 @@ void Location::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  state_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  city_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  code_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  state_.ClearToEmpty();
+  city_.ClearToEmpty();
+  code_.ClearToEmpty();
   ::memset(&country_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&longitude_) -
       reinterpret_cast<char*>(&country_)) + sizeof(longitude_));
@@ -6797,7 +6581,6 @@ void Location::Clear() {
 
 const char* Location::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);

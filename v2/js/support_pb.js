@@ -2,11 +2,14 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
@@ -66,7 +69,8 @@ proto.pb.Support.prototype.toObject = function(opt_includeInstance) {
  */
 proto.pb.Support.toObject = function(includeInstance, msg) {
   var f, obj = {
-    emoji: jspb.Message.getFieldWithDefault(msg, 1, "")
+    emoji: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    comment: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -107,6 +111,10 @@ proto.pb.Support.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.setEmoji(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setComment(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -143,6 +151,13 @@ proto.pb.Support.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getComment();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -161,6 +176,24 @@ proto.pb.Support.prototype.getEmoji = function() {
  */
 proto.pb.Support.prototype.setEmoji = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string comment = 2;
+ * @return {string}
+ */
+proto.pb.Support.prototype.getComment = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pb.Support} returns this
+ */
+proto.pb.Support.prototype.setComment = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

@@ -14,26 +14,22 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace pb {
-class PurchaseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Purchase> _instance;
-} _Purchase_default_instance_;
+constexpr Purchase::Purchase(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : claim_hash_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct PurchaseDefaultTypeInternal {
+  constexpr PurchaseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PurchaseDefaultTypeInternal() {}
+  union {
+    Purchase _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PurchaseDefaultTypeInternal _Purchase_default_instance_;
 }  // namespace pb
-static void InitDefaultsscc_info_Purchase_purchase_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::pb::_Purchase_default_instance_;
-    new (ptr) ::pb::Purchase();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::pb::Purchase::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Purchase_purchase_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Purchase_purchase_2eproto}, {}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_purchase_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_purchase_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_purchase_2eproto = nullptr;
@@ -56,29 +52,28 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_purchase_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\016purchase.proto\022\002pb\"\036\n\010Purchase\022\022\n\nclai"
-  "m_hash\030\001 \001(\014b\006proto3"
+  "m_hash\030\001 \001(\014B\037Z\035github.com/lbryio/types/"
+  "go/pbb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_purchase_2eproto_deps[1] = {
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_purchase_2eproto_sccs[1] = {
-  &scc_info_Purchase_purchase_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_purchase_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_purchase_2eproto = {
-  false, false, descriptor_table_protodef_purchase_2eproto, "purchase.proto", 60,
-  &descriptor_table_purchase_2eproto_once, descriptor_table_purchase_2eproto_sccs, descriptor_table_purchase_2eproto_deps, 1, 0,
+  false, false, 93, descriptor_table_protodef_purchase_2eproto, "purchase.proto", 
+  &descriptor_table_purchase_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_purchase_2eproto::offsets,
-  file_level_metadata_purchase_2eproto, 1, file_level_enum_descriptors_purchase_2eproto, file_level_service_descriptors_purchase_2eproto,
+  file_level_metadata_purchase_2eproto, file_level_enum_descriptors_purchase_2eproto, file_level_service_descriptors_purchase_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
+descriptor_table_purchase_2eproto_metadata_getter(int index) {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_purchase_2eproto);
+  return descriptor_table_purchase_2eproto.file_level_metadata[index];
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_purchase_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_purchase_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_purchase_2eproto(&descriptor_table_purchase_2eproto);
 namespace pb {
 
 // ===================================================================
 
-void Purchase::InitAsDefaultInstance() {
-}
 class Purchase::_Internal {
  public:
 };
@@ -94,15 +89,14 @@ Purchase::Purchase(const Purchase& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   claim_hash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_claim_hash().empty()) {
-    claim_hash_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_claim_hash(),
+    claim_hash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_claim_hash(), 
       GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:pb.Purchase)
 }
 
 void Purchase::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Purchase_purchase_2eproto.base);
-  claim_hash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+claim_hash_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 Purchase::~Purchase() {
@@ -125,11 +119,6 @@ void Purchase::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void Purchase::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Purchase& Purchase::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Purchase_purchase_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Purchase::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.Purchase)
@@ -137,13 +126,12 @@ void Purchase::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  claim_hash_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  claim_hash_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Purchase::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
