@@ -1,0 +1,93 @@
+syntax = "proto3";
+
+option go_package = "github.com/lbryio/types/go/pb";
+import "result.proto";
+
+package pb;
+
+service Hub {
+  rpc Search (SearchRequest) returns (Outputs) {}
+}
+
+message InvertibleField {
+  bool invert = 1;
+  repeated string value = 2;
+}
+
+message BoolValue {
+  bool value = 1;
+}
+
+message UInt32Value {
+  uint32 value = 1;
+}
+
+message RangeField {
+  enum Op {
+    EQ = 0;
+    LTE = 1;
+    GTE = 2;
+    LT = 3;
+    GT = 4;
+  }
+  Op op = 1;
+  repeated string value = 2;
+}
+
+message SearchRequest {
+  InvertibleField claim_id = 1;
+  InvertibleField channel_id = 2;
+  string text = 3;
+  uint32 limit = 4;
+  repeated string order_by = 5;
+  uint32 offset = 6;
+  bool is_controlling = 7;
+  string last_take_over_height = 8;
+  string name = 9;
+  string normalized_name = 10;
+  RangeField tx_position = 11;
+  RangeField amount = 12;
+  RangeField timestamp = 13;
+  RangeField creation_timestamp = 14;
+  RangeField height = 15;
+  RangeField creation_height = 16;
+  RangeField activation_height = 17;
+  RangeField expiration_height = 18;
+  RangeField release_time = 19;
+  string short_url = 20;
+  string canonical_url = 21;
+  string title = 22;
+  string author = 23;
+  string description = 24;
+  repeated string claim_type = 25;
+  RangeField repost_count = 26;
+  repeated string stream_type = 27;
+  repeated string media_type = 28;
+  RangeField fee_amount = 29;
+  string fee_currency = 30;
+  RangeField duration = 31;
+  string reposted_claim_id = 32;
+  RangeField censor_type = 33;
+  string claims_in_channel = 34;
+  RangeField channel_join = 35;
+  BoolValue is_signature_valid = 36;
+  RangeField effective_amount = 37;
+  RangeField support_amount = 38;
+  RangeField trending_score = 39;
+  string tx_id = 43;
+  UInt32Value tx_nout = 44;
+  string signature = 45;
+  string signature_digest = 46;
+  string public_key_bytes = 47;
+  string public_key_id = 48;
+  repeated string any_tags = 49;
+  repeated string all_tags = 50;
+  repeated string not_tags = 51;
+  bool has_channel_signature = 52;
+  BoolValue has_source = 53;
+  uint32 limit_claims_per_channel = 54;
+  repeated string any_languages = 55;
+  repeated string all_languages = 56;
+  bool remove_duplicates = 57;
+  bool no_totals = 58;
+}

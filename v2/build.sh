@@ -27,7 +27,15 @@ hash protoc-gen-go 2>/dev/null || { echo >&2 'error: Make sure $GOPATH/bin is in
 mkdir -p $DIR/go $DIR/python $DIR/js $DIR/cpp
 find $DIR/go $DIR/python $DIR/js $DIR/cpp -type f -delete
 
+$PROTOC --proto_path="$DIR/proto" \
+  --go_out="$DIR/go" --go_opt=paths=source_relative \
+  --go-grpc_out="$DIR/go" --go-grpc_opt=paths=source_relative \
+  --js_out="import_style=commonjs,binary:$DIR/js" --cpp_out="$DIR/cpp" \
+  $DIR/proto/*.proto
 
-protoc --proto_path="$DIR/proto" --python_out="$DIR/python" --go_out="$DIR/go" --js_out="import_style=commonjs,binary:$DIR/js" --cpp_out="$DIR/cpp" $DIR/proto/*.proto
+python -m grpc_tools.protoc --proto_path="$DIR/proto" \
+  --python_out="$DIR/python" \
+  --grpc_python_out="$DIR/python" \
+  $DIR/proto/*.proto
 
 ls "$DIR"/go/*.pb.go | xargs -n1 -IX bash -c "sed -e 's/,omitempty//' X > X.tmp && mv X{.tmp,}"
