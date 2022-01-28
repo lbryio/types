@@ -21,13 +21,13 @@ message Wallet {
 
 message Account {
   message AddressGenerator {
-    message Chain { // TODO - good name?
+    message AddressManager {
       uint32 gap = 1; // uint64? not sure how big this might get
       uint32 maximum_uses_per_address = 2 [json_name="maximum_uses_per_address"];
     }
-    Chain change = 1;
-    string name = 2;
-    Chain receiving = 3;
+    string name = 1;
+    AddressManager change = 2;
+    AddressManager receiving = 3;
   }
 
   AddressGenerator address_generator = 1 [json_name="address_generator"];
