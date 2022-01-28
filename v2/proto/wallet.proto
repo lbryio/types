@@ -43,9 +43,14 @@ message Account {
 
 message TimestampedPreferences {
   EnableSync enable_sync = 1 [json_name="enable-sync"];
-  Preferences local = 2;
-  Preferences shared = 3;
+  EncryptOnDisk encrypt_on_disk = 2 [json_name="encrypt-on-disk"];
+  Preferences local = 3;
+  Preferences shared = 4;
 
+  message EncryptOnDisk {
+    uint32 ts = 1;
+    bool value = 2;
+  }
   message EnableSync {
     uint32 ts = 1;
     bool value = 2;
