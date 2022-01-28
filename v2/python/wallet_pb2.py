@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='pb',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0cwallet.proto\x12\x02pb\"w\n\x06Wallet\x12\x1d\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\x0b.pb.Account\x12\x0c\n\x04name\x18\x02 \x01(\t\x12/\n\x0bpreferences\x18\x03 \x01(\x0b\x32\x1a.pb.TimestampedPreferences\x12\x0f\n\x07version\x18\x04 \x01(\r\"\xc2\x04\n\x07\x41\x63\x63ount\x12J\n\x11\x61\x64\x64ress_generator\x18\x01 \x01(\x0b\x32\x1c.pb.Account.AddressGeneratorR\x11\x61\x64\x64ress_generator\x12\x33\n\x0c\x63\x65rtificates\x18\x02 \x03(\x0b\x32\x1d.pb.Account.CertificatesEntry\x12\x11\n\tencrypted\x18\x03 \x01(\x08\x12\x0e\n\x06ledger\x18\x04 \x01(\t\x12 \n\x0bmodified_on\x18\x05 \x01(\rR\x0bmodified_on\x12\x0c\n\x04name\x18\x06 \x01(\t\x12 \n\x0bprivate_key\x18\x07 \x01(\tR\x0bprivate_key\x12\x1e\n\npublic_key\x18\x08 \x01(\tR\npublic_key\x12\x0c\n\x04seed\x18\t \x01(\t\x1a\xdd\x01\n\x10\x41\x64\x64ressGenerator\x12\x32\n\x06\x63hange\x18\x01 \x01(\x0b\x32\".pb.Account.AddressGenerator.Chain\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x35\n\treceiving\x18\x03 \x01(\x0b\x32\".pb.Account.AddressGenerator.Chain\x1aP\n\x05\x43hain\x12\x0b\n\x03gap\x18\x01 \x01(\r\x12:\n\x18maximum_uses_per_address\x18\x02 \x01(\rR\x18maximum_uses_per_address\x1a\x33\n\x11\x43\x65rtificatesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x9f\x15\n\x16TimestampedPreferences\x12G\n\x0b\x65nable_sync\x18\x01 \x01(\x0b\x32%.pb.TimestampedPreferences.EnableSyncR\x0b\x65nable-sync\x12\x35\n\x05local\x18\x02 \x01(\x0b\x32&.pb.TimestampedPreferences.Preferences\x12\x36\n\x06shared\x18\x03 \x01(\x0b\x32&.pb.TimestampedPreferences.Preferences\x1a\'\n\nEnableSync\x12\n\n\x02ts\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\x08\x1a\xc5\x01\n\x0bPreferences\x12\n\n\x02ts\x18\x01 \x01(\r\x12\x42\n\x05value\x18\x02 \x01(\x0b\x32\x33.pb.TimestampedPreferences.Preferences.Preferences_\x1a\x66\n\x0cPreferences_\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x37\n\x05value\x18\x02 \x01(\x0b\x32(.pb.TimestampedPreferences.Preferences__\x12\x0f\n\x07version\x18\x03 \x01(\t\x1a\xdb\x11\n\rPreferences__\x12\x30\n\x13\x61pp_welcome_version\x18\x01 \x01(\rR\x13\x61pp_welcome_version\x12\x0f\n\x07\x62locked\x18\x02 \x03(\t\x12W\n\x12\x62uiltinCollections\x18\x03 \x01(\x0b\x32;.pb.TimestampedPreferences.Preferences__.BuiltInCollections\x12(\n\x0f\x63oin_swap_codes\x18\x04 \x03(\tR\x0f\x63oin_swap_codes\x12Z\n\x11\x65\x64itedCollections\x18\x05 \x03(\x0b\x32?.pb.TimestampedPreferences.Preferences__.EditedCollectionsEntry\x12\x45\n\tfollowing\x18\x06 \x03(\x0b\x32\x32.pb.TimestampedPreferences.Preferences__.Following\x12\x43\n\x08settings\x18\x07 \x01(\x0b\x32\x31.pb.TimestampedPreferences.Preferences__.Settings\x12\x1e\n\nsharing_3P\x18\x08 \x01(\x08R\nsharing_3P\x12\x15\n\rsubscriptions\x18\t \x03(\t\x12\x0c\n\x04tags\x18\n \x03(\t\x12\x64\n\x16unpublishedCollections\x18\x0b \x03(\x0b\x32\x44.pb.TimestampedPreferences.Preferences__.UnpublishedCollectionsEntry\x1aV\n\nCollection\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05items\x18\x02 \x03(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\x11\n\tupdatedAt\x18\x05 \x01(\r\x1a\xa5\x01\n\x12\x42uiltInCollections\x12\x46\n\tfavorites\x18\x01 \x01(\x0b\x32\x33.pb.TimestampedPreferences.Preferences__.Collection\x12G\n\nwatchlater\x18\x02 \x01(\x0b\x32\x33.pb.TimestampedPreferences.Preferences__.Collection\x1a\x37\n\tFollowing\x12\x1d\n\x15notificationsDisabled\x18\x01 \x01(\x08\x12\x0b\n\x03uri\x18\x02 \x01(\t\x1a\xd4\x08\n\x08Settings\x12@\n\x1b\x61utomatic_dark_mode_enabled\x18\x01 \x01(\x08R\x1b\x61utomatic_dark_mode_enabled\x12\x10\n\x08\x61utoplay\x18\x02 \x01(\x08\x12$\n\rautoplay_next\x18\x03 \x01(\x08R\rautoplay_next\x12\x65\n\x0f\x64\x61rk_mode_times\x18\x04 \x01(\x0b\x32;.pb.TimestampedPreferences.Preferences__.Settings.TimeRangeR\x0f\x64\x61rk_mode_times\x12(\n\x0f\x66loating_player\x18\x05 \x01(\x08R\x0f\x66loating_player\x12\"\n\x0chide_balance\x18\x06 \x01(\x08R\x0chide_balance\x12\"\n\x0chide_reposts\x18\x07 \x01(\x08R\x0chide_reposts\x12\x34\n\x15hide_splash_animation\x18\x08 \x01(\x08R\x15hide_splash_animation\x12:\n\x18instant_purchase_enabled\x18\t \x01(\x08R\x18instant_purchase_enabled\x12t\n\x14instant_purchase_max\x18\n \x01(\x0b\x32@.pb.TimestampedPreferences.Preferences__.Settings.CurrencyAmountR\x14instant_purchase_max\x12\x10\n\x08language\x18\x0b \x01(\t\x12h\n\x0elbryum_servers\x18\x0c \x03(\x0b\x32@.pb.TimestampedPreferences.Preferences__.Settings.DomainPortPairR\x0elbryum_servers\x12*\n\x10share_usage_data\x18\r \x01(\x08R\x10share_usage_data\x12 \n\x0bshow_mature\x18\x0e \x01(\x08R\x0bshow_mature\x12\r\n\x05theme\x18\x0f \x01(\t\x1a\x38\n\x04Time\x12\x15\n\rformattedTime\x18\x01 \x01(\t\x12\x0c\n\x04hour\x18\x02 \x01(\t\x12\x0b\n\x03min\x18\x03 \x01(\t\x1a\x95\x01\n\tTimeRange\x12\x44\n\x04\x66rom\x18\x01 \x01(\x0b\x32\x36.pb.TimestampedPreferences.Preferences__.Settings.Time\x12\x42\n\x02to\x18\x02 \x01(\x0b\x32\x36.pb.TimestampedPreferences.Preferences__.Settings.Time\x1a\x32\n\x0e\x43urrencyAmount\x12\x0e\n\x06\x61mount\x18\x01 \x01(\x01\x12\x10\n\x08\x63urrency\x18\x02 \x01(\t\x1a.\n\x0e\x44omainPortPair\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\r\x1am\n\x16\x45\x64itedCollectionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x42\n\x05value\x18\x02 \x01(\x0b\x32\x33.pb.TimestampedPreferences.Preferences__.Collection:\x02\x38\x01\x1ar\n\x1bUnpublishedCollectionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x42\n\x05value\x18\x02 \x01(\x0b\x32\x33.pb.TimestampedPreferences.Preferences__.Collection:\x02\x38\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x0cwallet.proto\x12\x02pb\"w\n\x06Wallet\x12\x1d\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\x0b.pb.Account\x12\x0c\n\x04name\x18\x02 \x01(\t\x12/\n\x0bpreferences\x18\x03 \x01(\x0b\x32\x1a.pb.TimestampedPreferences\x12\x0f\n\x07version\x18\x04 \x01(\r\"\xdd\x04\n\x07\x41\x63\x63ount\x12J\n\x11\x61\x64\x64ress_generator\x18\x01 \x01(\x0b\x32\x1c.pb.Account.AddressGeneratorR\x11\x61\x64\x64ress_generator\x12\x33\n\x0c\x63\x65rtificates\x18\x02 \x03(\x0b\x32\x1d.pb.Account.CertificatesEntry\x12\x11\n\tencrypted\x18\x03 \x01(\x08\x12\x0e\n\x06ledger\x18\x04 \x01(\t\x12 \n\x0bmodified_on\x18\x05 \x01(\rR\x0bmodified_on\x12\x0c\n\x04name\x18\x06 \x01(\t\x12 \n\x0bprivate_key\x18\x07 \x01(\tR\x0bprivate_key\x12\x1e\n\npublic_key\x18\x08 \x01(\tR\npublic_key\x12\x0c\n\x04seed\x18\t \x01(\t\x1a\xf8\x01\n\x10\x41\x64\x64ressGenerator\x12\x0c\n\x04name\x18\x01 \x01(\t\x12;\n\x06\x63hange\x18\x02 \x01(\x0b\x32+.pb.Account.AddressGenerator.AddressManager\x12>\n\treceiving\x18\x03 \x01(\x0b\x32+.pb.Account.AddressGenerator.AddressManager\x1aY\n\x0e\x41\x64\x64ressManager\x12\x0b\n\x03gap\x18\x01 \x01(\r\x12:\n\x18maximum_uses_per_address\x18\x02 \x01(\rR\x18maximum_uses_per_address\x1a\x33\n\x11\x43\x65rtificatesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x9f\x16\n\x16TimestampedPreferences\x12G\n\x0b\x65nable_sync\x18\x01 \x01(\x0b\x32%.pb.TimestampedPreferences.EnableSyncR\x0b\x65nable-sync\x12R\n\x0f\x65ncrypt_on_disk\x18\x02 \x01(\x0b\x32(.pb.TimestampedPreferences.EncryptOnDiskR\x0f\x65ncrypt-on-disk\x12\x35\n\x05local\x18\x03 \x01(\x0b\x32&.pb.TimestampedPreferences.Preferences\x12\x36\n\x06shared\x18\x04 \x01(\x0b\x32&.pb.TimestampedPreferences.Preferences\x1a*\n\rEncryptOnDisk\x12\n\n\x02ts\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\x08\x1a\'\n\nEnableSync\x12\n\n\x02ts\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\x08\x1a\xc5\x01\n\x0bPreferences\x12\n\n\x02ts\x18\x01 \x01(\r\x12\x42\n\x05value\x18\x02 \x01(\x0b\x32\x33.pb.TimestampedPreferences.Preferences.Preferences_\x1a\x66\n\x0cPreferences_\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x37\n\x05value\x18\x02 \x01(\x0b\x32(.pb.TimestampedPreferences.Preferences__\x12\x0f\n\x07version\x18\x03 \x01(\t\x1a\xdb\x11\n\rPreferences__\x12\x30\n\x13\x61pp_welcome_version\x18\x01 \x01(\rR\x13\x61pp_welcome_version\x12\x0f\n\x07\x62locked\x18\x02 \x03(\t\x12W\n\x12\x62uiltinCollections\x18\x03 \x01(\x0b\x32;.pb.TimestampedPreferences.Preferences__.BuiltInCollections\x12(\n\x0f\x63oin_swap_codes\x18\x04 \x03(\tR\x0f\x63oin_swap_codes\x12Z\n\x11\x65\x64itedCollections\x18\x05 \x03(\x0b\x32?.pb.TimestampedPreferences.Preferences__.EditedCollectionsEntry\x12\x45\n\tfollowing\x18\x06 \x03(\x0b\x32\x32.pb.TimestampedPreferences.Preferences__.Following\x12\x43\n\x08settings\x18\x07 \x01(\x0b\x32\x31.pb.TimestampedPreferences.Preferences__.Settings\x12\x1e\n\nsharing_3P\x18\x08 \x01(\x08R\nsharing_3P\x12\x15\n\rsubscriptions\x18\t \x03(\t\x12\x0c\n\x04tags\x18\n \x03(\t\x12\x64\n\x16unpublishedCollections\x18\x0b \x03(\x0b\x32\x44.pb.TimestampedPreferences.Preferences__.UnpublishedCollectionsEntry\x1aV\n\nCollection\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05items\x18\x02 \x03(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\x11\n\tupdatedAt\x18\x05 \x01(\r\x1a\xa5\x01\n\x12\x42uiltInCollections\x12\x46\n\tfavorites\x18\x01 \x01(\x0b\x32\x33.pb.TimestampedPreferences.Preferences__.Collection\x12G\n\nwatchlater\x18\x02 \x01(\x0b\x32\x33.pb.TimestampedPreferences.Preferences__.Collection\x1a\x37\n\tFollowing\x12\x1d\n\x15notificationsDisabled\x18\x01 \x01(\x08\x12\x0b\n\x03uri\x18\x02 \x01(\t\x1a\xd4\x08\n\x08Settings\x12@\n\x1b\x61utomatic_dark_mode_enabled\x18\x01 \x01(\x08R\x1b\x61utomatic_dark_mode_enabled\x12\x10\n\x08\x61utoplay\x18\x02 \x01(\x08\x12$\n\rautoplay_next\x18\x03 \x01(\x08R\rautoplay_next\x12\x65\n\x0f\x64\x61rk_mode_times\x18\x04 \x01(\x0b\x32;.pb.TimestampedPreferences.Preferences__.Settings.TimeRangeR\x0f\x64\x61rk_mode_times\x12(\n\x0f\x66loating_player\x18\x05 \x01(\x08R\x0f\x66loating_player\x12\"\n\x0chide_balance\x18\x06 \x01(\x08R\x0chide_balance\x12\"\n\x0chide_reposts\x18\x07 \x01(\x08R\x0chide_reposts\x12\x34\n\x15hide_splash_animation\x18\x08 \x01(\x08R\x15hide_splash_animation\x12:\n\x18instant_purchase_enabled\x18\t \x01(\x08R\x18instant_purchase_enabled\x12t\n\x14instant_purchase_max\x18\n \x01(\x0b\x32@.pb.TimestampedPreferences.Preferences__.Settings.CurrencyAmountR\x14instant_purchase_max\x12\x10\n\x08language\x18\x0b \x01(\t\x12h\n\x0elbryum_servers\x18\x0c \x03(\x0b\x32@.pb.TimestampedPreferences.Preferences__.Settings.DomainPortPairR\x0elbryum_servers\x12*\n\x10share_usage_data\x18\r \x01(\x08R\x10share_usage_data\x12 \n\x0bshow_mature\x18\x0e \x01(\x08R\x0bshow_mature\x12\r\n\x05theme\x18\x0f \x01(\t\x1a\x38\n\x04Time\x12\x15\n\rformattedTime\x18\x01 \x01(\t\x12\x0c\n\x04hour\x18\x02 \x01(\t\x12\x0b\n\x03min\x18\x03 \x01(\t\x1a\x95\x01\n\tTimeRange\x12\x44\n\x04\x66rom\x18\x01 \x01(\x0b\x32\x36.pb.TimestampedPreferences.Preferences__.Settings.Time\x12\x42\n\x02to\x18\x02 \x01(\x0b\x32\x36.pb.TimestampedPreferences.Preferences__.Settings.Time\x1a\x32\n\x0e\x43urrencyAmount\x12\x0e\n\x06\x61mount\x18\x01 \x01(\x01\x12\x10\n\x08\x63urrency\x18\x02 \x01(\t\x1a.\n\x0e\x44omainPortPair\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\r\x1am\n\x16\x45\x64itedCollectionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x42\n\x05value\x18\x02 \x01(\x0b\x32\x33.pb.TimestampedPreferences.Preferences__.Collection:\x02\x38\x01\x1ar\n\x1bUnpublishedCollectionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x42\n\x05value\x18\x02 \x01(\x0b\x32\x33.pb.TimestampedPreferences.Preferences__.Collection:\x02\x38\x01\x62\x06proto3')
 )
 
 
@@ -77,22 +77,22 @@ _WALLET = _descriptor.Descriptor(
 )
 
 
-_ACCOUNT_ADDRESSGENERATOR_CHAIN = _descriptor.Descriptor(
-  name='Chain',
-  full_name='pb.Account.AddressGenerator.Chain',
+_ACCOUNT_ADDRESSGENERATOR_ADDRESSMANAGER = _descriptor.Descriptor(
+  name='AddressManager',
+  full_name='pb.Account.AddressGenerator.AddressManager',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='gap', full_name='pb.Account.AddressGenerator.Chain.gap', index=0,
+      name='gap', full_name='pb.Account.AddressGenerator.AddressManager.gap', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='maximum_uses_per_address', full_name='pb.Account.AddressGenerator.Chain.maximum_uses_per_address', index=1,
+      name='maximum_uses_per_address', full_name='pb.Account.AddressGenerator.AddressManager.maximum_uses_per_address', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -110,8 +110,8 @@ _ACCOUNT_ADDRESSGENERATOR_CHAIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=587,
-  serialized_end=667,
+  serialized_start=605,
+  serialized_end=694,
 )
 
 _ACCOUNT_ADDRESSGENERATOR = _descriptor.Descriptor(
@@ -122,16 +122,16 @@ _ACCOUNT_ADDRESSGENERATOR = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='change', full_name='pb.Account.AddressGenerator.change', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='name', full_name='pb.Account.AddressGenerator.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='name', full_name='pb.Account.AddressGenerator.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='change', full_name='pb.Account.AddressGenerator.change', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -145,7 +145,7 @@ _ACCOUNT_ADDRESSGENERATOR = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_ACCOUNT_ADDRESSGENERATOR_CHAIN, ],
+  nested_types=[_ACCOUNT_ADDRESSGENERATOR_ADDRESSMANAGER, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -155,7 +155,7 @@ _ACCOUNT_ADDRESSGENERATOR = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=446,
-  serialized_end=667,
+  serialized_end=694,
 )
 
 _ACCOUNT_CERTIFICATESENTRY = _descriptor.Descriptor(
@@ -191,8 +191,8 @@ _ACCOUNT_CERTIFICATESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=669,
-  serialized_end=720,
+  serialized_start=696,
+  serialized_end=747,
 )
 
 _ACCOUNT = _descriptor.Descriptor(
@@ -278,9 +278,46 @@ _ACCOUNT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=142,
-  serialized_end=720,
+  serialized_end=747,
 )
 
+
+_TIMESTAMPEDPREFERENCES_ENCRYPTONDISK = _descriptor.Descriptor(
+  name='EncryptOnDisk',
+  full_name='pb.TimestampedPreferences.EncryptOnDisk',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ts', full_name='pb.TimestampedPreferences.EncryptOnDisk.ts', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='pb.TimestampedPreferences.EncryptOnDisk.value', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1044,
+  serialized_end=1086,
+)
 
 _TIMESTAMPEDPREFERENCES_ENABLESYNC = _descriptor.Descriptor(
   name='EnableSync',
@@ -315,8 +352,8 @@ _TIMESTAMPEDPREFERENCES_ENABLESYNC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=933,
-  serialized_end=972,
+  serialized_start=1088,
+  serialized_end=1127,
 )
 
 _TIMESTAMPEDPREFERENCES_PREFERENCES_PREFERENCES_ = _descriptor.Descriptor(
@@ -359,8 +396,8 @@ _TIMESTAMPEDPREFERENCES_PREFERENCES_PREFERENCES_ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1070,
-  serialized_end=1172,
+  serialized_start=1225,
+  serialized_end=1327,
 )
 
 _TIMESTAMPEDPREFERENCES_PREFERENCES = _descriptor.Descriptor(
@@ -396,8 +433,8 @@ _TIMESTAMPEDPREFERENCES_PREFERENCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=975,
-  serialized_end=1172,
+  serialized_start=1130,
+  serialized_end=1327,
 )
 
 _TIMESTAMPEDPREFERENCES_PREFERENCES___COLLECTION = _descriptor.Descriptor(
@@ -454,8 +491,8 @@ _TIMESTAMPEDPREFERENCES_PREFERENCES___COLLECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1793,
-  serialized_end=1879,
+  serialized_start=1948,
+  serialized_end=2034,
 )
 
 _TIMESTAMPEDPREFERENCES_PREFERENCES___BUILTINCOLLECTIONS = _descriptor.Descriptor(
@@ -491,8 +528,8 @@ _TIMESTAMPEDPREFERENCES_PREFERENCES___BUILTINCOLLECTIONS = _descriptor.Descripto
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1882,
-  serialized_end=2047,
+  serialized_start=2037,
+  serialized_end=2202,
 )
 
 _TIMESTAMPEDPREFERENCES_PREFERENCES___FOLLOWING = _descriptor.Descriptor(
@@ -528,8 +565,8 @@ _TIMESTAMPEDPREFERENCES_PREFERENCES___FOLLOWING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2049,
-  serialized_end=2104,
+  serialized_start=2204,
+  serialized_end=2259,
 )
 
 _TIMESTAMPEDPREFERENCES_PREFERENCES___SETTINGS_TIME = _descriptor.Descriptor(
@@ -572,8 +609,8 @@ _TIMESTAMPEDPREFERENCES_PREFERENCES___SETTINGS_TIME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2907,
-  serialized_end=2963,
+  serialized_start=3062,
+  serialized_end=3118,
 )
 
 _TIMESTAMPEDPREFERENCES_PREFERENCES___SETTINGS_TIMERANGE = _descriptor.Descriptor(
@@ -609,8 +646,8 @@ _TIMESTAMPEDPREFERENCES_PREFERENCES___SETTINGS_TIMERANGE = _descriptor.Descripto
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2966,
-  serialized_end=3115,
+  serialized_start=3121,
+  serialized_end=3270,
 )
 
 _TIMESTAMPEDPREFERENCES_PREFERENCES___SETTINGS_CURRENCYAMOUNT = _descriptor.Descriptor(
@@ -646,8 +683,8 @@ _TIMESTAMPEDPREFERENCES_PREFERENCES___SETTINGS_CURRENCYAMOUNT = _descriptor.Desc
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3117,
-  serialized_end=3167,
+  serialized_start=3272,
+  serialized_end=3322,
 )
 
 _TIMESTAMPEDPREFERENCES_PREFERENCES___SETTINGS_DOMAINPORTPAIR = _descriptor.Descriptor(
@@ -683,8 +720,8 @@ _TIMESTAMPEDPREFERENCES_PREFERENCES___SETTINGS_DOMAINPORTPAIR = _descriptor.Desc
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3169,
-  serialized_end=3215,
+  serialized_start=3324,
+  serialized_end=3370,
 )
 
 _TIMESTAMPEDPREFERENCES_PREFERENCES___SETTINGS = _descriptor.Descriptor(
@@ -811,8 +848,8 @@ _TIMESTAMPEDPREFERENCES_PREFERENCES___SETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2107,
-  serialized_end=3215,
+  serialized_start=2262,
+  serialized_end=3370,
 )
 
 _TIMESTAMPEDPREFERENCES_PREFERENCES___EDITEDCOLLECTIONSENTRY = _descriptor.Descriptor(
@@ -848,8 +885,8 @@ _TIMESTAMPEDPREFERENCES_PREFERENCES___EDITEDCOLLECTIONSENTRY = _descriptor.Descr
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3217,
-  serialized_end=3326,
+  serialized_start=3372,
+  serialized_end=3481,
 )
 
 _TIMESTAMPEDPREFERENCES_PREFERENCES___UNPUBLISHEDCOLLECTIONSENTRY = _descriptor.Descriptor(
@@ -885,8 +922,8 @@ _TIMESTAMPEDPREFERENCES_PREFERENCES___UNPUBLISHEDCOLLECTIONSENTRY = _descriptor.
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3328,
-  serialized_end=3442,
+  serialized_start=3483,
+  serialized_end=3597,
 )
 
 _TIMESTAMPEDPREFERENCES_PREFERENCES__ = _descriptor.Descriptor(
@@ -985,8 +1022,8 @@ _TIMESTAMPEDPREFERENCES_PREFERENCES__ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1175,
-  serialized_end=3442,
+  serialized_start=1330,
+  serialized_end=3597,
 )
 
 _TIMESTAMPEDPREFERENCES = _descriptor.Descriptor(
@@ -1004,15 +1041,22 @@ _TIMESTAMPEDPREFERENCES = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='enable-sync', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='local', full_name='pb.TimestampedPreferences.local', index=1,
+      name='encrypt_on_disk', full_name='pb.TimestampedPreferences.encrypt_on_disk', index=1,
       number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='encrypt-on-disk', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='local', full_name='pb.TimestampedPreferences.local', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='shared', full_name='pb.TimestampedPreferences.shared', index=2,
-      number=3, type=11, cpp_type=10, label=1,
+      name='shared', full_name='pb.TimestampedPreferences.shared', index=3,
+      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1020,7 +1064,7 @@ _TIMESTAMPEDPREFERENCES = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_TIMESTAMPEDPREFERENCES_ENABLESYNC, _TIMESTAMPEDPREFERENCES_PREFERENCES, _TIMESTAMPEDPREFERENCES_PREFERENCES__, ],
+  nested_types=[_TIMESTAMPEDPREFERENCES_ENCRYPTONDISK, _TIMESTAMPEDPREFERENCES_ENABLESYNC, _TIMESTAMPEDPREFERENCES_PREFERENCES, _TIMESTAMPEDPREFERENCES_PREFERENCES__, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -1029,19 +1073,20 @@ _TIMESTAMPEDPREFERENCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=723,
-  serialized_end=3442,
+  serialized_start=750,
+  serialized_end=3597,
 )
 
 _WALLET.fields_by_name['accounts'].message_type = _ACCOUNT
 _WALLET.fields_by_name['preferences'].message_type = _TIMESTAMPEDPREFERENCES
-_ACCOUNT_ADDRESSGENERATOR_CHAIN.containing_type = _ACCOUNT_ADDRESSGENERATOR
-_ACCOUNT_ADDRESSGENERATOR.fields_by_name['change'].message_type = _ACCOUNT_ADDRESSGENERATOR_CHAIN
-_ACCOUNT_ADDRESSGENERATOR.fields_by_name['receiving'].message_type = _ACCOUNT_ADDRESSGENERATOR_CHAIN
+_ACCOUNT_ADDRESSGENERATOR_ADDRESSMANAGER.containing_type = _ACCOUNT_ADDRESSGENERATOR
+_ACCOUNT_ADDRESSGENERATOR.fields_by_name['change'].message_type = _ACCOUNT_ADDRESSGENERATOR_ADDRESSMANAGER
+_ACCOUNT_ADDRESSGENERATOR.fields_by_name['receiving'].message_type = _ACCOUNT_ADDRESSGENERATOR_ADDRESSMANAGER
 _ACCOUNT_ADDRESSGENERATOR.containing_type = _ACCOUNT
 _ACCOUNT_CERTIFICATESENTRY.containing_type = _ACCOUNT
 _ACCOUNT.fields_by_name['address_generator'].message_type = _ACCOUNT_ADDRESSGENERATOR
 _ACCOUNT.fields_by_name['certificates'].message_type = _ACCOUNT_CERTIFICATESENTRY
+_TIMESTAMPEDPREFERENCES_ENCRYPTONDISK.containing_type = _TIMESTAMPEDPREFERENCES
 _TIMESTAMPEDPREFERENCES_ENABLESYNC.containing_type = _TIMESTAMPEDPREFERENCES
 _TIMESTAMPEDPREFERENCES_PREFERENCES_PREFERENCES_.fields_by_name['value'].message_type = _TIMESTAMPEDPREFERENCES_PREFERENCES__
 _TIMESTAMPEDPREFERENCES_PREFERENCES_PREFERENCES_.containing_type = _TIMESTAMPEDPREFERENCES_PREFERENCES
@@ -1073,6 +1118,7 @@ _TIMESTAMPEDPREFERENCES_PREFERENCES__.fields_by_name['settings'].message_type = 
 _TIMESTAMPEDPREFERENCES_PREFERENCES__.fields_by_name['unpublishedCollections'].message_type = _TIMESTAMPEDPREFERENCES_PREFERENCES___UNPUBLISHEDCOLLECTIONSENTRY
 _TIMESTAMPEDPREFERENCES_PREFERENCES__.containing_type = _TIMESTAMPEDPREFERENCES
 _TIMESTAMPEDPREFERENCES.fields_by_name['enable_sync'].message_type = _TIMESTAMPEDPREFERENCES_ENABLESYNC
+_TIMESTAMPEDPREFERENCES.fields_by_name['encrypt_on_disk'].message_type = _TIMESTAMPEDPREFERENCES_ENCRYPTONDISK
 _TIMESTAMPEDPREFERENCES.fields_by_name['local'].message_type = _TIMESTAMPEDPREFERENCES_PREFERENCES
 _TIMESTAMPEDPREFERENCES.fields_by_name['shared'].message_type = _TIMESTAMPEDPREFERENCES_PREFERENCES
 DESCRIPTOR.message_types_by_name['Wallet'] = _WALLET
@@ -1091,10 +1137,10 @@ Account = _reflection.GeneratedProtocolMessageType('Account', (_message.Message,
 
   AddressGenerator = _reflection.GeneratedProtocolMessageType('AddressGenerator', (_message.Message,), dict(
 
-    Chain = _reflection.GeneratedProtocolMessageType('Chain', (_message.Message,), dict(
-      DESCRIPTOR = _ACCOUNT_ADDRESSGENERATOR_CHAIN,
+    AddressManager = _reflection.GeneratedProtocolMessageType('AddressManager', (_message.Message,), dict(
+      DESCRIPTOR = _ACCOUNT_ADDRESSGENERATOR_ADDRESSMANAGER,
       __module__ = 'wallet_pb2'
-      # @@protoc_insertion_point(class_scope:pb.Account.AddressGenerator.Chain)
+      # @@protoc_insertion_point(class_scope:pb.Account.AddressGenerator.AddressManager)
       ))
     ,
     DESCRIPTOR = _ACCOUNT_ADDRESSGENERATOR,
@@ -1115,10 +1161,17 @@ Account = _reflection.GeneratedProtocolMessageType('Account', (_message.Message,
   ))
 _sym_db.RegisterMessage(Account)
 _sym_db.RegisterMessage(Account.AddressGenerator)
-_sym_db.RegisterMessage(Account.AddressGenerator.Chain)
+_sym_db.RegisterMessage(Account.AddressGenerator.AddressManager)
 _sym_db.RegisterMessage(Account.CertificatesEntry)
 
 TimestampedPreferences = _reflection.GeneratedProtocolMessageType('TimestampedPreferences', (_message.Message,), dict(
+
+  EncryptOnDisk = _reflection.GeneratedProtocolMessageType('EncryptOnDisk', (_message.Message,), dict(
+    DESCRIPTOR = _TIMESTAMPEDPREFERENCES_ENCRYPTONDISK,
+    __module__ = 'wallet_pb2'
+    # @@protoc_insertion_point(class_scope:pb.TimestampedPreferences.EncryptOnDisk)
+    ))
+  ,
 
   EnableSync = _reflection.GeneratedProtocolMessageType('EnableSync', (_message.Message,), dict(
     DESCRIPTOR = _TIMESTAMPEDPREFERENCES_ENABLESYNC,
@@ -1222,6 +1275,7 @@ TimestampedPreferences = _reflection.GeneratedProtocolMessageType('TimestampedPr
   # @@protoc_insertion_point(class_scope:pb.TimestampedPreferences)
   ))
 _sym_db.RegisterMessage(TimestampedPreferences)
+_sym_db.RegisterMessage(TimestampedPreferences.EncryptOnDisk)
 _sym_db.RegisterMessage(TimestampedPreferences.EnableSync)
 _sym_db.RegisterMessage(TimestampedPreferences.Preferences)
 _sym_db.RegisterMessage(TimestampedPreferences.Preferences.Preferences_)
