@@ -1,0 +1,139 @@
+syntax = "proto3";
+
+package pb;
+
+// TODO - timestamps need not be uint64 right?
+
+message Wallet {
+  repeated Account accounts = 1;
+  string name = 2;
+  TimestampedPreferences preferences = 3;
+  uint32 version = 4;
+
+  /*
+    Python had these but probably unrelated
+
+    self.storage = storage or WalletStorage()
+    self.encryption_password = None
+    self.id = self.get_id()
+  */
+}
+
+message Account {
+  message AddressGenerator {
+    message Chain { // TODO - good name?
+      uint32 gap = 1; // uint64? not sure how big this might get
+      uint32 maximum_uses_per_address = 2 [json_name="maximum_uses_per_address"];
+    }
+    Chain change = 1;
+    string name = 2;
+    Chain receiving = 3;
+  }
+
+  AddressGenerator address_generator = 1 [json_name="address_generator"];
+  map<string, string> certificates = 2;
+  bool encrypted = 3;
+  string ledger = 4;
+  uint32 modified_on = 5 [json_name="modified_on"];
+  string name = 6;
+  string private_key = 7 [json_name="private_key"];
+  string public_key = 8 [json_name="public_key"];
+  string seed = 9;
+}
+
+message TimestampedPreferences {
+  EnableSync enable_sync = 1 [json_name="enable-sync"];
+  Preferences local = 2;
+  Preferences shared = 3;
+
+  message EnableSync {
+    uint32 ts = 1;
+    bool value = 2;
+  }
+  message Preferences {
+    message Preferences_ {
+      string type = 1; // TODO 'object' -- anything else?
+      Preferences__ value = 2;
+      string version = 3; // TODO why is this a string but not CurrencyAmount.amount?
+    }
+    uint32 ts = 1;
+    Preferences_ value = 2;
+  }
+  message Preferences__ {
+    message Collection {
+      string id = 1;
+      repeated string items = 2;
+      string name = 3;
+      string type = 4; // TODO - always playlist?
+      uint32 updatedAt = 5;
+    }
+    message BuiltInCollections {
+      Collection favorites = 1;
+      Collection watchlater = 2;
+    }
+    message Following {
+      bool notificationsDisabled = 1;
+      string uri = 2;
+    }
+    message Settings { // TODO check relevant code for more values
+      bool automatic_dark_mode_enabled = 1 [json_name="automatic_dark_mode_enabled"];
+      bool autoplay = 2;
+      bool autoplay_next = 3 [json_name="autoplay_next"];
+      message Time {
+        string formattedTime = 1;
+        string hour = 2; // TODO - can this safely be a number instead? convert it during de/serialization?
+        string min = 3;
+      }
+      message TimeRange {
+        Time from = 1;
+        Time to = 2;
+      }
+      TimeRange dark_mode_times = 4 [json_name="dark_mode_times"];
+      bool floating_player = 5 [json_name="floating_player"];
+      bool hide_balance = 6 [json_name="hide_balance"];
+      bool hide_reposts = 7 [json_name="hide_reposts"];
+      bool hide_splash_animation = 8 [json_name="hide_splash_animation"];
+      bool instant_purchase_enabled = 9 [json_name="instant_purchase_enabled"];
+      message CurrencyAmount {
+        double amount = 1; // TODO decimal type via string? is this safe?
+        string currency = 2;
+      }
+      CurrencyAmount instant_purchase_max = 10 [json_name="instant_purchase_max"];
+
+      // TODO - I'm guessing this is a string, but the example value was
+      //   `null`. What do we do about this? Can the sdk treat omission as
+      //   `null`, or should we put this into the json translation wrapper?
+      string language = 11;
+
+      // TODO - this struct is represented as [string, uint32] in the wallet
+      // files. We cannot represent this in protobuf. We will need an extra
+      // step before/after json de/serialization:
+      //
+      // {domain: "sdk.lbry.tech", port: 50001} <-> ["sdk.lbry.tech", 50001]
+      message DomainPortPair {
+        string domain = 1; // TODO - better name?
+        uint32 port = 2;
+      }
+      repeated DomainPortPair lbryum_servers = 12 [json_name="lbryum_servers"];
+
+      bool share_usage_data = 13 [json_name="share_usage_data"];
+      bool show_mature = 14 [json_name="show_mature"];
+      string theme = 15;
+    }
+
+    // TODO - In the example wallet, this is a string under the local
+    // preferences but a number under shared preferences. Which should we go
+    // with? Probably string, in case we get decimal version numbers.
+    uint32 app_welcome_version = 1 [json_name="app_welcome_version"];
+    repeated string blocked = 2;
+    BuiltInCollections builtinCollections = 3;
+    repeated string coin_swap_codes = 4 [json_name="coin_swap_codes"]; // TODO - check the type
+    map<string, Collection> editedCollections = 5;
+    repeated Following following = 6;
+    Settings settings = 7;
+    bool sharing_3P = 8 [json_name="sharing_3P"];
+    repeated string subscriptions = 9;
+    repeated string tags = 10;
+    map<string, Collection> unpublishedCollections = 11;
+  }
+}
