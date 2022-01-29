@@ -9,14 +9,6 @@ message Wallet {
   string name = 2; // Human readable name for this wallet
   TimestampedPreferences preferences = 3;
   uint32 version = 4;  // Wallet spec version
-
-  /*
-    Python had these but probably unrelated
-
-    self.storage = storage or WalletStorage()
-    self.encryption_password = None
-    self.id = self.get_id()
-  */
 }
 
 message Account {
