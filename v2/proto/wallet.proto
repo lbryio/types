@@ -5,10 +5,10 @@ package pb;
 // TODO - timestamps need not be uint64 right?
 
 message Wallet {
-  repeated Account accounts = 1;
-  string name = 2;
+  repeated Account accounts = 1; // Accounts associated with this wallet
+  string name = 2; // Human readable name for this wallet
   TimestampedPreferences preferences = 3;
-  uint32 version = 4;
+  uint32 version = 4;  // Wallet spec version
 
   /*
     Python had these but probably unrelated
@@ -20,25 +20,40 @@ message Wallet {
 }
 
 message Account {
-  message AddressGenerator {
-    message AddressManager {
-      uint32 gap = 1; // uint64? not sure how big this might get
-      uint32 maximum_uses_per_address = 2 [json_name="maximum_uses_per_address"];
+  message AddressGenerator { // Meta-manager for both singular or deterministically generated addresses
+    message AddressManager { // Manager for deterministically generated addresses
+      // TODO - it seems like chain can be as high as (1 << 32) - 1. I think that means that uint32 should cover `gap`?
+      uint32 gap = 1; // Maximum allowed consecutive generated addresses with no transactions
+      uint32 maximum_uses_per_address = 2 [json_name="maximum_uses_per_address"]; // Maximum number of uses for each generated address
     }
-    string name = 1;
-    AddressManager change = 2;
-    AddressManager receiving = 3;
+    string name = 1; // type of address generator: "deterministic-chain" or "single-address"
+    AddressManager change = 2; // Manager for deterministically generated change address (not used if `name` is set to `"single-address")
+    AddressManager receiving = 3; // Manager for deterministically generated receiving address (not used if `name` is set to `"single-address")
   }
 
-  AddressGenerator address_generator = 1 [json_name="address_generator"];
-  map<string, string> certificates = 2;
-  bool encrypted = 3;
-  string ledger = 4;
-  uint32 modified_on = 5 [json_name="modified_on"];
-  string name = 6;
+  AddressGenerator address_generator = 1 [json_name="address_generator"];  // Meta-manager for both singular or deterministically generated addresses
+  map<string, string> certificates = 2; // Channel keys. Mapping from public key address to pem-formatted private key.
+  bool encrypted = 3; // Whether private key and seed are encrypted
+  string ledger = 4; // Which network to use ("lbc_mainnet", etc)
+  uint32 modified_on = 5 [json_name="modified_on"]; // last modified time in Unix Time
+  string name = 6; // Name for account, possibly human readable
+
+  /*
+    if `address_generator.name` is set to `"single-address"`:
+      private key for address
+    if `address_generator.name` is set to `"deterministic-chain"`:
+      root of chain of private keys for addresses
+
+    encrypted if `encrypted` is set to `true`
+  */
   string private_key = 7 [json_name="private_key"];
+
+  /*
+    public key for address if `address_generator.name` is set to `"single-address"`
+    root of chain of public keys for addresses if `address_generator.name` is set to `"deterministic-chain"`
+  */
   string public_key = 8 [json_name="public_key"];
-  string seed = 9;
+  string seed = 9; // Human readable representation of `private_key`
 }
 
 message TimestampedPreferences {
