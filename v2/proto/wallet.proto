@@ -25,7 +25,7 @@ message Account {
 
   AddressGenerator address_generator = 1 [json_name="address_generator"];  // Meta-manager for both singular or deterministically generated addresses
   map<string, string> certificates = 2; // Channel keys. Mapping from public key address to pem-formatted private key.
-  bool encrypted = 3; // Whether private key and seed are encrypted
+  bool encrypted = 3; // Whether private key and seed are encrypted with a password
   string ledger = 4; // Which network to use ("lbc_mainnet", etc)
   uint32 modified_on = 5 [json_name="modified_on"]; // last modified time in Unix Time
   string name = 6; // Name for account, possibly human readable
@@ -45,7 +45,7 @@ message Account {
     root of chain of public keys for addresses if `address_generator.name` is set to `"deterministic-chain"`
   */
   string public_key = 8 [json_name="public_key"];
-  string seed = 9; // Human readable representation of `private_key`
+  string seed = 9; // Human readable representation of `private_key`. encrypted if `encrypted` is set to `true`
 }
 
 message TimestampedPreferences {
