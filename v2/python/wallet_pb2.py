@@ -7,6 +7,7 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -19,10 +20,10 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='wallet.proto',
   package='pb',
   syntax='proto3',
-  serialized_options=None,
   serialized_pb=_b('\n\x0cwallet.proto\x12\x02pb\x1a\x1cgoogle/protobuf/struct.proto\"w\n\x06Wallet\x12\x1d\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\x0b.pb.Account\x12\x0c\n\x04name\x18\x02 \x01(\t\x12/\n\x0bpreferences\x18\x03 \x01(\x0b\x32\x1a.pb.TimestampedPreferences\x12\x0f\n\x07version\x18\x04 \x01(\r\"\xdd\x04\n\x07\x41\x63\x63ount\x12J\n\x11\x61\x64\x64ress_generator\x18\x01 \x01(\x0b\x32\x1c.pb.Account.AddressGeneratorR\x11\x61\x64\x64ress_generator\x12\x33\n\x0c\x63\x65rtificates\x18\x02 \x03(\x0b\x32\x1d.pb.Account.CertificatesEntry\x12\x11\n\tencrypted\x18\x03 \x01(\x08\x12\x0e\n\x06ledger\x18\x04 \x01(\t\x12 \n\x0bmodified_on\x18\x05 \x01(\rR\x0bmodified_on\x12\x0c\n\x04name\x18\x06 \x01(\t\x12 \n\x0bprivate_key\x18\x07 \x01(\tR\x0bprivate_key\x12\x1e\n\npublic_key\x18\x08 \x01(\tR\npublic_key\x12\x0c\n\x04seed\x18\t \x01(\t\x1a\xf8\x01\n\x10\x41\x64\x64ressGenerator\x12\x0c\n\x04name\x18\x01 \x01(\t\x12;\n\x06\x63hange\x18\x02 \x01(\x0b\x32+.pb.Account.AddressGenerator.AddressManager\x12>\n\treceiving\x18\x03 \x01(\x0b\x32+.pb.Account.AddressGenerator.AddressManager\x1aY\n\x0e\x41\x64\x64ressManager\x12\x0b\n\x03gap\x18\x01 \x01(\r\x12:\n\x18maximum_uses_per_address\x18\x02 \x01(\rR\x18maximum_uses_per_address\x1a\x33\n\x11\x43\x65rtificatesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb0\x04\n\x16TimestampedPreferences\x12G\n\x0b\x65nable_sync\x18\x01 \x01(\x0b\x32%.pb.TimestampedPreferences.EnableSyncR\x0b\x65nable-sync\x12R\n\x0f\x65ncrypt_on_disk\x18\x02 \x01(\x0b\x32(.pb.TimestampedPreferences.EncryptOnDiskR\x0f\x65ncrypt-on-disk\x12\x35\n\x05local\x18\x03 \x01(\x0b\x32&.pb.TimestampedPreferences.Preferences\x12\x36\n\x06shared\x18\x04 \x01(\x0b\x32&.pb.TimestampedPreferences.Preferences\x1a*\n\rEncryptOnDisk\x12\n\n\x02ts\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\x08\x1a\'\n\nEnableSync\x12\n\n\x02ts\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\x08\x1a\xb4\x01\n\x0bPreferences\x12\n\n\x02ts\x18\x01 \x01(\r\x12\x42\n\x05value\x18\x02 \x01(\x0b\x32\x33.pb.TimestampedPreferences.Preferences.Preferences_\x1aU\n\x0cPreferences_\x12\x0c\n\x04type\x18\x01 \x01(\t\x12&\n\x05value\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x0f\n\x07version\x18\x03 \x01(\tb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,])
+_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
 
@@ -40,35 +41,35 @@ _WALLET = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
     _descriptor.FieldDescriptor(
       name='name', full_name='pb.Wallet.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
     _descriptor.FieldDescriptor(
       name='preferences', full_name='pb.Wallet.preferences', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
     _descriptor.FieldDescriptor(
       name='version', full_name='pb.Wallet.version', index=3,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -92,21 +93,21 @@ _ACCOUNT_ADDRESSGENERATOR_ADDRESSMANAGER = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
     _descriptor.FieldDescriptor(
       name='maximum_uses_per_address', full_name='pb.Account.AddressGenerator.AddressManager.maximum_uses_per_address', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='maximum_uses_per_address', file=DESCRIPTOR),
+      options=None, json_name='maximum_uses_per_address'),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -129,28 +130,28 @@ _ACCOUNT_ADDRESSGENERATOR = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
     _descriptor.FieldDescriptor(
       name='change', full_name='pb.Account.AddressGenerator.change', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
     _descriptor.FieldDescriptor(
       name='receiving', full_name='pb.Account.AddressGenerator.receiving', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
   ],
   extensions=[
   ],
   nested_types=[_ACCOUNT_ADDRESSGENERATOR_ADDRESSMANAGER, ],
   enum_types=[
   ],
-  serialized_options=None,
+  options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -173,21 +174,21 @@ _ACCOUNT_CERTIFICATESENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
     _descriptor.FieldDescriptor(
       name='value', full_name='pb.Account.CertificatesEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=_b('8\001'),
+  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -210,70 +211,70 @@ _ACCOUNT = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='address_generator', file=DESCRIPTOR),
+      options=None, json_name='address_generator'),
     _descriptor.FieldDescriptor(
       name='certificates', full_name='pb.Account.certificates', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
     _descriptor.FieldDescriptor(
       name='encrypted', full_name='pb.Account.encrypted', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
     _descriptor.FieldDescriptor(
       name='ledger', full_name='pb.Account.ledger', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
     _descriptor.FieldDescriptor(
       name='modified_on', full_name='pb.Account.modified_on', index=4,
       number=5, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='modified_on', file=DESCRIPTOR),
+      options=None, json_name='modified_on'),
     _descriptor.FieldDescriptor(
       name='name', full_name='pb.Account.name', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
     _descriptor.FieldDescriptor(
       name='private_key', full_name='pb.Account.private_key', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='private_key', file=DESCRIPTOR),
+      options=None, json_name='private_key'),
     _descriptor.FieldDescriptor(
       name='public_key', full_name='pb.Account.public_key', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='public_key', file=DESCRIPTOR),
+      options=None, json_name='public_key'),
     _descriptor.FieldDescriptor(
       name='seed', full_name='pb.Account.seed', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
   ],
   extensions=[
   ],
   nested_types=[_ACCOUNT_ADDRESSGENERATOR, _ACCOUNT_CERTIFICATESENTRY, ],
   enum_types=[
   ],
-  serialized_options=None,
+  options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -297,21 +298,21 @@ _TIMESTAMPEDPREFERENCES_ENCRYPTONDISK = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
     _descriptor.FieldDescriptor(
       name='value', full_name='pb.TimestampedPreferences.EncryptOnDisk.value', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -334,21 +335,21 @@ _TIMESTAMPEDPREFERENCES_ENABLESYNC = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
     _descriptor.FieldDescriptor(
       name='value', full_name='pb.TimestampedPreferences.EnableSync.value', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -371,28 +372,28 @@ _TIMESTAMPEDPREFERENCES_PREFERENCES_PREFERENCES_ = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
     _descriptor.FieldDescriptor(
       name='value', full_name='pb.TimestampedPreferences.Preferences.Preferences_.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
     _descriptor.FieldDescriptor(
       name='version', full_name='pb.TimestampedPreferences.Preferences.Preferences_.version', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -415,21 +416,21 @@ _TIMESTAMPEDPREFERENCES_PREFERENCES = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
     _descriptor.FieldDescriptor(
       name='value', full_name='pb.TimestampedPreferences.Preferences.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
   ],
   extensions=[
   ],
   nested_types=[_TIMESTAMPEDPREFERENCES_PREFERENCES_PREFERENCES_, ],
   enum_types=[
   ],
-  serialized_options=None,
+  options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -452,35 +453,35 @@ _TIMESTAMPEDPREFERENCES = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='enable-sync', file=DESCRIPTOR),
+      options=None, json_name='enable-sync'),
     _descriptor.FieldDescriptor(
       name='encrypt_on_disk', full_name='pb.TimestampedPreferences.encrypt_on_disk', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='encrypt-on-disk', file=DESCRIPTOR),
+      options=None, json_name='encrypt-on-disk'),
     _descriptor.FieldDescriptor(
       name='local', full_name='pb.TimestampedPreferences.local', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
     _descriptor.FieldDescriptor(
       name='shared', full_name='pb.TimestampedPreferences.shared', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
   ],
   extensions=[
   ],
   nested_types=[_TIMESTAMPEDPREFERENCES_ENCRYPTONDISK, _TIMESTAMPEDPREFERENCES_ENABLESYNC, _TIMESTAMPEDPREFERENCES_PREFERENCES, ],
   enum_types=[
   ],
-  serialized_options=None,
+  options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -512,7 +513,6 @@ _TIMESTAMPEDPREFERENCES.fields_by_name['shared'].message_type = _TIMESTAMPEDPREF
 DESCRIPTOR.message_types_by_name['Wallet'] = _WALLET
 DESCRIPTOR.message_types_by_name['Account'] = _ACCOUNT
 DESCRIPTOR.message_types_by_name['TimestampedPreferences'] = _TIMESTAMPEDPREFERENCES
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Wallet = _reflection.GeneratedProtocolMessageType('Wallet', (_message.Message,), dict(
   DESCRIPTOR = _WALLET,
@@ -592,5 +592,6 @@ _sym_db.RegisterMessage(TimestampedPreferences.Preferences)
 _sym_db.RegisterMessage(TimestampedPreferences.Preferences.Preferences_)
 
 
-_ACCOUNT_CERTIFICATESENTRY._options = None
+_ACCOUNT_CERTIFICATESENTRY.has_options = True
+_ACCOUNT_CERTIFICATESENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
 # @@protoc_insertion_point(module_scope)
