@@ -14,12 +14,12 @@ message Wallet {
 }
 
 message Account {
+  message AddressManager { // Manager for deterministically generated addresses
+    // TODO - it seems like chain can be as high as (1 << 32) - 1. I think that means that uint32 should cover `gap`?
+    uint32 gap = 1; // Maximum allowed consecutive generated addresses with no transactions
+    uint32 maximum_uses_per_address = 2 [json_name="maximum_uses_per_address"]; // Maximum number of uses for each generated address
+  }
   message AddressGenerator { // Meta-manager for both singular or deterministically generated addresses
-    message AddressManager { // Manager for deterministically generated addresses
-      // TODO - it seems like chain can be as high as (1 << 32) - 1. I think that means that uint32 should cover `gap`?
-      uint32 gap = 1; // Maximum allowed consecutive generated addresses with no transactions
-      uint32 maximum_uses_per_address = 2 [json_name="maximum_uses_per_address"]; // Maximum number of uses for each generated address
-    }
     string name = 1; // type of address generator: "deterministic-chain" or "single-address"
     AddressManager change = 2; // Manager for deterministically generated change address (not used if `name` is set to `"single-address")
     AddressManager receiving = 3; // Manager for deterministically generated receiving address (not used if `name` is set to `"single-address")
