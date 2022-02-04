@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='wallet.proto',
   package='pb',
   syntax='proto3',
-  serialized_pb=_b('\n\x0cwallet.proto\x12\x02pb\x1a\x1cgoogle/protobuf/struct.proto\"w\n\x06Wallet\x12\x1d\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\x0b.pb.Account\x12\x0c\n\x04name\x18\x02 \x01(\t\x12/\n\x0bpreferences\x18\x03 \x01(\x0b\x32\x1a.pb.TimestampedPreferences\x12\x0f\n\x07version\x18\x04 \x01(\r\"\xba\x04\n\x07\x41\x63\x63ount\x12J\n\x11\x61\x64\x64ress_generator\x18\x01 \x01(\x0b\x32\x1c.pb.Account.AddressGeneratorR\x11\x61\x64\x64ress_generator\x12\x33\n\x0c\x63\x65rtificates\x18\x02 \x03(\x0b\x32\x1d.pb.Account.CertificatesEntry\x12\x11\n\tencrypted\x18\x03 \x01(\x08\x12\x0e\n\x06ledger\x18\x04 \x01(\t\x12 \n\x0bmodified_on\x18\x05 \x01(\rR\x0bmodified_on\x12\x0c\n\x04name\x18\x06 \x01(\t\x12 \n\x0bprivate_key\x18\x07 \x01(\tR\x0bprivate_key\x12\x1e\n\npublic_key\x18\x08 \x01(\tR\npublic_key\x12\x0c\n\x04seed\x18\t \x01(\t\x1aY\n\x0e\x41\x64\x64ressManager\x12\x0b\n\x03gap\x18\x01 \x01(\r\x12:\n\x18maximum_uses_per_address\x18\x02 \x01(\rR\x18maximum_uses_per_address\x1a{\n\x10\x41\x64\x64ressGenerator\x12\x0c\n\x04name\x18\x01 \x01(\t\x12*\n\x06\x63hange\x18\x02 \x01(\x0b\x32\x1a.pb.Account.AddressManager\x12-\n\treceiving\x18\x03 \x01(\x0b\x32\x1a.pb.Account.AddressManager\x1a\x33\n\x11\x43\x65rtificatesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb0\x04\n\x16TimestampedPreferences\x12G\n\x0b\x65nable_sync\x18\x01 \x01(\x0b\x32%.pb.TimestampedPreferences.EnableSyncR\x0b\x65nable-sync\x12R\n\x0f\x65ncrypt_on_disk\x18\x02 \x01(\x0b\x32(.pb.TimestampedPreferences.EncryptOnDiskR\x0f\x65ncrypt-on-disk\x12\x35\n\x05local\x18\x03 \x01(\x0b\x32&.pb.TimestampedPreferences.Preferences\x12\x36\n\x06shared\x18\x04 \x01(\x0b\x32&.pb.TimestampedPreferences.Preferences\x1a*\n\rEncryptOnDisk\x12\n\n\x02ts\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\x08\x1a\'\n\nEnableSync\x12\n\n\x02ts\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\x08\x1a\xb4\x01\n\x0bPreferences\x12\n\n\x02ts\x18\x01 \x01(\x01\x12\x42\n\x05value\x18\x02 \x01(\x0b\x32\x33.pb.TimestampedPreferences.Preferences.Preferences_\x1aU\n\x0cPreferences_\x12\x0c\n\x04type\x18\x01 \x01(\t\x12&\n\x05value\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x0f\n\x07version\x18\x03 \x01(\tb\x06proto3')
+  serialized_pb=_b('\n\x0cwallet.proto\x12\x02pb\x1a\x1cgoogle/protobuf/struct.proto\"w\n\x06Wallet\x12\x1d\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\x0b.pb.Account\x12\x0c\n\x04name\x18\x02 \x01(\t\x12/\n\x0bpreferences\x18\x03 \x01(\x0b\x32\x1a.pb.TimestampedPreferences\x12\x0f\n\x07version\x18\x04 \x01(\r\"\xba\x04\n\x07\x41\x63\x63ount\x12J\n\x11\x61\x64\x64ress_generator\x18\x01 \x01(\x0b\x32\x1c.pb.Account.AddressGeneratorR\x11\x61\x64\x64ress_generator\x12\x33\n\x0c\x63\x65rtificates\x18\x02 \x03(\x0b\x32\x1d.pb.Account.CertificatesEntry\x12\x11\n\tencrypted\x18\x03 \x01(\x08\x12\x0e\n\x06ledger\x18\x04 \x01(\t\x12 \n\x0bmodified_on\x18\x05 \x01(\rR\x0bmodified_on\x12\x0c\n\x04name\x18\x06 \x01(\t\x12 \n\x0bprivate_key\x18\x07 \x01(\tR\x0bprivate_key\x12\x1e\n\npublic_key\x18\x08 \x01(\tR\npublic_key\x12\x0c\n\x04seed\x18\t \x01(\t\x1aY\n\x0e\x41\x64\x64ressManager\x12\x0b\n\x03gap\x18\x01 \x01(\r\x12:\n\x18maximum_uses_per_address\x18\x02 \x01(\rR\x18maximum_uses_per_address\x1a{\n\x10\x41\x64\x64ressGenerator\x12\x0c\n\x04name\x18\x01 \x01(\t\x12*\n\x06\x63hange\x18\x02 \x01(\x0b\x32\x1a.pb.Account.AddressManager\x12-\n\treceiving\x18\x03 \x01(\x0b\x32\x1a.pb.Account.AddressManager\x1a\x33\n\x11\x43\x65rtificatesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb0\x04\n\x16TimestampedPreferences\x12G\n\x0b\x65nable_sync\x18\x01 \x01(\x0b\x32%.pb.TimestampedPreferences.EnableSyncR\x0b\x65nable-sync\x12R\n\x0f\x65ncrypt_on_disk\x18\x02 \x01(\x0b\x32(.pb.TimestampedPreferences.EncryptOnDiskR\x0f\x65ncrypt-on-disk\x12\x35\n\x05local\x18\x03 \x01(\x0b\x32&.pb.TimestampedPreferences.Preferences\x12\x36\n\x06shared\x18\x04 \x01(\x0b\x32&.pb.TimestampedPreferences.Preferences\x1a*\n\rEncryptOnDisk\x12\n\n\x02ts\x18\x01 \x01(\x01\x12\r\n\x05value\x18\x02 \x01(\x08\x1a\'\n\nEnableSync\x12\n\n\x02ts\x18\x01 \x01(\x01\x12\r\n\x05value\x18\x02 \x01(\x08\x1a\xb4\x01\n\x0bPreferences\x12\n\n\x02ts\x18\x01 \x01(\x01\x12\x42\n\x05value\x18\x02 \x01(\x0b\x32\x33.pb.TimestampedPreferences.Preferences.Preferences_\x1aU\n\x0cPreferences_\x12\x0c\n\x04type\x18\x01 \x01(\t\x12&\n\x05value\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x0f\n\x07version\x18\x03 \x01(\tb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -294,8 +294,8 @@ _TIMESTAMPEDPREFERENCES_ENCRYPTONDISK = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='ts', full_name='pb.TimestampedPreferences.EncryptOnDisk.ts', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -331,8 +331,8 @@ _TIMESTAMPEDPREFERENCES_ENABLESYNC = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='ts', full_name='pb.TimestampedPreferences.EnableSync.ts', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
