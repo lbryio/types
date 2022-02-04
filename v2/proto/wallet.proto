@@ -57,11 +57,11 @@ message TimestampedPreferences {
   Preferences shared = 4;
 
   message EncryptOnDisk { // seen in sdk. do we want this here?
-    uint32 ts = 1;
+    double ts = 1; // TODO string?
     bool value = 2;
   }
   message EnableSync { // seen in example wallet. do we want this here?
-    uint32 ts = 1;
+    double ts = 1; // TODO string?
     bool value = 2;
   }
   message Preferences {
